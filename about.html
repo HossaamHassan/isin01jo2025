@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Islamic Insurance Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <div class="flex flex-col w-full items-start sticky top-0 z-50 bg-white border-b-[1.5px] border-solid border-[#eef0f3]">
+        <header class="flex items-center justify-between px-4 md:px-8 lg:px-20 py-0 my-4 bg-transparent relative w-full min-h-[60px]">
+            <div class="flex items-center gap-4 lg:gap-16 relative">
+                <a href="index.html">
+                    <img class="relative w-[350px] h-[90px] object-contain" alt="Logo" src="public/logo whitepng.png">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="inline-flex h-5 items-start gap-5 relative">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="products.html" class="hover:text-[#008c4b] transition-colors">Insurance Products</a></li>
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Shareholders Relations
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="annual-reports.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Annual Reports</a>
+                                    <a href="general-assembly-minutes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Minutes</a>
+                                    <a href="general-assembly-invitations.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Meeting Invitations</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="medical-network.html" class="hover:text-[#008c4b] transition-colors">Medical Network</a></li>
+                        <li><a href="news.html" class="hover:text-[#008c4b] transition-colors">News</a></li>
+                        <li><a href="careers.html" class="hover:text-[#008c4b] transition-colors">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-[#008c4b] transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#008c4b] text-white px-5 py-2 rounded-full text-sm">Search</button>
+                <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full text-sm">العربية</button>
+                <button class="lg:hidden p-2 bg-[#008c4b] text-white rounded" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+            <img class="w-48 h-32 object-contain" alt="Logo" src="public/logo whitepng.png">
+            <button id="mobile-menu-close" class="p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="who-we-are-toggle">
+                    <span>Who We Are</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="who-we-are-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="who-we-are-submenu">
+                    <a href="about.html" class="block py-2 px-2 text-sm text-gray-700">About Us</a>
+                    <a href="board.html" class="block py-2 px-2 text-sm text-gray-700">Board of Directors</a>
+                    <a href="awards.html" class="block py-2 px-2 text-sm text-gray-700">Awards</a>
+                    <a href="quality-policy.html" class="block py-2 px-2 text-sm text-gray-700">Quality Policy</a>
+                </div>
+            </div>
+            <a href="products.html" class="py-3 px-2 border-b border-gray-100">Insurance Products</a>
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="shareholders-toggle">
+                    <span>Shareholders Relations</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="shareholders-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="shareholders-submenu">
+                    <a href="annual-reports.html" class="block py-2 px-2 text-sm text-gray-700">Annual Reports</a>
+                    <a href="general-assembly-minutes.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Minutes</a>
+                    <a href="general-assembly-invitations.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Meeting Invitations</a>
+                </div>
+            </div>
+            <a href="medical-network.html" class="py-3 px-2 border-b border-gray-100">Medical Network</a>
+            <a href="news.html" class="py-3 px-2 border-b border-gray-100">News</a>
+            <a href="careers.html" class="py-3 px-2 border-b border-gray-100">Careers</a>
+            <a href="contact.html" class="py-3 px-2 border-b border-gray-100">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#008c4b] text-white py-20">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Islamic Insurance Company</h1>
+                <p class="text-xl opacity-90">Jordan's first and leading Takaful insurance company, established in 1996 with over 29 years of excellence in Sharia-compliant insurance services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-[#545454] mb-6">The Islamic Insurance Company is the first Takaful insurance company in Jordan.</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        The Islamic Insurance Company is the first Takaful insurance company in Jordan. It was established in 1996. It practices the legitimate cooperative Insurance which complies with the Islamic Share'ah laws and on the basis of a Wakalah (agency) with a known wage.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        The Islamic Insurance Company dominates the largest share of the takaful market in Jordan and occupies a prominent position in the takaful insurance market inside and outside Jordan. The Islamic Insurance Company won many awards and it has a distinguished rating of 'A (jd)' (Single A) from the Islamic International Rating Agency.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        We have participated in establishing many Takaful insurance in the Middle-East such like; Islamic Insurance Company in Yemen, Al-Aman Takaful Insurance Company (A.T.I) in the Lebanon, Saudi Reinsurance Company (Saudi Re), in Riyadh/Kingdom of Saudi Arabia, and At-Takafulia Assurances in Tunis.
+                    </p>
+                </div>
+                <div class="relative">
+                    <img src="public/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="About Us" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Our Mission & Vision</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Guided by Islamic principles, we strive to provide comprehensive insurance solutions that protect our community while adhering to Sharia compliance.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-[#008c4b] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] mb-4">Our Mission</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To provide innovative, Sharia-compliant insurance solutions that protect our customers' interests while contributing to the economic development of Jordan through ethical business practices and community engagement.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-[#008c4b] rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] mb-4">Our Vision</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To be the leading Takaful insurance company in the region, recognized for our commitment to Islamic principles, exceptional customer service, and innovative insurance products that meet the evolving needs of our community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Network Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Medical Network</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our comprehensive medical network providing quality healthcare services across Jordan.</p>
+            </div>
+
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Card 1: Physiotherapy Centers -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Physiotherapy Centers" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Physiotherapy Centers</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Doctors -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Doctors" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Doctors</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Dental -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/dentist-with-assistant-install-implant-patient-mouthin-modern-cl.png" alt="Dental" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Dental</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Pharmacies -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/young-woman-looking-camera-while-sitting-table.png" alt="Pharmacies" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Pharmacies</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Laboratories -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/featured-image.png" alt="Laboratories" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Laboratories</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Radiology -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/featured-image-1.png" alt="Radiology" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Radiology</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: Optics -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/featured-image-2.png" alt="Optics" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Optics</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Hospitals -->
+                        <div class="w-full md:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="public/group-1000003684.png" alt="Hospitals" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Hospitals</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-[#008c4b]"></i>
+                </button>
+                <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors z-10">
+                    <i data-lucide="chevron-right" class="w-6 h-6 text-[#008c4b]"></i>
+                </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="flex justify-center gap-2 mt-8">
+                <span class="carousel-dot w-3 h-3 rounded-full bg-[#008c4b] cursor-pointer" data-index="0"></span>
+                <span class="carousel-dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer" data-index="1"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#f9f9f9]">
+        <div class="bg-[#008c4b] py-12">
+            <div class="max-w-[1279px] mx-auto px-4 md:px-8 lg:px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Takaful Products</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products.html" class="text-white hover:underline">Medical Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Motor Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Travel Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Useful Links</h3>
+                        <ul class="space-y-2">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                            <li><a href="board.html" class="text-white hover:underline">Board of Directors</a></li>
+                            <li><a href="careers.html" class="text-white hover:underline">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Awards</h3>
+                        <p class="text-white text-sm">Best Takaful Insurance Company in Jordan for the year 2023 – World Finance Magazine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Contact us</h3>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm">Phone: 06-562-0151</p>
+                            <p class="text-white text-sm">islamicinsurance@tiic.com.jo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#f9f9f9] py-6">
+            <div class="max-w-[1280px] mx-auto px-4 text-center">
+                <p class="text-sm">© 2025 Developed by <a href="https://www.dot.jo" class="hover:underline">dot jo.</a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Carousel functionality
+        const carouselTrack = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+        const totalSlides = 2;
+
+        function updateCarousel() {
+            const translateValue = currentIndex * -100;
+            carouselTrack.style.transform = `translateX(${translateValue}%)`;
+
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-[#008c4b]');
+                } else {
+                    dot.classList.remove('bg-[#008c4b]');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.getAttribute('data-index'));
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>

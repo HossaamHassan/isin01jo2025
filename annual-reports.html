@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Reports - Islamic Insurance Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <div class="flex flex-col w-full items-start sticky top-0 z-50 bg-white border-b-[1.5px] border-solid border-[#eef0f3]">
+        <header class="flex items-center justify-between px-4 md:px-8 lg:px-20 py-0 my-4 bg-transparent relative w-full min-h-[60px]">
+            <div class="flex items-center gap-4 lg:gap-16 relative">
+                <a href="index.html">
+                    <img class="relative w-[350px] h-[90px] object-contain" alt="Logo" src="public/logo whitepng.png">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="inline-flex h-5 items-start gap-5 relative">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="products.html" class="hover:text-[#008c4b] transition-colors">Insurance Products</a></li>
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors text-[#008c4b] font-medium flex items-center gap-1">
+                                Shareholders Relations
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="annual-reports.html" class="block px-4 py-2 text-sm text-[#008c4b] font-medium bg-gray-50">Annual Reports</a>
+                                    <a href="general-assembly-minutes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Minutes</a>
+                                    <a href="general-assembly-invitations.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Meeting Invitations</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="medical-network.html" class="hover:text-[#008c4b] transition-colors">Medical Network</a></li>
+                        <li><a href="news.html" class="hover:text-[#008c4b] transition-colors">News</a></li>
+                        <li><a href="careers.html" class="hover:text-[#008c4b] transition-colors">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-[#008c4b] transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#008c4b] text-white px-5 py-2 rounded-full text-sm">Search</button>
+                <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full text-sm">العربية</button>
+                <button class="lg:hidden p-2 bg-[#008c4b] text-white rounded" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+            <img class="w-48 h-32 object-contain" alt="Logo" src="public/logo whitepng.png">
+            <button id="mobile-menu-close" class="p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="who-we-are-toggle">
+                    <span>Who We Are</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="who-we-are-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="who-we-are-submenu">
+                    <a href="about.html" class="block py-2 px-2 text-sm text-gray-700">About Us</a>
+                    <a href="board.html" class="block py-2 px-2 text-sm text-gray-700">Board of Directors</a>
+                    <a href="awards.html" class="block py-2 px-2 text-sm text-gray-700">Awards</a>
+                    <a href="quality-policy.html" class="block py-2 px-2 text-sm text-gray-700">Quality Policy</a>
+                </div>
+            </div>
+            <a href="products.html" class="py-3 px-2 border-b border-gray-100">Insurance Products</a>
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2 text-[#008c4b] font-medium" id="shareholders-toggle">
+                    <span>Shareholders Relations</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="shareholders-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="shareholders-submenu">
+                    <a href="annual-reports.html" class="block py-2 px-2 text-sm text-[#008c4b] font-medium">Annual Reports</a>
+                    <a href="general-assembly-minutes.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Minutes</a>
+                    <a href="general-assembly-invitations.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Meeting Invitations</a>
+                </div>
+            </div>
+            <a href="medical-network.html" class="py-3 px-2 border-b border-gray-100">Medical Network</a>
+            <a href="news.html" class="py-3 px-2 border-b border-gray-100">News</a>
+            <a href="careers.html" class="py-3 px-2 border-b border-gray-100">Careers</a>
+            <a href="contact.html" class="py-3 px-2 border-b border-gray-100">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#008c4b] text-white py-20">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Annual Reports</h1>
+                <p class="text-xl opacity-90">Access our comprehensive annual financial reports and performance reviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports List -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Financial Reports Archive</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Download our annual financial reports for complete transparency into our performance and operations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 2024 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2025</h3>
+                    <p class="text-center text-gray-600 mb-6">Comprehensive financial performance and strategic overview</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+
+                <!-- 2023 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2024</h3>
+                    <p class="text-center text-gray-600 mb-6">Award-winning year performance and achievements</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+
+                <!-- 2022 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2023</h3>
+                    <p class="text-center text-gray-600 mb-6">Growth and expansion initiatives summary</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+
+                <!-- 2021 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2022</h3>
+                    <p class="text-center text-gray-600 mb-6">Resilience and adaptation strategies</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+
+                <!-- 2020 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2021</h3>
+                    <p class="text-center text-gray-600 mb-6">Digital transformation initiatives</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+
+                <!-- 2020 Report -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2020</h3>
+                    <p class="text-center text-gray-600 mb-6">Market leadership and innovation</p>
+                    <button class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        Download Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#f9f9f9]">
+        <div class="bg-[#008c4b] py-12">
+            <div class="max-w-[1279px] mx-auto px-4 md:px-8 lg:px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Takaful Products</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products.html" class="text-white hover:underline">Medical Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Motor Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Travel Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Useful Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="about.html" class="text-white hover:underline">Who We Are</a></li>
+                            <li><a href="board.html" class="text-white hover:underline">Board of Directors</a></li>
+                            <li><a href="careers.html" class="text-white hover:underline">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Awards</h3>
+                        <p class="text-white text-sm">Best Takaful Insurance Company in Jordan for the year 2023 – World Finance Magazine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Contact us</h3>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm">Phone: 06-562-0151</p>
+                            <p class="text-white text-sm">islamicinsurance@tiic.com.jo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#f9f9f9] py-6">
+            <div class="max-w-[1280px] mx-auto px-4 text-center">
+                <p class="text-sm">© 2025 Developed by <a href="https://www.dot.jo" class="hover:underline">dot jo.</a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        const whoWeAreToggle = document.getElementById('who-we-are-toggle');
+        const whoWeAreSubmenu = document.getElementById('who-we-are-submenu');
+        const whoWeAreIcon = document.getElementById('who-we-are-icon');
+
+        whoWeAreToggle.addEventListener('click', () => {
+            whoWeAreSubmenu.classList.toggle('hidden');
+            whoWeAreIcon.style.transform = whoWeAreSubmenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+
+        const shareholdersToggle = document.getElementById('shareholders-toggle');
+        const shareholdersSubmenu = document.getElementById('shareholders-submenu');
+        const shareholdersIcon = document.getElementById('shareholders-icon');
+
+        shareholdersToggle.addEventListener('click', () => {
+            shareholdersSubmenu.classList.toggle('hidden');
+            shareholdersIcon.style.transform = shareholdersSubmenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Islamic Insurance Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <div class="flex flex-col w-full items-start sticky top-0 z-50 bg-white border-b-[1.5px] border-solid border-[#eef0f3]">
+        <header class="flex items-center justify-between px-4 md:px-8 lg:px-20 py-0 my-4 bg-transparent relative w-full min-h-[60px]">
+            <div class="flex items-center gap-4 lg:gap-16 relative">
+                <a href="index.html">
+                    <img class="relative w-[350px] h-[90px] object-contain" alt="Logo" src="public/logo whitepng.png">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="inline-flex h-5 items-start gap-5 relative">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="products.html" class="hover:text-[#008c4b] transition-colors">Insurance Products</a></li>
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Shareholders Relations
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="annual-reports.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Annual Reports</a>
+                                    <a href="general-assembly-minutes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Minutes</a>
+                                    <a href="general-assembly-invitations.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Meeting Invitations</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="medical-network.html" class="hover:text-[#008c4b] transition-colors">Medical Network</a></li>
+                        <li><a href="news.html" class="text-[#008c4b] font-medium">News</a></li>
+                        <li><a href="careers.html" class="hover:text-[#008c4b] transition-colors">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-[#008c4b] transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#008c4b] text-white px-5 py-2 rounded-full text-sm">Search</button>
+                <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full text-sm">العربية</button>
+                <button class="lg:hidden p-2 bg-[#008c4b] text-white rounded" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+            <img class="w-48 h-32 object-contain" alt="Logo" src="public/logo whitepng.png">
+            <button id="mobile-menu-close" class="p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="who-we-are-toggle">
+                    <span>Who We Are</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="who-we-are-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="who-we-are-submenu">
+                    <a href="about.html" class="block py-2 px-2 text-sm text-gray-700">About Us</a>
+                    <a href="board.html" class="block py-2 px-2 text-sm text-gray-700">Board of Directors</a>
+                    <a href="awards.html" class="block py-2 px-2 text-sm text-gray-700">Awards</a>
+                    <a href="quality-policy.html" class="block py-2 px-2 text-sm text-gray-700">Quality Policy</a>
+                </div>
+            </div>
+            <a href="products.html" class="py-3 px-2 border-b border-gray-100">Insurance Products</a>
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="shareholders-toggle">
+                    <span>Shareholders Relations</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="shareholders-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="shareholders-submenu">
+                    <a href="annual-reports.html" class="block py-2 px-2 text-sm text-gray-700">Annual Reports</a>
+                    <a href="general-assembly-minutes.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Minutes</a>
+                    <a href="general-assembly-invitations.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Meeting Invitations</a>
+                </div>
+            </div>
+            <a href="medical-network.html" class="py-3 px-2 border-b border-gray-100">Medical Network</a>
+            <a href="news.html" class="py-3 px-2 border-b border-gray-100 text-[#008c4b] font-medium">News</a>
+            <a href="careers.html" class="py-3 px-2 border-b border-gray-100">Careers</a>
+            <a href="contact.html" class="py-3 px-2 border-b border-gray-100">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#008c4b] text-white py-20">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Latest News</h1>
+                <p class="text-xl opacity-90">Stay updated with the latest developments, achievements, and announcements from Islamic Insurance Company.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="py-12 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden news-item" data-category="financial">
+                    <img src="public/featured-image.png" alt="Featured News" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>17 Aug 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#545454] mb-3" dir="rtl">نتائج مميزة.. أرباح قبل الضريبة 2.8 مليون دينار وبنسبة نمو 70 بالمئة</h3>
+                        <p class="text-gray-700 mb-4" dir="rtl">الأقساط المكتتبة خلال النصف الأول من عام 2025 27.7 مليون دينار مقابل 24.2 مليون دينار بزيادة بلغت 14%...</p>
+                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Read More</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden news-item" data-category="awards">
+                    <img src="public/featured-image-1.png" alt="Award News" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>17 Aug 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#545454] mb-3" dir="rtl">مجلة يوروموني تمنح شركة التأمين الاسلامية جائزة أفضل شركة تكافل إسلامي في الاردن لعام 2025</h3>
+                        <p class="text-gray-700 mb-4" dir="rtl">اعلنت مجلة يوروموني المالية العالمية للمرة الاولى عن فوز شركة التأمين الاسلامية بجائزة افضل شركة تأمين تكافلي اسلامي في الاردن لعام2025...</p>
+                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All News -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-[#545454] mb-2">All News</h2>
+                <div class="w-16 h-1 bg-[#008c4b]"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+                <!-- News Article 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="partnerships">
+                    <img src="public/featured-image-2.png" alt="Partnership News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>17 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3" dir="rtl">شركة التأمين الإسلامية توقع اتفاقية مع مؤسسة الحسين للسرطان</h3>
+                        <p class="text-gray-700 text-sm mb-4" dir="rtl">عمان، أيار 2025: وقعت شركة التأمين الإسلامية اتفاقية مع مؤسسة الحسين للسرطان...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+
+                <!-- News Article 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
+                    <img src="public/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Medical Network" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>15 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3">Expansion of Medical Network Coverage</h3>
+                        <p class="text-gray-700 text-sm mb-4">Islamic Insurance Company announces the addition of 50 new medical providers to its network, enhancing healthcare access...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+
+                <!-- News Article 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
+                    <img src="public/safety-happy-portrait-family-with-roof-covering-gesture-with-car.png" alt="Motor Insurance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>12 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3">New Motor Insurance Features Launched</h3>
+                        <p class="text-gray-700 text-sm mb-4">Enhanced motor insurance coverage now includes roadside assistance and replacement vehicle services...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+
+                <!-- News Article 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="financial">
+                    <img src="public/beautiful-asian-businesswoman-insert-coins-pin-piggy-bank-table-.png" alt="Financial Performance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>10 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3">Q2 2025 Financial Performance</h3>
+                        <p class="text-gray-700 text-sm mb-4">Strong financial performance continues with increased premium income and improved operational efficiency...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+
+                <!-- News Article 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
+                    <img src="public/young-woman-looking-camera-while-sitting-table.png" alt="Customer Service" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>08 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3">Enhanced Customer Service Platform</h3>
+                        <p class="text-gray-700 text-sm mb-4">New digital platform launched to improve customer experience and streamline claim processing...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+
+                <!-- News Article 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
+                    <img src="public/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Healthcare Initiative" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>05 Aug 2025</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3">Community Health Initiative Launch</h3>
+                        <p class="text-gray-700 text-sm mb-4">Islamic Insurance Company launches community health awareness program in partnership with local healthcare providers...</p>
+                        <button class="text-[#008c4b] font-semibold hover:underline">Read More →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <div class="flex items-center gap-2">
+                    <button class="px-3 py-2 border rounded-lg hover:bg-gray-100 disabled:opacity-50" disabled>
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <button class="px-4 py-2 bg-[#008c4b] text-white rounded-lg">1</button>
+                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">2</button>
+                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">3</button>
+                    <span class="px-2">...</span>
+                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">10</button>
+                    <button class="px-3 py-2 border rounded-lg hover:bg-gray-100">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-20 bg-[#008c4b]">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Stay Updated</h2>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter to receive the latest news and updates directly in your inbox.</p>
+            <div class="max-w-md mx-auto flex gap-4">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="bg-white text-[#008c4b] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#f9f9f9]">
+        <div class="bg-[#008c4b] py-12">
+            <div class="max-w-[1279px] mx-auto px-4 md:px-8 lg:px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Takaful Products</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products.html" class="text-white hover:underline">Medical Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Motor Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Travel Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Useful Links</h3>
+                        <ul class="space-y-2">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                            <li><a href="board.html" class="text-white hover:underline">Board of Directors</a></li>
+                            <li><a href="careers.html" class="text-white hover:underline">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Awards</h3>
+                        <p class="text-white text-sm">Best Takaful Insurance Company in Jordan for the year 2023 – World Finance Magazine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Contact us</h3>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm">Phone: 06-562-0151</p>
+                            <p class="text-white text-sm">islamicinsurance@tiic.com.jo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#f9f9f9] py-6">
+            <div class="max-w-[1280px] mx-auto px-4 text-center">
+                <p class="text-sm">© 2025 Developed by <a href="https://www.dot.jo" class="hover:underline">dot jo.</a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imphc3Nmbnd1aHRkZHdxemxveGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjI0ODQsImV4cCI6MjA3NzM5ODQ4NH0.xx373opRUSa1yS1og8_TDx5F3Lrix4PSkybhU_XPD88';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        lucide.createIcons();
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+
+        async function loadNews() {
+            try {
+                const { data: featuredArticles, error: featuredError } = await supabase
+                    .from('news_articles')
+                    .select('*')
+                    .eq('is_featured', true)
+                    .order('publish_date', { ascending: false })
+                    .limit(2);
+
+                if (featuredError) throw featuredError;
+
+                const { data: allArticles, error: allError } = await supabase
+                    .from('news_articles')
+                    .select('*')
+                    .eq('is_featured', false)
+                    .order('publish_date', { ascending: false })
+                    .limit(6);
+
+                if (allError) throw allError;
+
+                displayFeaturedNews(featuredArticles);
+                displayAllNews(allArticles);
+            } catch (error) {
+                console.error('Error loading news:', error);
+            }
+        }
+
+        function displayFeaturedNews(articles) {
+            const featuredContainer = document.querySelector('.grid.grid-cols-1.lg\\:grid-cols-2.gap-8.mb-16');
+            if (!featuredContainer || articles.length === 0) return;
+
+            featuredContainer.innerHTML = articles.map(article => `
+                <a href="news-article.html?slug=${article.slug}" class="bg-white rounded-lg shadow-lg overflow-hidden news-item block hover:shadow-xl transition-shadow">
+                    <img src="${article.image_url}" alt="${article.title}" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>${formatDate(article.publish_date)}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#545454] mb-3" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
+                        <p class="text-gray-700 mb-4" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 150)}...</p>
+                        <span class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors inline-block">Read More</span>
+                    </div>
+                </a>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function displayAllNews(articles) {
+            const newsGrid = document.getElementById('news-grid');
+            if (!newsGrid || articles.length === 0) return;
+
+            newsGrid.innerHTML = articles.map(article => `
+                <a href="news-article.html?slug=${article.slug}" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item block">
+                    <img src="${article.image_url}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>${formatDate(article.publish_date)}</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#545454] mb-3" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
+                        <p class="text-gray-700 text-sm mb-4" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 120)}...</p>
+                        <span class="text-[#008c4b] font-semibold hover:underline">Read More →</span>
+                    </div>
+                </a>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        loadNews();
+    </script>
+</body>
+</html>

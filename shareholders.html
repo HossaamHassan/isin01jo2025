@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareholders Relations - Islamic Insurance Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <div class="flex flex-col w-full items-start sticky top-0 z-50 bg-white border-b-[1.5px] border-solid border-[#eef0f3]">
+        <header class="flex items-center justify-between px-4 md:px-8 lg:px-20 py-0 my-4 bg-transparent relative w-full min-h-[60px]">
+            <div class="flex items-center gap-4 lg:gap-16 relative">
+                <a href="index.html">
+                    <img class="relative w-[350px] h-[90px] object-contain" alt="Logo" src="public/logo whitepng.png">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="inline-flex h-5 items-start gap-5 relative">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="products.html" class="hover:text-[#008c4b] transition-colors">Insurance Products</a></li>
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Shareholders Relations
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="annual-reports.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Annual Reports</a>
+                                    <a href="general-assembly-minutes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Minutes</a>
+                                    <a href="general-assembly-invitations.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Meeting Invitations</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="medical-network.html" class="hover:text-[#008c4b] transition-colors">Medical Network</a></li>
+                        <li><a href="news.html" class="hover:text-[#008c4b] transition-colors">News</a></li>
+                        <li><a href="careers.html" class="hover:text-[#008c4b] transition-colors">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-[#008c4b] transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#008c4b] text-white px-5 py-2 rounded-full text-sm">Search</button>
+                <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full text-sm">العربية</button>
+                <button class="lg:hidden p-2 bg-[#008c4b] text-white rounded" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+            <img class="w-48 h-32 object-contain" alt="Logo" src="public/logo whitepng.png">
+            <button id="mobile-menu-close" class="p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="who-we-are-toggle">
+                    <span>Who We Are</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="who-we-are-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="who-we-are-submenu">
+                    <a href="about.html" class="block py-2 px-2 text-sm text-gray-700">About Us</a>
+                    <a href="board.html" class="block py-2 px-2 text-sm text-gray-700">Board of Directors</a>
+                    <a href="awards.html" class="block py-2 px-2 text-sm text-gray-700">Awards</a>
+                    <a href="quality-policy.html" class="block py-2 px-2 text-sm text-gray-700">Quality Policy</a>
+                </div>
+            </div>
+            <a href="products.html" class="py-3 px-2 border-b border-gray-100">Insurance Products</a>
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="shareholders-toggle">
+                    <span>Shareholders Relations</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="shareholders-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="shareholders-submenu">
+                    <a href="annual-reports.html" class="block py-2 px-2 text-sm text-gray-700">Annual Reports</a>
+                    <a href="general-assembly-minutes.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Minutes</a>
+                    <a href="general-assembly-invitations.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Meeting Invitations</a>
+                </div>
+            </div>
+            <a href="medical-network.html" class="py-3 px-2 border-b border-gray-100">Medical Network</a>
+            <a href="news.html" class="py-3 px-2 border-b border-gray-100">News</a>
+            <a href="careers.html" class="py-3 px-2 border-b border-gray-100">Careers</a>
+            <a href="contact.html" class="py-3 px-2 border-b border-gray-100">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#008c4b] text-white py-20">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Shareholders Relations</h1>
+                <p class="text-xl opacity-90">Transparent communication and strong relationships with our valued shareholders and investors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Highlights -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Financial Highlights 2025</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Strong financial performance demonstrating our commitment to sustainable growth and shareholder value.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-3xl font-bold text-[#008c4b] mb-2">2.8M</div>
+                    <div class="text-gray-600 text-sm">Pre-tax Profits (JOD)</div>
+                    <div class="text-green-600 text-xs mt-1">↑ 70% growth</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-3xl font-bold text-[#008c4b] mb-2">27.7M</div>
+                    <div class="text-gray-600 text-sm">Written Premiums (JOD)</div>
+                    <div class="text-green-600 text-xs mt-1">↑ 14% increase</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-3xl font-bold text-[#008c4b] mb-2">56M</div>
+                    <div class="text-gray-600 text-sm">Total Assets (JOD)</div>
+                    <div class="text-green-600 text-xs mt-1">↑ 8% growth</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="text-3xl font-bold text-[#008c4b] mb-2">150%</div>
+                    <div class="text-gray-600 text-sm">Capital Adequacy</div>
+                    <div class="text-green-600 text-xs mt-1">Above regulatory requirements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Reports -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Financial Reports & Documents</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Access our latest financial reports, annual statements, and regulatory filings.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Annual Report 2024 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Annual Report 2024</h3>
+                            <p class="text-sm text-gray-600">PDF • 2.5 MB</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">Comprehensive annual report covering financial performance, business strategy, and market outlook.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">Download</button>
+                </div>
+
+                <!-- Q2 2025 Results -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Q2 2025 Results</h3>
+                            <p class="text-sm text-gray-600">PDF • 1.8 MB</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">Quarterly financial results showing strong performance and growth across all business segments.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">Download</button>
+                </div>
+
+                <!-- Corporate Governance -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Governance Manual</h3>
+                            <p class="text-sm text-gray-600">PDF • 3.2 MB</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">Corporate governance framework and policies ensuring transparency and accountability.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">Download</button>
+                </div>
+
+                <!-- Audited Financials -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="calculator" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Audited Financials 2024</h3>
+                            <p class="text-sm text-gray-600">PDF • 2.1 MB</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">Independently audited financial statements prepared in accordance with international standards.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">Download</button>
+                </div>
+
+                <!-- Investor Presentation -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="presentation" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Investor Presentation</h3>
+                            <p class="text-sm text-gray-600">PDF • 4.5 MB</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">Latest investor presentation highlighting key achievements and strategic initiatives.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">Download</button>
+                </div>
+
+                <!-- Regulatory Filings -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center mr-4">
+                            <i data-lucide="file-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Regulatory Filings</h3>
+                            <p class="text-sm text-gray-600">Multiple Files</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm">All regulatory submissions and compliance reports filed with relevant authorities.</p>
+                    <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">View All</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Board of Directors</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Experienced leadership guiding our strategic direction and ensuring strong corporate governance.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-2">Dr. Ahmad Al-Rashid</h3>
+                    <p class="text-[#008c4b] font-semibold mb-2">Chairman</p>
+                    <p class="text-gray-700 text-sm">Over 25 years of experience in Islamic finance and insurance industry leadership.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-2">Ms. Fatima Al-Zahra</h3>
+                    <p class="text-[#008c4b] font-semibold mb-2">Vice Chairman</p>
+                    <p class="text-gray-700 text-sm">Expert in corporate governance and strategic planning with extensive board experience.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-2">Mr. Omar Al-Khouri</h3>
+                    <p class="text-[#008c4b] font-semibold mb-2">Independent Director</p>
+                    <p class="text-gray-700 text-sm">Former banking executive with deep expertise in risk management and financial services.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-[#008c4b] text-white px-8 py-3 rounded-full hover:bg-[#007a42] transition-colors">View Full Board</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Calendar -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Investor Calendar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Important dates and events for our shareholders and the investment community.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
+                            <span class="text-xs">SEP</span>
+                            <span class="text-lg font-bold">15</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Q3 2025 Results Announcement</h3>
+                            <p class="text-gray-600">Third quarter financial results and earnings call</p>
+                        </div>
+                    </div>
+                    <button class="text-[#008c4b] hover:underline">Add to Calendar</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
+                            <span class="text-xs">OCT</span>
+                            <span class="text-lg font-bold">20</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Annual General Meeting</h3>
+                            <p class="text-gray-600">Annual shareholders meeting and board elections</p>
+                        </div>
+                    </div>
+                    <button class="text-[#008c4b] hover:underline">Add to Calendar</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
+                            <span class="text-xs">DEC</span>
+                            <span class="text-lg font-bold">10</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#545454]">Dividend Payment</h3>
+                            <p class="text-gray-600">Final dividend payment for fiscal year 2025</p>
+                        </div>
+                    </div>
+                    <button class="text-[#008c4b] hover:underline">Add to Calendar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Investor Relations -->
+    <section class="py-20 bg-[#008c4b]">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Investor Relations Contact</h2>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">Have questions about our financial performance or investment opportunities? Our investor relations team is here to help.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="text-center">
+                    <i data-lucide="mail" class="w-8 h-8 text-white mx-auto mb-2"></i>
+                    <p class="text-white">investors@tiic.com.jo</p>
+                </div>
+                <div class="text-center">
+                    <i data-lucide="phone" class="w-8 h-8 text-white mx-auto mb-2"></i>
+                    <p class="text-white">+962 6 562-0151</p>
+                </div>
+                <div class="text-center">
+                    <i data-lucide="calendar" class="w-8 h-8 text-white mx-auto mb-2"></i>
+                    <p class="text-white">Schedule a Meeting</p>
+                </div>
+            </div>
+            <button class="bg-white text-[#008c4b] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">Contact Investor Relations</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#f9f9f9]">
+        <div class="bg-[#008c4b] py-12">
+            <div class="max-w-[1279px] mx-auto px-4 md:px-8 lg:px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Takaful Products</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products.html" class="text-white hover:underline">Medical Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Motor Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Travel Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Useful Links</h3>
+                        <ul class="space-y-2">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                            <li><a href="board.html" class="text-white hover:underline">Board of Directors</a></li>
+                            <li><a href="careers.html" class="text-white hover:underline">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Awards</h3>
+                        <p class="text-white text-sm">Best Takaful Insurance Company in Jordan for the year 2023 – World Finance Magazine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Contact us</h3>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm">Phone: 06-562-0151</p>
+                            <p class="text-white text-sm">islamicinsurance@tiic.com.jo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#f9f9f9] py-6">
+            <div class="max-w-[1280px] mx-auto px-4 text-center">
+                <p class="text-sm">© 2025 Developed by <a href="https://www.dot.jo" class="hover:underline">dot jo.</a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Mobile submenu toggles
+        const whoWeAreToggle = document.getElementById('who-we-are-toggle');
+        const whoWeAreSubmenu = document.getElementById('who-we-are-submenu');
+        const whoWeAreIcon = document.getElementById('who-we-are-icon');
+
+        whoWeAreToggle.addEventListener('click', () => {
+            whoWeAreSubmenu.classList.toggle('hidden');
+            whoWeAreIcon.classList.toggle('rotate-180');
+        });
+
+        const shareholdersToggle = document.getElementById('shareholders-toggle');
+        const shareholdersSubmenu = document.getElementById('shareholders-submenu');
+        const shareholdersIcon = document.getElementById('shareholders-icon');
+
+        shareholdersToggle.addEventListener('click', () => {
+            shareholdersSubmenu.classList.toggle('hidden');
+            shareholdersIcon.classList.toggle('rotate-180');
+        });
+    </script>
+</body>
+</html>

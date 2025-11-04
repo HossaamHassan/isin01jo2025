@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Islamic Insurance Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <div class="flex flex-col w-full items-start sticky top-0 z-50 bg-white border-b-[1.5px] border-solid border-[#eef0f3]">
+        <header class="flex items-center justify-between px-4 md:px-8 lg:px-20 py-0 my-4 bg-transparent relative w-full min-h-[60px]">
+            <div class="flex items-center gap-4 lg:gap-16 relative">
+                <a href="index.html">
+                    <img class="relative w-[350px] h-[90px] object-contain" alt="Logo" src="public/logo whitepng.png">
+                </a>
+                <nav class="hidden lg:block">
+                    <ul class="inline-flex h-5 items-start gap-5 relative">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="products.html" class="hover:text-[#008c4b] transition-colors">Insurance Products</a></li>
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Shareholders Relations
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="annual-reports.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Annual Reports</a>
+                                    <a href="general-assembly-minutes.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Minutes</a>
+                                    <a href="general-assembly-invitations.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">General Assembly Meeting Invitations</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="medical-network.html" class="hover:text-[#008c4b] transition-colors">Medical Network</a></li>
+                        <li><a href="news.html" class="hover:text-[#008c4b] transition-colors">News</a></li>
+                        <li><a href="careers.html" class="text-[#008c4b] font-medium">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-[#008c4b] transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-[#008c4b] text-white px-5 py-2 rounded-full text-sm">Search</button>
+                <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full text-sm">العربية</button>
+                <button class="lg:hidden p-2 bg-[#008c4b] text-white rounded" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex items-center justify-between px-4 py-2.5 border-b border-gray-200">
+            <img class="w-48 h-32 object-contain" alt="Logo" src="public/logo whitepng.png">
+            <button id="mobile-menu-close" class="p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="who-we-are-toggle">
+                    <span>Who We Are</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="who-we-are-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="who-we-are-submenu">
+                    <a href="about.html" class="block py-2 px-2 text-sm text-gray-700">About Us</a>
+                    <a href="board.html" class="block py-2 px-2 text-sm text-gray-700">Board of Directors</a>
+                    <a href="awards.html" class="block py-2 px-2 text-sm text-gray-700">Awards</a>
+                    <a href="quality-policy.html" class="block py-2 px-2 text-sm text-gray-700">Quality Policy</a>
+                </div>
+            </div>
+            <a href="products.html" class="py-3 px-2 border-b border-gray-100">Insurance Products</a>
+            <div class="border-b border-gray-100">
+                <button class="w-full flex items-center justify-between py-3 px-2" id="shareholders-toggle">
+                    <span>Shareholders Relations</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="shareholders-icon"></i>
+                </button>
+                <div class="hidden pl-4 pb-2 space-y-2" id="shareholders-submenu">
+                    <a href="annual-reports.html" class="block py-2 px-2 text-sm text-gray-700">Annual Reports</a>
+                    <a href="general-assembly-minutes.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Minutes</a>
+                    <a href="general-assembly-invitations.html" class="block py-2 px-2 text-sm text-gray-700">General Assembly Meeting Invitations</a>
+                </div>
+            </div>
+            <a href="medical-network.html" class="py-3 px-2 border-b border-gray-100">Medical Network</a>
+            <a href="news.html" class="py-3 px-2 border-b border-gray-100">News</a>
+            <a href="careers.html" class="py-3 px-2 border-b border-gray-100 text-[#008c4b] font-medium">Careers</a>
+            <a href="contact.html" class="py-3 px-2 border-b border-gray-100">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-[#008c4b] text-white py-20">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h1>
+                <p class="text-xl opacity-90">Build your career with Jordan's leading Takaful insurance company and be part of our mission to provide ethical insurance solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Why Work With Us?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join a company that values Islamic principles, professional growth, and employee well-being.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-[#008c4b] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-4">Career Growth</h3>
+                    <p class="text-gray-700">Continuous learning opportunities and clear career advancement paths to help you reach your professional goals.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-[#008c4b] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-4">Work-Life Balance</h3>
+                    <p class="text-gray-700">Flexible working arrangements and comprehensive benefits that support your personal and family life.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-[#008c4b] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#545454] mb-4">Team Culture</h3>
+                    <p class="text-gray-700">Collaborative environment built on Islamic values of respect, integrity, and mutual support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Openings -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-[#545454] mb-4">Current Openings</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore exciting career opportunities across different departments and levels.</p>
+            </div>
+
+
+            <!-- Job Listings -->
+            <div class="space-y-6" id="job-listings">
+                <!-- Job 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="claims">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-[#545454]">Senior Claims Specialist</h3>
+                                <span class="bg-[#008c4b] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Process and evaluate insurance claims while ensuring compliance with Takaful principles and company policies.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Amman, Jordan
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    Claims Department
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                    Posted 2 days ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4b] hover:text-white transition-colors">View Details</button>
+                            <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="sales">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-[#545454]">Digital Marketing Specialist</h3>
+                                <span class="bg-[#008c4b] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Develop and execute digital marketing strategies to promote our Takaful insurance products across various channels.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Amman, Jordan
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    Marketing Department
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                    Posted 5 days ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4b] hover:text-white transition-colors">View Details</button>
+                            <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="customer-service">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-[#545454]">Customer Service Representative</h3>
+                                <span class="bg-[#008c4b] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Provide exceptional customer service and support to policyholders, handling inquiries and resolving issues promptly.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Amman, Jordan
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    Customer Service
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                    Posted 1 week ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4b] hover:text-white transition-colors">View Details</button>
+                            <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="it">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-[#545454]">IT Systems Analyst</h3>
+                                <span class="bg-[#008c4b] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">Analyze, design, and implement IT solutions to support business operations and improve system efficiency.</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Amman, Jordan
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    IT Department
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                    Posted 1 week ago
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4b] hover:text-white transition-colors">View Details</button>
+                            <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#f9f9f9]">
+        <div class="bg-[#008c4b] py-12">
+            <div class="max-w-[1279px] mx-auto px-4 md:px-8 lg:px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Takaful Products</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products.html" class="text-white hover:underline">Medical Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Motor Insurance</a></li>
+                            <li><a href="products.html" class="text-white hover:underline">Travel Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Useful Links</h3>
+                        <ul class="space-y-2">
+                        <li class="relative group">
+                            <button class="hover:text-[#008c4b] transition-colors flex items-center gap-1">
+                                Who We Are
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                    <a href="about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">About Us</a>
+                                    <a href="board.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Board of Directors</a>
+                                    <a href="awards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Awards</a>
+                                    <a href="quality-policy.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#008c4b]">Quality Policy</a>
+                                </div>
+                            </div>
+                        </li>
+                            <li><a href="board.html" class="text-white hover:underline">Board of Directors</a></li>
+                            <li><a href="careers.html" class="text-white hover:underline">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Awards</h3>
+                        <p class="text-white text-sm">Best Takaful Insurance Company in Jordan for the year 2023 – World Finance Magazine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-semibold mb-4">Contact us</h3>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm">Phone: 06-562-0151</p>
+                            <p class="text-white text-sm">islamicinsurance@tiic.com.jo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#f9f9f9] py-6">
+            <div class="max-w-[1280px] mx-auto px-4 text-center">
+                <p class="text-sm">© 2025 Developed by <a href="https://www.dot.jo" class="hover:underline">dot jo.</a> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imphc3Nmbnd1aHRkZHdxemxveGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjI0ODQsImV4cCI6MjA3NzM5ODQ4NH0.xx373opRUSa1yS1og8_TDx5F3Lrix4PSkybhU_XPD88';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        lucide.createIcons();
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const today = new Date();
+            const diffTime = Math.abs(today - date);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays === 0) return 'Posted today';
+            if (diffDays === 1) return 'Posted 1 day ago';
+            if (diffDays < 7) return `Posted ${diffDays} days ago`;
+            if (diffDays < 14) return 'Posted 1 week ago';
+            if (diffDays < 30) return `Posted ${Math.floor(diffDays / 7)} weeks ago`;
+            return `Posted ${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) > 1 ? 's' : ''} ago`;
+        }
+
+        window.applyNow = function(jobTitle) {
+            const subject = encodeURIComponent(`Job Application: ${jobTitle}`);
+            const body = encodeURIComponent(`Dear Hiring Manager,\n\nI am interested in applying for the ${jobTitle} position at Islamic Insurance Company.\n\nBest regards`);
+            window.location.href = `mailto:hr@tiic.com.jo?subject=${subject}&body=${body}`;
+        }
+
+        async function loadJobs() {
+            try {
+                const { data: jobs, error } = await supabase
+                    .from('job_positions')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('posted_date', { ascending: false });
+
+                if (error) throw error;
+
+                displayJobs(jobs);
+            } catch (error) {
+                console.error('Error loading jobs:', error);
+            }
+        }
+
+        function displayJobs(jobs) {
+            const jobListings = document.getElementById('job-listings');
+            if (!jobListings || jobs.length === 0) return;
+
+            jobListings.innerHTML = jobs.map(job => `
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-[#545454]">${job.title}</h3>
+                                <span class="bg-[#008c4b] text-white px-3 py-1 rounded-full text-xs">${job.employment_type}</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">${job.description}</p>
+                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    ${job.location}
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    ${job.department} Department
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                    ${formatDate(job.posted_date)}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="job-detail.html?slug=${job.slug}" class="border border-[#008c4b] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4b] hover:text-white transition-colors">View Details</a>
+                            <button onclick="applyNow('${job.title}')" class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        loadJobs();
+    </script>
+</body>
+</html>
