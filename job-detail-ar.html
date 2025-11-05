@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,21 +26,21 @@
     <script src="./js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body class="bg-white">
+<body class="bg-white arabic-version">
 
     <!-- Loading State -->
     <div id="loading" class="py-20 text-center">
         <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#008c4b]"></div>
-        <p class="mt-4 text-gray-600">Loading job details...</p>
+        <p class="mt-4 text-gray-600">جارٍ تحميل تفاصيل الوظيفة...</p>
     </div>
 
     <!-- Error State -->
     <div id="error" class="hidden py-20 text-center">
         <div class="max-w-2xl mx-auto px-4">
             <i data-lucide="alert-circle" class="w-16 h-16 mx-auto text-red-500 mb-4"></i>
-            <h2 class="text-2xl font-bold text-[#545454] mb-4">Job Position Not Found</h2>
-            <p class="text-gray-600 mb-6">The job position you're looking for could not be found or is no longer available.</p>
-            <a href="careers.html" class="inline-block bg-[#008c4b] text-white px-8 py-3 rounded-full hover:bg-[#007a42] transition-colors">Back to Careers</a>
+            <h2 class="text-2xl font-bold text-[#545454] mb-4">الوظيفة غير موجودة</h2>
+            <p class="text-gray-600 mb-6">الوظيفة التي تبحث عنها غير موجودة أو لم تعد متاحة.</p>
+            <a href="careers.html" class="inline-block bg-[#008c4b] text-white px-8 py-3 rounded-full hover:bg-[#007a42] transition-colors">العودة إلى الوظائف</a>
         </div>
     </div>
 
@@ -50,11 +50,11 @@
         <div class="bg-gray-50 py-4">
             <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
                 <nav class="flex items-center text-sm text-gray-600">
-                    <a href="index.html" class="hover:text-[#008c4b]">Home</a>
+                    <a href="index.html" class="hover:text-[#008c4b]">الرئيسية</a>
                     <i data-lucide="chevron-right" class="w-4 h-4 mx-2"></i>
-                    <a href="careers.html" class="hover:text-[#008c4b]">Careers</a>
+                    <a href="careers.html" class="hover:text-[#008c4b]">الوظائف</a>
                     <i data-lucide="chevron-right" class="w-4 h-4 mx-2"></i>
-                    <span class="text-[#008c4b]">Job Details</span>
+                    <span class="text-[#008c4b]">تفاصيل الوظيفة</span>
                 </nav>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <div class="flex items-center gap-4 mb-6">
                     <a href="careers.html" class="inline-flex items-center gap-2 text-[#008c4b] hover:underline">
                         <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        Back to Careers
+                        العودة إلى الوظائف
                     </a>
                 </div>
 
@@ -95,11 +95,11 @@
 
                     <div class="lg:w-72">
                         <button onclick="applyNow()" class="w-full bg-[#008c4b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#007a42] transition-colors mb-4">
-                            Apply Now
+                            قدّم الآن
                         </button>
                         <button onclick="shareJob()" class="w-full border border-[#008c4b] text-[#008c4b] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#008c4b] hover:text-white transition-colors flex items-center justify-center gap-2">
                             <i data-lucide="share-2" class="w-5 h-5"></i>
-                            Share Job
+                            مشاركة الوظيفة
                         </button>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     <div class="lg:col-span-2 space-y-8">
                         <!-- Description -->
                         <div class="bg-white rounded-lg shadow-md p-8">
-                            <h3 class="text-2xl font-bold text-[#545454] mb-6">Job Description</h3>
+                            <h3 class="text-2xl font-bold text-[#545454] mb-6">وصف الوظيفة</h3>
                             <div id="job-description" class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4"></div>
                         </div>
 
@@ -126,7 +126,7 @@
 
                         <!-- Requirements -->
                         <div class="bg-white rounded-lg shadow-md p-8">
-                            <h3 class="text-2xl font-bold text-[#545454] mb-6">Requirements & Qualifications</h3>
+                            <h3 class="text-2xl font-bold text-[#545454] mb-6">المتطلبات والمؤهلات</h3>
                             <div id="job-requirements" class="prose prose-lg max-w-none text-gray-800 leading-relaxed space-y-4"></div>
                         </div>
 
@@ -141,19 +141,19 @@
                     <div class="space-y-6">
                         <!-- Apply Card -->
                         <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
-                            <h4 class="text-lg font-bold text-[#545454] mb-4">Interested in this position?</h4>
-                            <p class="text-gray-600 mb-6">Submit your application and join our team at Islamic Insurance Company.</p>
+                            <h4 class="text-lg font-bold text-[#545454] mb-4">هل أنت مهتم بهذه الوظيفة؟</h4>
+                            <p class="text-gray-600 mb-6">قدّم طلبك وانضم إلى فريق شركة التأمين الإسلامية.</p>
                             <button onclick="applyNow()" class="w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors mb-3">
-                                Apply Now
+                                قدّم الآن
                             </button>
-                            <a href="careers.html" class="block text-center text-[#008c4b] hover:underline">View All Positions</a>
+                            <a href="careers.html" class="block text-center text-[#008c4b] hover:underline">عرض جميع الوظائف</a>
                         </div>
 
                         <!-- Company Info -->
                         <div class="bg-white rounded-lg shadow-md p-6">
-                            <h4 class="text-lg font-bold text-[#545454] mb-4">About Us</h4>
-                            <p class="text-gray-600 text-sm mb-4">Islamic Insurance Company is Jordan's leading Takaful insurance provider, committed to delivering ethical insurance solutions based on Islamic principles.</p>
-                            <a href="about.html" class="text-[#008c4b] hover:underline text-sm">Learn More →</a>
+                            <h4 class="text-lg font-bold text-[#545454] mb-4">نبذة عنا</h4>
+                            <p class="text-gray-600 text-sm mb-4">شركة التأمين الإسلامية هي المزود الرائد للتأمين التكافلي في الأردن، ملتزمة بتقديم حلول تأمينية أخلاقية مبنية على مبادئ الشريعة الإسلامية.</p>
+                            <a href="about.html" class="text-[#008c4b] hover:underline text-sm">اعرف المزيد →</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
         <!-- Similar Positions -->
         <section class="py-12 bg-white">
             <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
-                <h2 class="text-2xl font-bold text-[#545454] mb-8">Similar Positions</h2>
+                <h2 class="text-2xl font-bold text-[#545454] mb-8">وظائف مشابهة</h2>
                 <div id="similar-jobs" class="space-y-6">
                 </div>
             </div>

@@ -3,7 +3,8 @@ window.tailwind.config = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--primary-color)',
+        'primary-color': 'var(--primary-color)',
+        'secondary-color': 'var(--secondary-color)',
       },
     },
   },
