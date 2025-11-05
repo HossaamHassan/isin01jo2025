@@ -3,11 +3,6 @@
     --secondary-color: #545454;
 }
 
-:root {
-    --primary-color: #008c4c;
-    --secondary-color: #545454;
-}
-
 * {
     margin: 0;
     padding: 0;
