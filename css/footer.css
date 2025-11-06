@@ -1,0 +1,98 @@
+.main-footer-container .fa-minus::before,
+.main-footer-container .fa-plus::before {
+    color: white;
+}
+
+.arabic-version .footer-section .footer-item h5 {
+    font-size: 1rem;
+    /* font-family: "Cairo-SemiBold"; */
+    letter-spacing: -0.1px;
+}
+
+.main-footer-container .footer-item ul li span {
+    font-size: 0.75rem;
+    color: white;
+}
+
+.main-footer-container .footer-item ul li a {
+    text-decoration: none;
+    /* font-family: "Cairo-SemiBold"; */
+    color: white;
+    font-size: 0.75rem;
+}
+
+/* .arabic-version .main-footer-container .footer-item ul li a {
+  font-family: "Cairo-light";
+} */
+
+.main-footer-container .footer-item ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.main-footer-container .footer-copyright-container {
+    background: white;
+    margin-top: 2rem;
+}
+
+.main-footer-container .footer-copyright-container-centered {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-color);
+}
+
+.main-footer-container .footer-copyright-container-centered a {
+    color: var(--primary-color);
+    padding-inline-end: 1rem;
+    position: relative;
+    /* font-family: "Roboto-Light"; */
+    text-decoration: none;
+}
+
+.mobile-responsive {
+    outline: none;
+    border: none;
+    color: var(--primary-white-color);
+    background: transparent;
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .main-footer-container .footer-item:not(:first-child) {
+        padding-top: 0;
+    }
+
+    .mobile-responsive {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-section ul li {
+        position: relative;
+        padding: 0.75rem 0;
+    }
+
+    .footer-section ul:not(.show) {
+        display: none;
+    }
+
+    .footer-section ul li::after {
+        position: absolute;
+        bottom: 0;
+        bottom: -2px;
+        right: 0;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: white;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-copyright-container-centered {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+        gap: 1rem;
+    }
+}

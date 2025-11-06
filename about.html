@@ -26,10 +26,124 @@
     <script src="./js/navbar.js"></script>
 </head>
 <body class="bg-white">
+    <!-- Start Navbar -->
+    <header class="relative py-3 flex flex-col justify-center items-center">
+        <div
+            class="container nav-container inline-flex flex-col-reverse justify-between items-stretch gap-3 xl:flex-row px-4 md:px-8 lg:px-20">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class="default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="w-full bg-white">
+                <div class="max-w-7xl mx-auto px-0 xl:px-6 h-full">
+                    <div class="flex items-center w-full h-full">
+                        <!-- Mobile menu button -->
+                        <div class="mobile-menu-container flex items-center w-full xl:hidden">
+                            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <i class="fa-solid fa-bars text-lg" id="openIcon"></i>
+                                <i class="fa-solid fa-xmark text-lg hidden" id="closeIcon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Desktop menu -->
+                        <div class="hidden xl:flex xl:items-center xl:justify-center xl:w-full">
+                            <div class="flex">
+                                
+                                <!-- Dropdown -->
+                                <div class="relative group">
+                                    <button class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium inline-flex items-center">
+                                        Who We Are
+                                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                                    </button>
+                                    <div class="absolute left-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                        <div class="py-1">
+                                            <a href="/news/local" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Local News</a>
+                                            <a href="/news/world" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">World News</a>
+                                            <a href="/news/sports" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="./our-work.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Our Work</a>
+                                <a href="./our-work-inner.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Projects</a>
+                                <a href="./clients-partners.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Client & Partners</a>
+                                <a href="./join-us.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Join Us</a>
+                                <a href="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu -->
+                <div class="xl:hidden hidden absolute max-h-60 top-full w-full left-0 right-0 bg-white z-10 shadow-md overflow-y-scroll" id="mobile-menu">
+                    <div class="container mx-auto px-0 pt-2 pb-3 space-y-1 sm:px-3">
+                        <a href="./home.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Home</a>
+                        
+                        <!-- Mobile dropdown -->
+                        <div class="relative">
+                            <button id="mobile-dropdown-button" class="toggleButtonHeader w-full text-start px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 flex justify-between items-center">
+                                About Us
+                                <i class="fa-solid fa-plus text-xs"></i>
+                                <i class="fa-solid fa-minus text-xs hidden"></i>
+                            </button>
+                            <div id="mobile-dropdown" class="dropdown-menu-news bg-[#008c4c] bg-opacity-10 pl-4 space-y-1">
+                                <a href="/news/local" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">Local News</a>
+                                <a href="/news/world" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">World News</a>
+                                <a href="/news/sports" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">Sports</a>
+                            </div>
+                        </div>
+
+                        <a href="./our-work.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Our Work</a>
+                        <a href="./our-work-inner.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Projects</a>
+                        <a href="./clients-partners.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Client & Partners</a>
+                        <a href="./join-us.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Join Us</a>
+                        <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Contact Us</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex justify-between items-center px-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="flex justify-center items-center gap-3">
+                    <a href="#" class="flex items-center gap-1 search-btn text-[#008c4c] border-2 border-[#008c4c] rounded-full px-4 py-2 transition-colors duration-300 hover:bg-[#008c4c] hover:text-white">
+                        <span>
+                            Search
+                        </span>
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="flex items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="w-7 h-7"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="flex items-centr gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="Search Here"
+                        data-url-name="title" />
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass text-white"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i data-lucide="x" class="w-6 h-6"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
 
     <!-- Hero Section -->
     <section class="bg-[#008c4c] text-white py-20">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
             <div class="max-w-3xl">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">About Islamic Insurance Company</h1>
                 <p class="text-xl opacity-90">Jordan's first and leading Takaful insurance company, established in 1996 with over 29 years of excellence in Sharia-compliant insurance services.</p>
@@ -39,7 +153,7 @@
 
     <!-- Company Overview -->
     <section class="py-20 bg-white">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl font-bold text-[#545454] mb-6">The Islamic Insurance Company is the first Takaful insurance company in Jordan.</h2>
@@ -62,7 +176,7 @@
 
     <!-- Mission & Vision -->
     <section class="py-20 bg-gray-50">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-[#545454] mb-4">Our Mission & Vision</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Guided by Islamic principles, we strive to provide comprehensive insurance solutions that protect our community while adhering to Sharia compliance.</p>
@@ -92,7 +206,7 @@
 
     <!-- Medical Network Section -->
     <section class="py-20 bg-white">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-20">
+        <div class="container mx-auto px-4 md:px-8 lg:px-20">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-[#545454] mb-4">Medical Network</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Our comprehensive medical network providing quality healthcare services across Jordan.</p>
@@ -214,6 +328,140 @@
 
         </div>
     </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container relative bg-[#008c4c]">
+            <div class="container footer-section mx-auto py-5 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <div class="footer-item pt-6">
+                    <div class="flex items-start gap-4 mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class max-w-72">
+                    </div>
+                    <div class="footer-item-header flex items-start justify-between">
+                        <h5 class="text-white">The Islamic Insurance</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-none py-3">
+                        <li class="pb-2 mb-0">
+                            <span>Islamic Insurance Company is the first Islamic Takaful insurance company in Jordan, founded in 1996. It operates in accordance with the provisions of Islamic Sharia.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item pt-6">
+                    <div class="footer-item-header flex items-start justify-between">
+                        <h5 class="text-white">Takaful Products</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-none py-3">
+                        <li class="pb-2 mb-0">
+                            <a href=""> Our Vision</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href=""> Board of Directors </a></li>
+                        <li class="pb-2 mb-0"><a href="">Management Team </a></li>
+                        <li class="pb-2 mb-0"><a href=""> Products and Services </a></li>
+                        <li class="pb-2 mb-0"><a href="">Pricing and Fees List </a></li>
+                        <li class="pb-2 mb-0"><a href="">Branches</a></li>
+                        <li class="pb-2 mb-0"><a href="">Corporate Governance</a></li>
+                        <li class="pb-2 mb-0"><a href="">Central Bank of Jordan
+                                Instructions </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item pt-6">
+                    <div class="footer-item-header max-md:flex max-md:items-start max-md:justify-between">
+                        <h5 class="text-white">Useful Links</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-none py-3">
+                        <li class="pb-2 mb-0">
+                            <a href=""> FAQs </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">Customer Complaints Channels </a></li>
+                        <li class="pb-2 mb-0"><a href=""> Apply a Complaint</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Vacancies</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Job Application</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Site Map</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Marketing campaigns
+                                and rearwards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item pt-6">
+                    <div class="footer-item-header flex items-start justify-between">
+                        <h5 class="text-white">Contact Us</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-none py-3 flex flex-col gap-2">
+                        <li class="flex items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <a href="#" class="flex items-center gap-1 flex-wrap">
+                                <p>Phone:</p>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <a href="#" class="flex items-center gap-1 flex-wrap">
+                                <p>Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</p>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <a href="#" class="flex items-center gap-1 flex-wrap">
+                                <p>islamicinsurance@tiic.com.jo</p>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <a href="#" class="flex items-center gap-1 flex-wrap">
+                                <p>P.O.Box (941000) Amman 11194 – Jordan</p>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <a href="#" class="flex items-center gap-1 flex-wrap">
+                                <p>Medical Approvals:</p>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container mx-auto py-7 px-4 md:px-8 lg:px-20">
+                    <div class="text-sm text-black text-center">
+                        <p>© 2025 Developed by dot jo. All rights reserved.</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         lucide.createIcons();

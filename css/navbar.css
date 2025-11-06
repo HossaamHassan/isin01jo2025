@@ -1,0 +1,445 @@
+header {
+    background-color: var(--white-color);
+}
+
+/* Navbar */
+.logo-img {
+    display: inline-block;
+    width: 400px;
+}
+
+/*====================================*/
+.fa-bars {
+    color: var(--secondary-color);
+}
+
+@media (min-width: 1200px) {
+    .dropdown-menu-news-li-parent:hover .dropdown-menu-news {
+        display: grid;
+    }
+}
+
+.dropdown-menu-news {
+    border-radius: var(--main-border-radius) !important;
+    border: var(--black-border-op-30);
+    position: absolute;
+    margin-top: 0;
+    z-index: 1090;
+    display: none;
+    top: 2.6rem;
+    width: 200px;
+    overflow: hidden;
+}
+
+@media (max-width: 991.98px) {
+    .dropdown-menu-news {
+      border-radius: 0 !important;
+    }
+  }
+
+.dropdown-menu-news-li-parent .custom-white-dropdown {
+    margin-top: 0;
+    width: auto !important;
+    background-color: var(--white-color) !important;
+    border-radius: 0rem !important;
+    border: 0.1rem solid var(--primary-color);
+    border-bottom: 0.25rem solid var(--primary-color);
+    position: absolute;
+    z-index: 1090;
+    display: none;
+    opacity: 100% !important;
+    top: 2.5rem;
+}
+
+.dropdown-menu-news-li-parent .custom-white-dropdown ul {
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dropdown-menu-news ul {
+    margin: 0rem;
+    padding: 0rem;
+
+}
+
+.dropdown-menu-news li {
+    list-style: none;
+    border-bottom: var(--black-border-op-30);
+    transition: 0.3s all ease-in-out;
+}
+
+.dropdown-menu-news li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu-news li:hover {
+    background-color: var(--primary-color);
+}
+
+.dropdown-menu-news li:hover a {
+    color: var(--white-color);
+}
+
+.dropdown-menu-news a {
+    display: block;
+    width: 100%;
+    padding: .2rem .8rem;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s all ease-in-out;
+}
+
+.dropdown-menu-news-li-parent .custom-white-dropdown a {
+    color: var(--black-color);
+}
+
+.dropdown-menu-news-li-parent {
+    position: relative !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.custom-dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.nav-link {
+    color: var(--secondary-color);
+}
+
+/*button*/
+.navbar {
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-container {
+        padding-inline: 0;
+    }
+}
+
+.navbar ul li {
+    padding-block: 0.5rem;
+}
+
+.navbar ul li::after {
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: var(--secondary-color);
+}
+
+/*           menu           */
+
+@media (max-width: 1200px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        z-index: 11;
+        max-height: 245px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar-collapse::-webkit-scrollbar {
+        width: 8px;
+        -webkit-appearance: none;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color);
+    }
+
+    .small-screen {
+        padding: 1rem;
+        color: var(--secondary-color) !important;
+    }
+}
+
+#toggleButtonHeader:focus,
+#toggleButtonHeader:active,
+#toggleButton:focus,
+#toggleButton:active,
+#toggleButton:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.custom-dropdown {
+    font-size: 1rem;
+}
+
+.custom-dropdown i {
+    padding: 0 0.2rem;
+    transition: 0.1s all ease-in-out;
+}
+
+.custom-dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 1280px) {
+    .custom-dropdown {
+        width: 85%;
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+
+    .custom-dropdown i {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+
+    .toggleButtonHeader {
+        width: auto;
+        border: none;
+        background-color: transparent;
+    }
+
+    .toggleButtonHeader i {
+        color: var(--secondary-color);
+        font-size: 1rem;
+    }
+
+    .mobile-menu-container {
+        border-top: 1px solid rgb(45 41 38 / 20%);
+        padding-top: 0.75rem;
+    }
+
+    .dropdown-menu-news a {
+        padding-inline-start: 2.2rem;
+        padding-block: .1rem;
+    }
+
+    .dropdown-menu-news.show {
+        display: block;
+        width: 100% !important;
+    }
+
+    .dropdown-menu-news:not(.show) {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .dropdown-menu-news {
+        position: relative !important;
+        top: 0 !important;
+        opacity: unset !important;
+    }
+
+    .dropdown-menu-news ul {
+        position: relative !important;
+        display: block !important;
+        margin-top: 0px;
+    }
+
+    .dropdown-menu-news ul {
+        background-color: rgb(122 17 41 / 5%);
+    }
+
+    .dropdown-menu-news a {
+        color: var(--secondary-color);
+        padding: 0.5rem;
+    }
+
+    .navbar-nav li ul li:first-child {
+        border-top: 1px solid rgba(52, 52, 52, 0.2);
+    }
+
+    .navbar-nav li:not(:last-child) {
+        border-bottom: 1px solid rgba(52, 52, 52, 0.2);
+    }
+
+    .navbar-nav .nav-item a {
+        padding-block: .7rem !important;
+        color: var(--secondary-color);
+    }
+
+    .dropdown-menu-news ul li a {
+        color: var(--black-color);
+    }
+
+}
+
+.navbar-nav.custom-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* ============== */
+
+/* Search Container */
+.searchBarOpen {
+    position: fixed;
+    background: var(--primary-color-op-30);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    padding: 2rem;
+    top: -120%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.searchBarOpen.active {
+    top: 0;
+}
+
+.searchBarOpen--input {
+    background: white;
+    border-radius: 50px;
+    padding: .5rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.searchBarOpen--input input {
+    padding: 0 .8rem !important;
+    caret-color: black;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    flex: 1;
+    border: 0;
+}
+
+.searchBarOpen--input input:focus {
+    border: 0;
+    outline: unset;
+}
+
+.searchBarOpen--input input::placeholder {
+    color: rgb(0 0 0 / 80%);
+}
+
+.searchBarOpen--input button {
+    border-radius: 50px;
+    align-self: flex-start;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.searchBarOpen--input button:hover {
+    background: var(--primary-color-op-30);
+}
+
+.searchBarOpen--input button:hover i {
+    color: var(--primary-color) !important;
+}
+
+.searchBarOpen--closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem ;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.arabic-version .searchBarOpen--closeBtn {
+    right: auto;
+    left: 30px;
+}
+
+.searchBarOpen--closeBtn:hover {
+    transform: scale(1.2);
+}
+
+.nav-container .mobile.logo-img {
+    display: none;
+}
+
+@media (max-width: 1279.98px) {
+    .nav-container {
+        max-width: 100%;
+    }
+
+    .nav-container .search-btn span {
+        display: none;
+    }
+
+    .nav-container .logo-img {
+        display: none;
+    }
+
+    .nav-container .mobile.logo-img {
+        width: 250px !important;
+        display: block;
+    }
+
+    .nav-container {
+        padding: 0;
+    }
+
+    .navbar-toggler {
+        padding-inline-start: 10px;
+    }
+
+    .nav-container .search-btn i {
+        color: var(--primary-color);
+    }
+
+    .navbar ul li {
+        padding: 0;
+    }
+
+    .navbar-collapse-container {
+        width: fit-content !important;
+    }
+}
+
+@media(max-width: 767.98px) {
+    .nav-container .mobile.logo-img {
+        width: 200px !important;
+        display: block;
+    }
+}
+
+@media(max-width: 425.98px) {
+    .searchBarOpen--input input {
+        font-size: 0.8rem;
+    }
+
+    .nav-container .mobile.logo-img {
+        width: 180px !important;
+    }
+}
