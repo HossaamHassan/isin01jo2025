@@ -1,0 +1,45 @@
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    outline: 1px solid var(--light-gray-color);
+    border-radius: var(--main-border-radius);
+    border: none;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: unset;
+    outline: 2px solid var(--primary-color);
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    outline: 1px solid var(--light-gray-color);
+    border-radius: var(--main-border-radius);
+    border: none;
+}
+
+.form-select:focus {
+    border: none;
+    box-shadow: unset;
+    outline: 2px solid var(--primary-color);
+}
+
+.arabic-version .form-select {
+    background-position: left .75rem center;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    outline: 1px solid var(--light-gray-color);
+    border-radius: var(--main-border-radius);
+    border: none;
+}
+
+.form-textarea:focus {
+    border: none;
+    box-shadow: unset;
+    outline: 2px solid var(--primary-color);
+}

@@ -12,8 +12,8 @@ $(document).ready(function () {
             }
 
             // Header
-            if ($(this).closest("div").find(".dropdown-menu-news").length) {
-                dropdown = $(this).closest("div").find(".dropdown-menu-news");
+            if ($(this).closest("li").find(".dropdown-menu-news").length) {
+                dropdown = $(this).closest("li").find(".dropdown-menu-news");
             }
             dropdown.toggleClass("show");
 

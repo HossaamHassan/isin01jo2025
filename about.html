@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -26,83 +26,69 @@
     <script src="./js/navbar.js"></script>
 </head>
 <body class="bg-white">
+
     <!-- Start Navbar -->
-    <header class="relative py-3 flex flex-col justify-center items-center">
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
         <div
-            class="container nav-container inline-flex flex-col-reverse justify-between items-stretch gap-3 xl:flex-row px-4 md:px-8 lg:px-20">
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
             <picture class="logo-img">
-                <img src="./assets/images/logo-nav.png" alt="" class="default-image-class">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
             </picture>
             <!-- Navbar links -->
-            <nav class="w-full bg-white">
-                <div class="max-w-7xl mx-auto px-0 xl:px-6 h-full">
-                    <div class="flex items-center w-full h-full">
-                        <!-- Mobile menu button -->
-                        <div class="mobile-menu-container flex items-center w-full xl:hidden">
-                            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
-                                <span class="sr-only">Open main menu</span>
-                                <i class="fa-solid fa-bars text-lg" id="openIcon"></i>
-                                <i class="fa-solid fa-xmark text-lg hidden" id="closeIcon"></i>
-                            </button>
-                        </div>
-
-                        <!-- Desktop menu -->
-                        <div class="hidden xl:flex xl:items-center xl:justify-center xl:w-full">
-                            <div class="flex">
-                                
-                                <!-- Dropdown -->
-                                <div class="relative group">
-                                    <button class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium inline-flex items-center">
-                                        Who We Are
-                                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
-                                    </button>
-                                    <div class="absolute left-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                        <div class="py-1">
-                                            <a href="/news/local" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Local News</a>
-                                            <a href="/news/world" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">World News</a>
-                                            <a href="/news/sports" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sports</a>
-                                        </div>
-                                    </div>
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">Home</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    About Us
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">Local News</a></li>
+                                        <li><a href="/news/world">World News</a></li>
+                                        <li><a href="/news/sports">Sports</a></li>
+                                    </ul>
                                 </div>
-
-                                <a href="./our-work.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Our Work</a>
-                                <a href="./our-work-inner.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Projects</a>
-                                <a href="./clients-partners.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Client & Partners</a>
-                                <a href="./join-us.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Join Us</a>
-                                <a href="/contact" class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile menu -->
-                <div class="xl:hidden hidden absolute max-h-60 top-full w-full left-0 right-0 bg-white z-10 shadow-md overflow-y-scroll" id="mobile-menu">
-                    <div class="container mx-auto px-0 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="./home.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Home</a>
-                        
-                        <!-- Mobile dropdown -->
-                        <div class="relative">
-                            <button id="mobile-dropdown-button" class="toggleButtonHeader w-full text-start px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 flex justify-between items-center">
-                                About Us
-                                <i class="fa-solid fa-plus text-xs"></i>
-                                <i class="fa-solid fa-minus text-xs hidden"></i>
-                            </button>
-                            <div id="mobile-dropdown" class="dropdown-menu-news bg-[#008c4c] bg-opacity-10 pl-4 space-y-1">
-                                <a href="/news/local" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">Local News</a>
-                                <a href="/news/world" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">World News</a>
-                                <a href="/news/sports" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600 rounded-md">Sports</a>
-                            </div>
-                        </div>
-
-                        <a href="./our-work.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Our Work</a>
-                        <a href="./our-work-inner.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Projects</a>
-                        <a href="./clients-partners.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Client & Partners</a>
-                        <a href="./join-us.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Join Us</a>
-                        <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#008c4c] hover:bg-primary-600">Contact Us</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">Our Work</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">Projects</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">client &
+                                    Partners</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">Join Us</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">Contact Us</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
-            <div class="flex justify-between items-center px-0">
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
                 <div>
                     <a href="#">
                         <picture class="mobile logo-img">
@@ -110,15 +96,18 @@
                         </picture>
                     </a>
                 </div>
-                <div class="flex justify-center items-center gap-3">
-                    <a href="#" class="flex items-center gap-1 search-btn text-[#008c4c] border-2 border-[#008c4c] rounded-full px-4 py-2 transition-colors duration-300 hover:bg-[#008c4c] hover:text-white">
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="d-flex align-items-center gap-2 search-btn text-black-color">
                         <span>
                             Search
                         </span>
-                        <i data-lucide="search" class="w-4 h-4"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <a href="#" class="flex items-center gap-2 language-toggle-btn">
-                        <i data-lucide="globe" class="w-7 h-7"></i>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <span class="text-black-color">
+                            العربية
+                        </span>
+                        <i class="fa-solid fa-globe text-secondary-color"></i>
                     </a>
                 </div>
             </div>
@@ -128,7 +117,7 @@
     <div class="search-nav-container overflow-hidden">
         <div class="searchBarOpen">
             <form class="searchBarOpen--input" id="custom-search-form">
-                <div class="flex items-centr gap-2">
+                <div class="d-flex align-items-centr gap-2">
                     <input type="text" name="title" id="search-title-input" required placeholder="Search Here"
                         data-url-name="title" />
                     <button>
@@ -136,178 +125,185 @@
                     </button>
                 </div>
             </form>
-            <span class="searchBarOpen--closeBtn"><i data-lucide="x" class="w-6 h-6"></i></span>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
         </div>
     </div>
     <!-- End Navbar -->
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4c] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Islamic Insurance Company</h1>
-                <p class="text-xl opacity-90">Jordan's first and leading Takaful insurance company, established in 1996 with over 29 years of excellence in Sharia-compliant insurance services.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">About Islamic Insurance Company</h1>
+                <p class="mb-0">Jordan's first and leading Takaful insurance company, established in 1996 with over 29 years of excellence in Sharia-compliant insurance services.</p>
             </div>
         </div>
     </section>
 
     <!-- Company Overview -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-[#545454] mb-6">The Islamic Insurance Company is the first Takaful insurance company in Jordan.</h2>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+    <section class="company-overview-section py-6">
+        <div class="container">
+            <div class="row gy-5 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="text-gray-color mb-4">The Islamic Insurance Company is the first Takaful insurance company in Jordan.</h2>
+                    <p class="text-gray-color">
                         The Islamic Insurance Company is the first Takaful insurance company in Jordan. It was established in 1996. It practices the legitimate cooperative Insurance which complies with the Islamic Share'ah laws and on the basis of a Wakalah (agency) with a known wage.
                     </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+                    <p class="text-gray-color">
                         The Islamic Insurance Company dominates the largest share of the takaful market in Jordan and occupies a prominent position in the takaful insurance market inside and outside Jordan. The Islamic Insurance Company won many awards and it has a distinguished rating of 'A (jd)' (Single A) from the Islamic International Rating Agency.
                     </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+                    <p class="text-gray-color">
                         We have participated in establishing many Takaful insurance in the Middle-East such like; Islamic Insurance Company in Yemen, Al-Aman Takaful Insurance Company (A.T.I) in the Lebanon, Saudi Reinsurance Company (Saudi Re), in Riyadh/Kingdom of Saudi Arabia, and At-Takafulia Assurances in Tunis.
                     </p>
                 </div>
-                <div class="relative rounded-3xl shadow-lg">
-                    <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="About Us" class="default-image-class">
+                <div class="col-lg-6 image-col position-relative">
+                    <div class="image-container">
+                        <picture>
+                            <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="About Us" class="cover-image-class">
+                        </picture>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission & Vision -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Our Mission & Vision</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Guided by Islamic principles, we strive to provide comprehensive insurance solutions that protect our community while adhering to Sharia compliance.</p>
+    <section class="mission-vision-section py-6">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Our Mission & Vision</h2>
+                <p class="text-gray-color mx-auto">Guided by Islamic principles, we strive to provide comprehensive insurance solutions that protect our community while adhering to Sharia compliance.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="w-16 h-16 bg-[#008c4c] rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="target" class="w-8 h-8 text-white"></i>
+            <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                <div class="col-md-6 d-flex">
+                    <div class="mission-vision-card d-flex flex-column flex-grow-1">
+                        <div class="card-icon d-flex justify-content-center align-items-center mb-4">
+                            <i data-lucide="target" class="text-white"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-3">Our Mission</h3>
+                        <p class="text-gray-color flex-grow-1">
+                            To provide innovative, Sharia-compliant insurance solutions that protect our customers' interests while contributing to the economic development of Jordan through ethical business practices and community engagement.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] mb-4">Our Mission</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        To provide innovative, Sharia-compliant insurance solutions that protect our customers' interests while contributing to the economic development of Jordan through ethical business practices and community engagement.
-                    </p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="w-16 h-16 bg-[#008c4c] rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="eye" class="w-8 h-8 text-white"></i>
+                <div class="col-md-6 d-flex">
+                    <div class="mission-vision-card d-flex flex-column flex-grow-1">
+                        <div class="card-icon d-flex justify-content-center align-items-center mb-4">
+                            <i data-lucide="eye" class="text-white"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-3">Our Vision</h3>
+                        <p class="text-gray-color flex-grow-1">
+                            To be the leading Takaful insurance company in the region, recognized for our commitment to Islamic principles, exceptional customer service, and innovative insurance products that meet the evolving needs of our community.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] mb-4">Our Vision</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        To be the leading Takaful insurance company in the region, recognized for our commitment to Islamic principles, exceptional customer service, and innovative insurance products that meet the evolving needs of our community.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Medical Network Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Medical Network</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our comprehensive medical network providing quality healthcare services across Jordan.</p>
+    <section class="medical-network-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Medical Network</h2>
+                <p class="text-gray-color mx-auto">Our comprehensive medical network providing quality healthcare services across Jordan.</p>
             </div>
 
-            <div class="relative">
-
-                <div class="swiper-container relative overflow-hidden mx-auto">
-                    <div class="swiper-wrapper py-4">
+            <div class="position-relative">
+                <div class="swiper-container position-relative overflow-hidden mx-auto">
+                    <div class="swiper-wrapper py-3">
                         <!-- Card 1: Physiotherapy Centers -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Physiotherapy Centers" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Physiotherapy Centers" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Physiotherapy Centers</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Physiotherapy Centers</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 2: Doctors -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Doctors" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Doctors" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Doctors</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Doctors</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 3: Dental -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/dentist-with-assistant-install-implant-patient-mouthin-modern-cl.png" alt="Dental" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/dentist-with-assistant-install-implant-patient-mouthin-modern-cl.png" alt="Dental" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Dental</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Dental</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 4: Pharmacies -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/young-woman-looking-camera-while-sitting-table.png" alt="Pharmacies" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/young-woman-looking-camera-while-sitting-table.png" alt="Pharmacies" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Pharmacies</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Pharmacies</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 5: Laboratories -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/featured-image.png" alt="Laboratories" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/featured-image.png" alt="Laboratories" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Laboratories</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Laboratories</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 6: Radiology -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/featured-image-1.png" alt="Radiology" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/featured-image-1.png" alt="Radiology" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Radiology</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Radiology</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 7: Optics -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/featured-image-2.png" alt="Optics" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/featured-image-2.png" alt="Optics" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Optics</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Optics</h3>
                                 </div>
                             </div>
                         </div>
     
                         <!-- Card 8: Hospitals -->
                         <div class="swiper-slide">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-2 md:mx-3">
+                            <div class="medical-network-card mx-2 mx-md-3">
                                 <div class="overflow-hidden">
-                                    <img src="./assets/images/group-1000003684.png" alt="Hospitals" class="cover-image-class aspect-video">
+                                    <img src="./assets/images/group-1000003684.png" alt="Hospitals" class="cover-image-class aspect-ratio-16-9">
                                 </div>
-                                <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold text-[#545454] mb-2">Hospitals</h3>
+                                <div class="p-4 text-center">
+                                    <h3 class="text-secondary-color mb-2">Hospitals</h3>
                                 </div>
                             </div>
                         </div>
@@ -315,49 +311,50 @@
     
                 </div>
                 <!-- Navigation Buttons -->
-                <div class="swiper-button-prev bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 -left-2 md:-left-4">
-                    <i data-lucide="chevron-left" class="w-4 h-4 md:w-6 md:h-6 text-[#008c4c]"></i>
+                <div class="swiper-button-prev p-2">
+                    <i data-lucide="chevron-left" class="text-primary-color"></i>
                 </div>
-                <div class="swiper-button-next bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 -right-2 md:-right-4">
-                    <i data-lucide="chevron-right" class="w-4 h-4 md:w-6 md:h-6 text-[#008c4c]"></i>
+                <div class="swiper-button-next p-2">
+                    <i data-lucide="chevron-right" class="text-primary-color"></i>
                 </div>
 
                 <!-- Pagination -->
-                <div class="swiper-pagination mt-4 md:mt-8"></div>
+                <div class="swiper-pagination mt-3 mt-md-4"></div>
             </div>
 
         </div>
     </section>
 
     <!-- Start Footer -->
-        <footer class="main-footer-container relative bg-[#008c4c]">
-            <div class="container footer-section mx-auto py-5 px-4 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                <div class="footer-item pt-6">
-                    <div class="flex items-start gap-4 mb-2">
-                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class max-w-72">
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
                     </div>
-                    <div class="footer-item-header flex items-start justify-between">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
                         <h5 class="text-white">The Islamic Insurance</h5>
                         <button class="toggleButton mobile-responsive" data-target="about">
                             <i class="fa-solid fa-plus"></i>
                             <i class="fa-solid fa-minus" style="display: none"></i>
                         </button>
                     </div>
-                    <ul id="about" class="list-none py-3">
+                    <ul id="about" class="list-unstyled py-2">
                         <li class="pb-2 mb-0">
                             <span>Islamic Insurance Company is the first Islamic Takaful insurance company in Jordan, founded in 1996. It operates in accordance with the provisions of Islamic Sharia.</span>
                         </li>
                     </ul>
                 </div>
-                <div class="footer-item pt-6">
-                    <div class="footer-item-header flex items-start justify-between">
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
                         <h5 class="text-white">Takaful Products</h5>
-                        <button class="toggleButton mobile-responsive" data-target="about">
+                        <button class="toggleButton mobile-responsive" data-target="products">
                             <i class="fa-solid fa-plus"></i>
                             <i class="fa-solid fa-minus" style="display: none"></i>
                         </button>
                     </div>
-                    <ul id="about" class="list-none py-3">
+                    <ul id="products" class="list-unstyled py-2">
                         <li class="pb-2 mb-0">
                             <a href=""> Our Vision</a>
                         </li>
@@ -372,15 +369,15 @@
                         <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">View All</a></li>
                     </ul>
                 </div>
-                <div class="footer-item pt-6">
-                    <div class="footer-item-header max-md:flex max-md:items-start max-md:justify-between">
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
                         <h5 class="text-white">Useful Links</h5>
-                        <button class="toggleButton mobile-responsive" data-target="about">
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
                             <i class="fa-solid fa-plus"></i>
                             <i class="fa-solid fa-minus" style="display: none"></i>
                         </button>
                     </div>
-                    <ul id="about" class="list-none py-3">
+                    <ul id="useful-links" class="list-unstyled py-2">
                         <li class="pb-2 mb-0">
                             <a href=""> FAQs </a>
                         </li>
@@ -393,66 +390,67 @@
                                 and rearwards</a></li>
                     </ul>
                 </div>
-                <div class="footer-item pt-6">
-                    <div class="footer-item-header flex items-start justify-between">
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
                         <h5 class="text-white">Contact Us</h5>
-                        <button class="toggleButton mobile-responsive" data-target="about">
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
                             <i class="fa-solid fa-plus"></i>
                             <i class="fa-solid fa-minus" style="display: none"></i>
                         </button>
                     </div>
-                    <ul id="about" class="list-none py-3 flex flex-col gap-2">
-                        <li class="flex items-start gap-2">
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
                             <div>
-                                <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                                <i data-lucide="phone" class="text-white"></i>
                             </div>
-                            <a href="#" class="flex items-center gap-1 flex-wrap">
-                                <p>Phone:</p>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Phone:</span>
                                 <span dir="ltr">06-562-0151</span>
                             </a>
                         </li>
-                        <li class="flex items-start gap-2">
+                        <li class="d-flex align-items-start gap-2">
                             <div>
-                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                                <i data-lucide="map-pin" class="text-white"></i>
                             </div>
-                            <a href="#" class="flex items-center gap-1 flex-wrap">
-                                <p>Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</p>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</span>
                             </a>
                         </li>
-                        <li class="flex items-start gap-2">
+                        <li class="d-flex align-items-start gap-2">
                             <div>
-                                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                                <i data-lucide="mail" class="text-white"></i>
                             </div>
-                            <a href="#" class="flex items-center gap-1 flex-wrap">
-                                <p>islamicinsurance@tiic.com.jo</p>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
                             </a>
                         </li>
-                        <li class="flex items-start gap-2">
+                        <li class="d-flex align-items-start gap-2">
                             <div>
-                                <i data-lucide="mailbox" class="w-5 h-5 text-white"></i>
+                                <i data-lucide="mailbox" class="text-white"></i>
                             </div>
-                            <a href="#" class="flex items-center gap-1 flex-wrap">
-                                <p>P.O.Box (941000) Amman 11194 – Jordan</p>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>P.O.Box (941000) Amman 11194 – Jordan</span>
                             </a>
                         </li>
-                        <li class="flex items-start gap-2">
+                        <li class="d-flex align-items-start gap-2">
                             <div>
-                                <i data-lucide="stethoscope" class="w-5 h-5 text-white"></i>
+                                <i data-lucide="stethoscope" class="text-white"></i>
                             </div>
-                            <a href="#" class="flex items-center gap-1 flex-wrap">
-                                <p>Medical Approvals:</p>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Medical Approvals:</span>
                                 <span dir="ltr">06-566-1300</span>
                             </a>
                         </li>
                     </ul>
                 </div>
+                </div>
             </div>
             <div class="footer-copyright-container m-0">
-                <div class="footer-copyright-container-centered container mx-auto py-7 px-4 md:px-8 lg:px-20">
-                    <div class="text-sm text-black text-center">
-                        <p>© 2025 Developed by dot jo. All rights reserved.</p>
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 Developed by dot jo. All rights reserved.</p>
                     </div>
-                    <div class="flex justify-center items-center gap-2">
+                    <div class="d-flex justify-content-center align-items-center gap-2">
                         <a href="#"><i data-lucide="facebook"></i></a>
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="linkedin"></i></a>

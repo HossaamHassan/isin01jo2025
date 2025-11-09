@@ -1,7 +1,18 @@
 :root {
     --primary-color: #008c4c;
+    --primary-color-hover: #007a42;
     --secondary-color: #545454;
     --primary-color-op-30: rgba(0, 140, 76, 0.3);
+    --white-color: #fff;
+    --black-color: #000;
+    --soft-white: #f9fafb;
+    --gray-color: #374151;
+    --silver-color: #6b7280;
+    --light-gray-color: #d1d5db;
+    --main-font-family: 'Rubik';
+    --main-border-radius: 0.5rem;
+    --rounded-circle: 999px;
+    --line-height: 1.7rem;
 }
 
 * {
@@ -130,11 +141,160 @@ h6 {
     }
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p,
+li,
+h6 {
+    font-size: .95rem;
+}
+
+p {
+    text-align: justify;
+}
+
+span,
+.card-date {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+th {
+    font-size: .9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+ul {
+    list-style: disc;
+    padding-left: unset;
+    padding-inline-start: 2rem;
+}
+
 .arabic-version .lucide-chevron-left,
 .arabic-version .lucide-chevron-right,
 .arabic-version .lucide-arrow-right,
 .arabic-version .lucide-arrow-left {
     transform: scaleX(-1);
+}
+
+.main-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--rounded-circle);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-btn:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.main-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.outlined-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--rounded-circle);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.outlined-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.outlined-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.py-6 {
+    padding: 5rem 0;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.bg-primary-color {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary-color {
+    background-color: var(--secondary-color);
+}
+
+.bg-soft-white {
+    background-color: var(--soft-white);
+}
+
+.bg-gray-color {
+    background-color: var(--gray-color);
+}
+
+.bg-light-gray-color {
+    background-color: var(--light-gray-color);
+}
+
+.text-primary-color {
+    color: var(--primary-color);
+}
+
+.text-secondary-color {
+    color: var(--secondary-color);
+}
+
+.text-gray-color {
+    color: var(--gray-color);
+}
+
+.text-silver-color {
+    color: var(--silver-color);
 }
 
 /* Webkit box  */
@@ -191,6 +351,11 @@ h6 {
     object-fit: cover;
 }
 
+/* Aspect Ratio */
+.aspect-ratio-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
 /* Swiper Custom Styling */
 
 .swiper-slide {
@@ -205,6 +370,20 @@ h6 {
     background-color: var(--primary-color);
     width: 0.7rem;
     height: 0.7rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: var(--white-color);
+    border-radius: var(--rounded-circle);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: var(--soft-white);
 }
 
 .swiper-button-prev {
@@ -225,7 +404,7 @@ h6 {
     right: auto !important;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 991.98px) {
     .swiper-button-prev {
         left: -2.5rem !important;
     }
@@ -243,9 +422,41 @@ h6 {
         left: -2.5rem !important;
         right: auto !important;
     }
+
+    .swiper-button-prev svg,
+    .swiper-button-next svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+    width: 1rem;
+    height: 1rem;
 }
 
 .arabic-version .swiper-button-prev svg,
 .arabic-version .swiper-button-next svg {
     transform: scaleX(-1);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 0;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.hero-section .hero-content {
+    max-width: 768px;
+}
+
+.hero-section .hero-content p {
+    text-align: start;
+}
+
+.section-header p {
+    max-width: 672px;
+    text-align: center;
 }

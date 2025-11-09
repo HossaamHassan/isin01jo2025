@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,153 +28,160 @@
 <body class="bg-white">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4c] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Board of Directors</h1>
-                <p class="text-xl opacity-90">Experienced leadership committed to excellence, transparency, and Sharia-compliant governance.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">Board of Directors</h1>
+                <p class="mb-0">Experienced leadership committed to excellence, transparency, and Sharia-compliant governance.</p>
             </div>
         </div>
     </section>
 
     <!-- Board Members Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Our Leadership Team</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A distinguished board with extensive experience in Islamic finance, insurance, and corporate governance.</p>
+    <section class="board-members-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Our Leadership Team</h2>
+                <p class="text-gray-color mx-auto">A distinguished board with extensive experience in Islamic finance, insurance, and corporate governance.</p>
             </div>
 
-            <div class="space-y-6">
-                <!-- Category 1: Board of Directors Members -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="board-members">
-                        <h3 class="text-2xl font-bold text-[#545454]">Board of Directors Members</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="board-members" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">H.E. Mr. Issa H. Murad</h4>
-                                <p class="text-[#008c4c] font-semibold">Chairman</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Fadi Aboul Hosn</h4>
-                                <p class="text-[#008c4c] font-semibold">Vice-Chairman</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Hussein Saed Se'fan</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Asad Eldisi</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Mohammad Abdul Latif Ghurab</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">H.E. Mr. Ayman Hatahet</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Musa Mubarak</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Khawla Fareez AlNobani</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">H.E. Dr. Hatem AlHalawani AlTamimi</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Yazeed ShamsEddin AlKhalidi</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Taj Omran Khomosh</h4>
-                                <p class="text-[#008c4c] font-semibold">Member</p>
-                            </div>
+            <div class="accordion" id="boardAccordion">
+                        
+              <!-- Category 1: Board of Directors -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingOne">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#boardMembers" aria-expanded="false" aria-controls="boardMembers">
+                    <h3>Board of Directors Members</h3>
+                  </button>
+                </h3>
+                <div id="boardMembers" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <!-- Each member card -->
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">H.E. Mr. Issa H. Murad</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Chairman</p>
+                          </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Category 2: Share'ah Supervisory Board -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="shareah-board">
-                        <h3 class="text-2xl font-bold text-[#545454]">Share'ah Supervisory Board</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="shareah-board" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Mahmoud Al-Sartawi</h4>
-                                <p class="text-[#008c4c] font-semibold">Chairman of the Sharia Supervisory Board</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Abdul Rahman Zeid Al-Kilani</h4>
-                                <p class="text-[#008c4c] font-semibold">Vice Chairman of the Sharia Supervisory Board</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Dr. Hamdy Murad</h4>
-                                <p class="text-[#008c4c] font-semibold">Share'ah Supervisory Board Secretary</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">H.E. Dr. Wae'l Arabiyat</h4>
-                                <p class="text-[#008c4c] font-semibold">Share'ah Supervisory Board Member</p>
-                            </div>
+                      </div>
+                  
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Mr. Fadi Aboul Hosn</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Vice-Chairman</p>
+                          </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Category 3: Executive Management -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="executive-management">
-                        <h3 class="text-2xl font-bold text-[#545454]">Executive Management</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="executive-management" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Reda Dahbour</h4>
-                                <p class="text-[#008c4c] font-semibold">General Manager</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Abdel Samie' Al-Natsheh</h4>
-                                <p class="text-[#008c4c] font-semibold">First Deputy General Manager</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">Mr. Yaser Al-Tamimi</h4>
-                                <p class="text-[#008c4c] font-semibold">Second Deputy General Manager</p>
-                            </div>
+                      </div>
+                  
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Dr. Hussein Saed Se'fan</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Member</p>
+                          </div>
                         </div>
+                      </div>
+                  
+                      <!-- Add the rest of the members in the same pattern -->
                     </div>
+                  </div>
                 </div>
+              </div>
+          
+              <!-- Category 2: Share'ah Supervisory Board -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingTwo">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#shareahBoard" aria-expanded="false" aria-controls="shareahBoard">
+                    <h3>Share'ah Supervisory Board</h3>
+                  </button>
+                </h3>
+                <div id="shareahBoard" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Dr. Mahmoud Al-Sartawi</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Chairman of the Sharia Supervisory Board</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Dr. Abdul Rahman Zeid Al-Kilani</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Vice Chairman of the Sharia Supervisory Board</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Dr. Hamdy Murad</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Share'ah Supervisory Board Secretary</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">H.E. Dr. Wae'l Arabiyat</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Share'ah Supervisory Board Member</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Category 3: Executive Management -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingThree">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#executiveManagement" aria-expanded="false" aria-controls="executiveManagement">
+                    <h3>Executive Management</h3>
+                  </button>
+                </h3>
+                <div id="executiveManagement" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Mr. Reda Dahbour</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">General Manager</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Mr. Abdel Samie' Al-Natsheh</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">First Deputy General Manager</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">Mr. Yaser Al-Tamimi</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">Second Deputy General Manager</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </section>
 
     <script>
         lucide.createIcons();
-
-        // Collapse functionality for board sections
-        $('.collapse-button').on('click', function() {
-            const $button = $(this);
-            const targetId = $button.data('target');
-            const $content = $(`#${targetId}`);
-            const $icon = $button.find('.collapse-icon');
-        
-            $content.toggleClass('hidden');
-
-            if ($content.hasClass('hidden')) {
-                $icon.css('transform', 'rotate(0deg)');
-            } else {
-                $icon.css('transform', 'rotate(180deg)');
-            }
-        });
     </script>
 </body>
 </html>

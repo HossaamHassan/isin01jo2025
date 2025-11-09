@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -29,179 +29,192 @@
 <body class="bg-white">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4c] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h1>
-                <p class="text-xl opacity-90">Build your career with Jordan's leading Takaful insurance company and be part of our mission to provide ethical insurance solutions.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">Join Our Team</h1>
+                <p class="mb-0">Build your career with Jordan's leading Takaful insurance company and be part of our mission to provide ethical insurance solutions.</p>
             </div>
         </div>
     </section>
 
     <!-- Why Work With Us -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Why Work With Us?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Join a company that values Islamic principles, professional growth, and employee well-being.</p>
+    <section class="work-with-us-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Why Work With Us?</h2>
+                <p class="text-gray-color mx-auto">Join a company that values Islamic principles, professional growth, and employee well-being.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-[#008c4c] rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="work-with-us-card text-center p-4 d-flex flex-column flex-grow-1">
+                        <div class="card-icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center mx-auto mb-4">
+                            <i data-lucide="trending-up" class="text-white"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-3">Career Growth</h3>
+                        <p class="text-gray-color text-center mb-0 flex-grow-1">Continuous learning opportunities and clear career advancement paths to help you reach your professional goals.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] mb-4">Career Growth</h3>
-                    <p class="text-gray-700">Continuous learning opportunities and clear career advancement paths to help you reach your professional goals.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-[#008c4c] rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="heart" class="w-8 h-8 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="work-with-us-card text-center p-4 d-flex flex-column flex-grow-1">
+                        <div class="card-icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center mx-auto mb-4">
+                            <i data-lucide="heart" class="text-white"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-3">Work-Life Balance</h3>
+                        <p class="text-gray-color text-center mb-0 flex-grow-1">Flexible working arrangements and comprehensive benefits that support your personal and family life.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] mb-4">Work-Life Balance</h3>
-                    <p class="text-gray-700">Flexible working arrangements and comprehensive benefits that support your personal and family life.</p>
                 </div>
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-[#008c4c] rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="work-with-us-card text-center p-4 d-flex flex-column flex-grow-1">
+                        <div class="card-icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center mx-auto mb-4">
+                            <i data-lucide="users" class="text-white"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-3">Team Culture</h3>
+                        <p class="text-gray-color text-center mb-0 flex-grow-1">Collaborative environment built on Islamic values of respect, integrity, and mutual support.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] mb-4">Team Culture</h3>
-                    <p class="text-gray-700">Collaborative environment built on Islamic values of respect, integrity, and mutual support.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Current Openings -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Current Openings</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore exciting career opportunities across different departments and levels.</p>
+    <section class="current-openings-section py-6 bg-soft-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Current Openings</h2>
+                <p class="text-gray-color mx-auto">Explore exciting career opportunities across different departments and levels.</p>
             </div>
 
-
             <!-- Job Listings -->
-            <div class="space-y-6" id="job-listings">
+            <div class="row gy-4" id="job-listings">
                 <!-- Job 1 -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="claims">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#545454]">Senior Claims Specialist</h3>
-                                <span class="bg-[#008c4c] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                <div class="col-12">
+                    <div class="job-card p-4" data-category="claims">
+                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                            <div class="job-card-content">
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                    <h3 class="text-secondary-color">Senior Claims Specialist</h3>
+                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">Full-time</span>
+                                </div>
+                                <p class="text-gray-color mb-3">Process and evaluate insurance claims while ensuring compliance with Takaful principles and company policies.</p>
+                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="map-pin"></i>
+                                        Amman, Jordan
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="briefcase"></i>
+                                        Claims Department
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="clock"></i>
+                                        Posted 2 days ago
+                                    </span>
+                                </div>
                             </div>
-                            <p class="text-gray-600 mb-3">Process and evaluate insurance claims while ensuring compliance with Takaful principles and company policies.</p>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    Amman, Jordan
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
-                                    Claims Department
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="clock" class="w-4 h-4"></i>
-                                    Posted 2 days ago
-                                </span>
+                            <div class="d-flex gap-3 flex-column flex-sm-row">
+                                <button class="outlined-btn w-sm-100 px-4 py-2">View Details</button>
+                                <button class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
                             </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="border border-[#008c4c] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4c] hover:text-white transition-colors">View Details</button>
-                            <button class="bg-[#008c4c] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job 2 -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="sales">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#545454]">Digital Marketing Specialist</h3>
-                                <span class="bg-[#008c4c] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                <div class="col-12">
+                    <div class="job-card p-4" data-category="sales">
+                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                            <div class="job-card-content">
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                    <h3 class="text-secondary-color">Digital Marketing Specialist</h3>
+                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">Full-time</span>
+                                </div>
+                                <p class="text-gray-color mb-3">Develop and execute digital marketing strategies to promote our Takaful insurance products across various channels.</p>
+                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="map-pin"></i>
+                                        Amman, Jordan
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="briefcase"></i>
+                                        Marketing Department
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="clock"></i>
+                                        Posted 5 days ago
+                                    </span>
+                                </div>
                             </div>
-                            <p class="text-gray-600 mb-3">Develop and execute digital marketing strategies to promote our Takaful insurance products across various channels.</p>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    Amman, Jordan
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
-                                    Marketing Department
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="clock" class="w-4 h-4"></i>
-                                    Posted 5 days ago
-                                </span>
+                            <div class="d-flex gap-3 flex-column flex-sm-row">
+                                <button class="outlined-btn w-sm-100 px-4 py-2">View Details</button>
+                                <button class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
                             </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="border border-[#008c4c] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4c] hover:text-white transition-colors">View Details</button>
-                            <button class="bg-[#008c4c] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job 3 -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="customer-service">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#545454]">Customer Service Representative</h3>
-                                <span class="bg-[#008c4c] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                <div class="col-12">
+                    <div class="job-card p-4" data-category="customer-service">
+                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                            <div class="job-card-content">
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                    <h3 class="text-secondary-color">Customer Service Representative</h3>
+                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">Full-time</span>
+                                </div>
+                                <p class="text-gray-color mb-3">Provide exceptional customer service and support to policyholders, handling inquiries and resolving issues promptly.</p>
+                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="map-pin"></i>
+                                        Amman, Jordan
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="briefcase"></i>
+                                        Customer Service
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="clock"></i>
+                                        Posted 1 week ago
+                                    </span>
+                                </div>
                             </div>
-                            <p class="text-gray-600 mb-3">Provide exceptional customer service and support to policyholders, handling inquiries and resolving issues promptly.</p>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    Amman, Jordan
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
-                                    Customer Service
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="clock" class="w-4 h-4"></i>
-                                    Posted 1 week ago
-                                </span>
+                            <div class="d-flex gap-3 flex-column flex-sm-row">
+                                <button class="outlined-btn w-sm-100 px-4 py-2">View Details</button>
+                                <button class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
                             </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="border border-[#008c4c] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4c] hover:text-white transition-colors">View Details</button>
-                            <button class="bg-[#008c4c] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Job 4 -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item" data-category="it">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#545454]">IT Systems Analyst</h3>
-                                <span class="bg-[#008c4c] text-white px-3 py-1 rounded-full text-xs">Full-time</span>
+                <div class="col-12">
+                    <div class="job-card p-4" data-category="it">
+                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                            <div class="job-card-content">
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                    <h3 class="text-secondary-color">IT Systems Analyst</h3>
+                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">Full-time</span>
+                                </div>
+                                <p class="text-gray-color mb-3">Analyze, design, and implement IT solutions to support business operations and improve system efficiency.</p>
+                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="map-pin"></i>
+                                        Amman, Jordan
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="briefcase"></i>
+                                        IT Department
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="clock"></i>
+                                        Posted 1 week ago
+                                    </span>
+                                </div>
                             </div>
-                            <p class="text-gray-600 mb-3">Analyze, design, and implement IT solutions to support business operations and improve system efficiency.</p>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    Amman, Jordan
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
-                                    IT Department
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="clock" class="w-4 h-4"></i>
-                                    Posted 1 week ago
-                                </span>
+                            <div class="d-flex gap-3 flex-column flex-sm-row">
+                                <button class="outlined-btn w-sm-100 px-4 py-2">View Details</button>
+                                <button class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
                             </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="border border-[#008c4c] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4c] hover:text-white transition-colors">View Details</button>
-                            <button class="bg-[#008c4c] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
                         </div>
                     </div>
                 </div>
@@ -258,35 +271,37 @@
             if (!jobListings || jobs.length === 0) return;
 
             jobListings.innerHTML = jobs.map(job => `
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow job-item">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#545454]">${job.title}</h3>
-                                <span class="bg-[#008c4c] text-white px-3 py-1 rounded-full text-xs">${job.employment_type}</span>
+            <div class="col-12">
+                <div class="job-card p-4">
+                    <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                        <div class="job-card-content">
+                            <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                <h3 class="text-secondary-color">${job.title}</h3>
+                                <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">${job.employment_type}</span>
                             </div>
-                            <p class="text-gray-600 mb-3">${job.description}</p>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <p class="text-gray-color mb-3">${job.description}</p>
+                            <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                <span class="d-flex align-items-center gap-1">
+                                    <i data-lucide="map-pin"></i>
                                     ${job.location}
                                 </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                <span class="d-flex align-items-center gap-1">
+                                    <i data-lucide="briefcase"></i>
                                     ${job.department} Department
                                 </span>
-                                <span class="flex items-center gap-1">
-                                    <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span class="d-flex align-items-center gap-1">
+                                    <i data-lucide="clock"></i>
                                     ${formatDate(job.posted_date)}
                                 </span>
                             </div>
                         </div>
-                        <div class="flex gap-3">
-                            <a href="job-detail.html?slug=${job.slug}" class="border border-[#008c4c] text-[#008c4b] px-6 py-2 rounded-full hover:bg-[#008c4c] hover:text-white transition-colors">View Details</a>
-                            <button onclick="applyNow('${job.title}')" class="bg-[#008c4c] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">Apply Now</button>
+                        <div class="d-flex gap-3 flex-column flex-sm-row">
+                            <a href="job-detail.html?slug=${job.slug}" class="outlined-btn w-sm-100 px-4 py-2">View Details</a>
+                            <button onclick="applyNow('${job.title}')" class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
                         </div>
                     </div>
                 </div>
+            </div>
             `).join('');
 
             lucide.createIcons();

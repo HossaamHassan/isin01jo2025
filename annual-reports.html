@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,112 +28,124 @@
 <body class="bg-white">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4c] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Annual Reports</h1>
-                <p class="text-xl opacity-90">Access our comprehensive annual financial reports and performance reviews.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">Annual Reports</h1>
+                <p class="mb-0">Access our comprehensive annual financial reports and performance reviews.</p>
             </div>
         </div>
     </section>
 
     <!-- Reports List -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">Financial Reports Archive</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Download our annual financial reports for complete transparency into our performance and operations.</p>
+    <section class="reports-list-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">Financial Reports Archive</h2>
+                <p class="text-gray-color mx-auto">Download our annual financial reports for complete transparency into our performance and operations.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div class="row g-4">
                 <!-- 2024 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2025</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Comprehensive financial performance and strategic overview</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2025</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Comprehensive financial performance and strategic overview</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
 
                 <!-- 2023 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2024</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Award-winning year performance and achievements</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2024</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Award-winning year performance and achievements</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
 
                 <!-- 2022 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2023</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Growth and expansion initiatives summary</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2023</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Growth and expansion initiatives summary</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
 
                 <!-- 2021 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2022</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Resilience and adaptation strategies</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2022</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Resilience and adaptation strategies</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
 
                 <!-- 2020 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2021</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Digital transformation initiatives</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2021</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Digital transformation initiatives</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
 
                 <!-- 2020 Report -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4c] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4c] rounded-full flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Annual Report 2020</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Market leadership and innovation</p>
+                        <button class="main-btn">
+                            <i data-lucide="download"></i>
+                            Download Report
+                        </button>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#545454] text-center mb-2">Annual Report 2020</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Market leadership and innovation</p>
-                    <button class="w-full bg-[#008c4c] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Download Report
-                    </button>
                 </div>
             </div>
         </div>

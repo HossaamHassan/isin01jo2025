@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,102 +28,116 @@
 <body class="bg-white arabic-version">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">الجوائز والتكريم</h1>
-                <p class="text-xl opacity-90">نحتفل بإنجازاتنا والتزامنا بالتميز في خدمات التأمين التكافلي.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">الجوائز والتقديرات</h1>
+                <p class="mb-0">نحتفل بإنجازاتنا والتزامنا بالتميز في خدمات التأمين التكافلي.</p>
             </div>
         </div>
     </section>
 
     <!-- Awards Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">جوائزنا وتكريمنا</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">نحتفل بإنجازاتنا والتزامنا بالتميز في خدمات التأمين التكافلي.</p>
+    <section class="awards-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">جوائزنا وتقديراتنا</h2>
+                <p class="text-gray-color mx-auto">نحتفل بإنجازاتنا والتزامنا بالتميز في خدمات التأمين التكافلي.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div class="row g-4">
                 <!-- Award 1: Best Takaful Insurance Company in Jordan 2024 -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <img src="./assets/images/1 copy copy copy.png" alt="جائزة 2024" class="max-h-full max-w-full object-contain">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">أفضل شركة تأمين تكافلي في الأردن لعام 2024</h3>
-                        <p class="text-[#008c4b] font-semibold">مجلة وورلد فاينانس</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/1 copy copy copy.png" alt="Award 2024" class="default-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">أفضل شركة تأمين تكافلي في الأردن لعام 2024</h3>
+                            <p class="text-primary-color text-center">مجلة وورلد فاينانس</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 2: Best Takaful Insurance Company in Jordan 2025 -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <img src="./assets/images/2 copy copy copy copy.png" alt="جائزة 2025" class="max-h-full max-w-full object-contain">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">أفضل شركة تأمين تكافلي في الأردن لعام 2025</h3>
-                        <p class="text-[#008c4b] font-semibold">مجلة يوروموني</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/2 copy copy copy copy.png" alt="Award 2025" class="default-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">أفضل شركة تأمين تكافلي في الأردن لعام 2025</h3>
+                            <p class="text-primary-color text-center">مجلة يوروموني</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 3: Innovation and Excellence Award 2017 -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <img src="./assets/images/3 copy copy copy.png" alt="جائزة 2017" class="max-h-full max-w-full object-contain">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">جائزة الابتكار والتميز في تطوير خدمات التأمين التكافلي – 2017</h3>
-                        <p class="text-[#008c4b] font-semibold">جوائز التميز المصرفي في الشرق الأوسط وشمال أفريقيا 2017</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/3 copy copy copy.png" alt="Award 2017" class="default-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">جائزة الابتكار والتميز في تطوير خدمات التأمين التكافلي – 2017</h3>
+                            <p class="text-primary-color text-center">جوائز التميز المصرفي في الشرق الأوسط وشمال أفريقيا 2017</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 4: Best Takaful Insurance Company in Jordan 2021 -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <img src="./assets/images/4 copy copy copy.png" alt="جائزة 2021" class="max-h-full max-w-full object-contain">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">أفضل شركة تأمين تكافلي في الأردن لعام 2021</h3>
-                        <p class="text-[#008c4b] font-semibold">مجلة وورلد فاينانس</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/4 copy copy copy.png" alt="Award 2021" class="default-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">أفضل شركة تأمين تكافلي في الأردن لعام 2021</h3>
+                            <p class="text-primary-color text-center">مجلة وورلد فاينانس</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 5: Best Takaful Insurance Company in Jordan 2022 -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <img src="./assets/images/5 copy.png" alt="جائزة 2022" class="max-h-full max-w-full object-contain">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">أفضل شركة تأمين تكافلي في الأردن لعام 2022</h3>
-                        <p class="text-[#008c4b] font-semibold">مجلة وورلد فاينانس</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/5 copy.png" alt="Award 2022" class="default-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">أفضل شركة تأمين تكافلي في الأردن لعام 2022</h3>
+                            <p class="text-primary-color text-center">مجلة وورلد فاينانس</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 6: Best Takaful Insurance Company in Jordan 2023 - PLACEHOLDER -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded">
-                            <p class="text-gray-500 text-center px-4">صورة الجائزة 6<br/>قريباً</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-light-gray-color rounded-1">
+                                <p class="text-gray-color text-center px-3 mb-0">صورة الجائزة 6<br/>قريباً</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">أفضل شركة تأمين تكافلي في الأردن لعام 2023</h3>
-                        <p class="text-[#008c4b] font-semibold">مجلة وورلد فاينانس</p>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">أفضل شركة تأمين تكافلي في الأردن لعام 2023</h3>
+                            <p class="text-primary-color text-center">مجلة وورلد فاينانس</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Award 7: Innovation and Excellence Award 2023 - PLACEHOLDER -->
-                <div class="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="h-80 flex items-center justify-center bg-gray-50 p-8">
-                        <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded">
-                            <p class="text-gray-500 text-center px-4">صورة الجائزة 7<br/>قريباً</p>
+                <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="awards-card d-flex flex-column flex-grow-1">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <div class="w-100 h-100 d-flex align-items-center justify-content-center bg-light-gray-color rounded-1">
+                                <p class="text-gray-color text-center px-3 mb-0">صورة الجائزة 7<br/>قريباً</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">جائزة الابتكار والتميز في تطوير خدمات التأمين التكافلي – 2023</h3>
-                        <p class="text-[#008c4b] font-semibold">جوائز التميز المصرفي في الشرق الأوسط وشمال أفريقيا 2023</p>
+                        <div class="p-4 text-center d-flex flex-column flex-grow-1">
+                            <h3 class="text-secondary-color mb-3 flex-grow-1">جائزة الابتكار والتميز في تطوير خدمات التأمين التكافلي – 2023</h3>
+                            <p class="text-primary-color text-center">جوائز التميز المصرفي في الشرق الأوسط وشمال أفريقيا 2023</p>
+                        </div>
                     </div>
                 </div>
             </div>

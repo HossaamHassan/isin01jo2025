@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,44 +28,44 @@
 <body class="bg-white">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-                <p class="text-xl opacity-90">Get in touch with our team for any inquiries, support, or assistance with your insurance needs.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">Contact Us</h1>
+                <p class="mb-0">Get in touch with our team for any inquiries, support, or assistance with your insurance needs.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Information -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section class="contact-info-section py-6 bg-white">
+        <div class="container">
+            <div class="row gy-5 gy-lg-0 gx-0 gx-lg-5">
                 <!-- Contact Form -->
-                <div>
-                    <h2 class="text-3xl font-bold text-[#545454] mb-6">Send us a Message</h2>
-                    <form class="space-y-6" id="contact-form">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent">
+                <div class="col-lg-6">
+                    <h2 class="text-secondary-color mb-4">Send us a Message</h2>
+                    <form class="d-flex flex-column gap-4" id="contact-form">
+                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-4">
+                            <div class="col-lg-6">
+                                <label class="text-gray-color mb-2">First Name *</label>
+                                <input type="text" required class="form-control">
                             </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent">
+                            <div class="col-lg-6">
+                                <label class="text-gray-color mb-2">Last Name *</label>
+                                <input type="text" required class="form-control">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent">
+                            <label class="text-gray-color mb-2">Email Address *</label>
+                            <input type="email" required class="form-control">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent">
+                            <label class="text-gray-color mb-2">Phone Number</label>
+                            <input type="tel" class="form-control">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                            <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent">
+                            <label class="text-gray-color mb-2">Subject *</label>
+                            <select required class="form-select">
                                 <option value="">Select a subject</option>
                                 <option value="general">General Inquiry</option>
                                 <option value="claims">Claims Support</option>
@@ -76,97 +76,102 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                            <textarea required rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008c4b] focus:border-transparent" placeholder="Please describe your inquiry in detail..."></textarea>
+                            <label class="text-gray-color mb-2">Message *</label>
+                            <textarea required rows="6" class="form-textarea" placeholder="Please describe your inquiry in detail..."></textarea>
                         </div>
-                        <button type="submit" class="bg-[#008c4b] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors">Send Message</button>
+                        <button type="submit" class="main-btn w-fit px-4 py-2">Send Message</button>
                     </form>
                 </div>
 
                 <!-- Branch Information -->
-                <div>
-                    <h2 class="text-3xl font-bold text-[#545454] mb-6">Get in Touch</h2>
-                    <div class="space-y-6">
+                <div class="col-lg-6">
+                    <h2 class="text-secondary-color mb-4">Get in Touch</h2>
+                    <div class="row gy-4">
                         <!-- Head Quarters -->
-                        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-[#008c4b] mb-4">Head Quarters</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="mailbox" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">P.O. Box: 941000 Amman 11194 – Jordan</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="phone" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Tel.: <a href="tel:06-5620151" class="text-[#008c4b] hover:underline">06-5620151</a></p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="printer" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Fax: 06-5621414</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="mail" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">E-mail: <a href="mailto:islamicinsurance@tiic.com.jo" class="text-[#008c4b] hover:underline">islamicinsurance@tiic.com.jo</a></p>
+                        <div class="col-12">
+                            <div class="branch-info-card p-4">
+                                <h3 class="text-primary-color mb-3">Head Quarters</h3>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="map-pin" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="mailbox" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">P.O. Box: 941000 Amman 11194 – Jordan</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="phone" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Tel.: <a href="tel:06-5620151" class="contact-info-link text-primary-color">06-5620151</a></p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="printer" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Fax: 06-5621414</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="mail" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">E-mail: <a href="mailto:islamicinsurance@tiic.com.jo" class="contact-info-link text-primary-color">islamicinsurance@tiic.com.jo</a></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- Shafa Badran Branch -->
-                        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-[#008c4b] mb-4">Shafa Badran</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Inside the premises of North Amman Licensing</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="phone" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Tel.: <a href="tel:06-5237751" class="text-[#008c4b] hover:underline">06-5237751</a></p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="printer" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Fax: 06-5237761</p>
+                        <div class="col-12">
+                            <div class="branch-info-card p-4">
+                                <h3 class="text-primary-color mb-3">Shafa Badran</h3>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="map-pin" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Inside the premises of North Amman Licensing</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="phone" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Tel.: <a href="tel:06-5237751" class="contact-info-link text-primary-color">06-5237751</a></p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="printer" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Fax: 06-5237761</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- Wihdat Branch -->
-                        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-[#008c4b] mb-4">Wihdat Branch</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Middle East Circle – (251) Al-Yarmouk Complex</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="phone" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Tel.: <a href="tel:06-4757699" class="text-[#008c4b] hover:underline">06-4757699</a></p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="printer" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Fax: 06-4741808</p>
+                        <div class="col-12">
+                            <div class="branch-info-card p-4">
+                                <h3 class="text-primary-color mb-3">Wihdat Branch</h3>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="map-pin" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Middle East Circle – (251) Al-Yarmouk Complex</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="phone" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Tel.: <a href="tel:06-4757699" class="contact-info-link text-primary-color">06-4757699</a></p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="printer" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Fax: 06-4741808</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- Marka Branch -->
-                        <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-[#008c4b] mb-4">Marka Branch</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Hamza Neighborhood - Ibn Ayash Street 351 - Next to Marka Licensing</p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="phone" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Tel.: <a href="tel:06-4881200" class="text-[#008c4b] hover:underline">06-4881200</a></p>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <i data-lucide="printer" class="w-5 h-5 text-[#008c4b] flex-shrink-0 mt-0.5"></i>
-                                    <p class="text-gray-700 text-sm">Fax: 06-4885346</p>
+                        <div class="col-12">
+                            <div class="branch-info-card p-4">
+                                <h3 class="text-primary-color mb-3">Marka Branch</h3>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="map-pin" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Hamza Neighborhood - Ibn Ayash Street 351 - Next to Marka Licensing</p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="phone" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Tel.: <a href="tel:06-4881200" class="contact-info-link text-primary-color">06-4881200</a></p>
+                                    </div>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i data-lucide="printer" class="info-icon text-primary-color mt-1"></i>
+                                        <p class="text-gray-color">Fax: 06-4885346</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

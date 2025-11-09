@@ -1,0 +1,21 @@
+.contact-info-section .branch-info-card {
+    background-color: var(--soft-white);
+    border-radius: var(--main-border-radius);
+    border: 1px solid var(--light-gray-color);
+}
+
+.contact-info-section .branch-info-card .info-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+}
+
+.contact-info-section .branch-info-card .contact-info-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-info-section .branch-info-card p {
+    text-align: start;
+}

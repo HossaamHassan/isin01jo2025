@@ -5,7 +5,7 @@ header {
 /* Navbar */
 .logo-img {
     display: inline-block;
-    width: 400px;
+    width: 220px;
 }
 
 /*====================================*/
@@ -22,7 +22,9 @@ header {
 .dropdown-menu-news {
     border-radius: var(--main-border-radius) !important;
     border: var(--black-border-op-30);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     position: absolute;
+    background-color: var(--white-color);
     margin-top: 0;
     z-index: 1090;
     display: none;
@@ -119,7 +121,7 @@ header {
 }
 
 @media (min-width: 992px) {
-    .navbar .nav-container {
+    .navbar .navbar-container {
         padding-inline: 0;
     }
 }
@@ -180,6 +182,10 @@ header {
     border: none !important;
 }
 
+.navbar-expand-xl .fa-chevron-down {
+    display: inline-block;
+}
+
 .custom-dropdown {
     font-size: 1rem;
 }
@@ -193,7 +199,7 @@ header {
     transform: rotate(180deg);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1200px) {
     .custom-dropdown {
         width: 85%;
         font-size: 1.3rem;
@@ -216,37 +222,85 @@ header {
         font-size: 1rem;
     }
 
-    .mobile-menu-container {
+    .navbar-expand-xl {
         border-top: 1px solid rgb(45 41 38 / 20%);
-        padding-top: 0.75rem;
+        padding-top: 1rem;
     }
 
-    .dropdown-menu-news a {
+    .navbar-expand-xl .fa-chevron-down {
+        display: none;
+    }
+
+    .custom-nav .dropdown-menu-news {
+        display: none;
+        padding: 0;
+
+    }
+
+    .custom-nav .dropdown-menu-news a {
         padding-inline-start: 2.2rem;
         padding-block: .1rem;
     }
 
-    .dropdown-menu-news.show {
+    .custom-nav .dropdown-menu-news.show {
         display: block;
         width: 100% !important;
     }
+}
 
-    .dropdown-menu-news:not(.show) {
-        display: none;
+.custom-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 0;
+}
+
+@media (max-width: 1200px) {
+    .custom-nav {
+        gap: 0;
     }
 }
 
+.custom-nav a {
+    display: block;
+    white-space: nowrap;
+    font-size: .9rem;
+    width: fit-content;
+    color: var(--black-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding-block: 0;
+    gap: 5px;
+}
 
+.custom-nav a:hover {
+    color: var(--primary-color);
+}
+
+.navbar-toggler {
+    padding: 0px;
+}
 
 @media (max-width: 1200px) {
 
-    .dropdown-menu-news {
+    .dropdown-menu-news,
+    .custom-white-dropdown {
         position: relative !important;
         top: 0 !important;
         opacity: unset !important;
     }
 
-    .dropdown-menu-news ul {
+    .dropdown-menu-news,
+    .custom-white-dropdown {
+        position: relative;
+        display: block;
+        width: 100% !important;
+        background-color: var(--white-color) !important;
+        border: unset !important;
+        top: 0;
+    }
+
+    .dropdown-menu-news ul,
+    .custom-white-dropdown ul {
         position: relative !important;
         display: block !important;
         margin-top: 0px;
@@ -256,7 +310,8 @@ header {
         background-color: rgb(122 17 41 / 5%);
     }
 
-    .dropdown-menu-news a {
+    .dropdown-menu-news a,
+    .custom-white-dropdown a {
         color: var(--secondary-color);
         padding: 0.5rem;
     }
@@ -289,8 +344,8 @@ header {
 /* Search Container */
 .searchBarOpen {
     position: fixed;
-    background: var(--primary-color-op-30);
-    backdrop-filter: blur(5px);
+    background: var(--light-blue-bg-op-30);
+    backdrop-filter: blur(2px);
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -307,7 +362,7 @@ header {
 }
 
 .searchBarOpen--input {
-    background: white;
+    background: var(--white-color);
     border-radius: 50px;
     padding: .5rem;
     max-width: 600px;
@@ -320,13 +375,13 @@ header {
 
 .searchBarOpen--input input {
     padding: 0 .8rem !important;
-    caret-color: black;
+    caret-color: var(--black-color);
     border-radius: 50px;
     border: none;
     font-size: 1rem;
     background: transparent;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid var(--black-color);
+    color: var(--black-color);
     flex: 1;
     border: 0;
 }
@@ -345,7 +400,7 @@ header {
     align-self: flex-start;
     padding: 0.8rem 1.5rem;
     background: var(--primary-color);
-    color: white;
+    color: var(--white-color);
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -356,7 +411,7 @@ header {
 }
 
 .searchBarOpen--input button:hover {
-    background: var(--primary-color-op-30);
+    background: var(--light-red-color-op-20);
 }
 
 .searchBarOpen--input button:hover i {
@@ -367,10 +422,11 @@ header {
     position: absolute;
     top: 25px;
     right: 30px;
-    color: white;
+    font-size: 1rem;
+    color: var(--white-color);
     background-color: var(--primary-color);
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.5rem ;
+    border-radius: var(--main-border-radius);
+    padding: 0.1rem 0.5rem ;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
@@ -384,29 +440,30 @@ header {
     transform: scale(1.2);
 }
 
-.nav-container .mobile.logo-img {
+.navbar-container .mobile.logo-img {
     display: none;
 }
 
-@media (max-width: 1279.98px) {
-    .nav-container {
+@media (max-width: 1200px) {
+    .navbar-container {
         max-width: 100%;
     }
 
-    .nav-container .search-btn span {
+    .navbar-container .search-btn span,
+    .custom-dropdown i {
         display: none;
     }
 
-    .nav-container .logo-img {
+    .navbar-container .logo-img {
         display: none;
     }
 
-    .nav-container .mobile.logo-img {
-        width: 250px !important;
+    .navbar-container .mobile.logo-img {
+        width: 200px !important;
         display: block;
     }
 
-    .nav-container {
+    .navbar-container {
         padding: 0;
     }
 
@@ -414,8 +471,12 @@ header {
         padding-inline-start: 10px;
     }
 
-    .nav-container .search-btn i {
-        color: var(--primary-color);
+    .navbar-container .search-btn i {
+        color: var(--secondary-color);
+    }
+
+    .navbar-container .language-toggle-btn span {
+        color: var(--secondary-color);
     }
 
     .navbar ul li {
@@ -428,18 +489,22 @@ header {
 }
 
 @media(max-width: 767.98px) {
-    .nav-container .mobile.logo-img {
-        width: 200px !important;
+    .navbar-container .mobile.logo-img {
+        width: 150px !important;
         display: block;
     }
+}
+
+@media(max-width: 575.98px) {
+
+    .navbar-container .mobile.logo-img {
+        width: 120px !important;
+    }
+
 }
 
 @media(max-width: 425.98px) {
     .searchBarOpen--input input {
         font-size: 0.8rem;
-    }
-
-    .nav-container .mobile.logo-img {
-        width: 180px !important;
     }
 }

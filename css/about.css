@@ -1,0 +1,43 @@
+/* Company Overview Section */
+.company-overview-section .image-col .image-container {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+}
+
+/* Mission Vision Section */
+.mission-vision-section {
+    background-color: var(--soft-white);
+}
+
+.mission-vision-section .mission-vision-card {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--main-border-radius);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mission-vision-section .mission-vision-card .card-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--rounded-circle);
+    background-color: var(--primary-color);
+}
+
+.mission-vision-section .mission-vision-card .card-icon svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Medical Network Section */
+.medical-network-section {
+    background-color: var(--white-color);
+    padding: 5rem 0;
+}
+
+.medical-network-section .medical-network-card {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 100%;
+}

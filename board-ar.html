@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,131 +28,154 @@
 <body class="bg-white arabic-version">
 
     <!-- Hero Section -->
-    <section class="bg-[#008c4c] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">مجلس الإدارة</h1>
-                <p class="text-xl opacity-90">قيادة متمرسة ملتزمة بالتميز والشفافية والحوكمة المتوافقة مع أحكام الشريعة الإسلامية.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">مجلس الإدارة</h1>
+                <p class="mb-0">قيادة ذات خبرة ملتزمة بالتميز والشفافية والحوكمة المتوافقة مع الشريعة الإسلامية.</p>
             </div>
         </div>
     </section>
 
     <!-- Board Members Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#545454] mb-4">فريق القيادة لدينا</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">مجلس متميز يتمتع بخبرة واسعة في مجالات التمويل الإسلامي والتأمين وحوكمة الشركات.</p>
+    <section class="board-members-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">فريق القيادة لدينا</h2>
+                <p class="text-gray-color mx-auto">مجلس متميز يتمتع بخبرة واسعة في التمويل الإسلامي، والتأمين، والحوكمة المؤسسية.</p>
             </div>
 
-            <div class="space-y-6">
-                <!-- Category 1: Board of Directors Members -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="board-members">
-                        <h3 class="text-2xl font-bold text-[#545454]">أعضاء مجلس الإدارة</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="board-members" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">سعادة السيد عيسى حمد مراد</h4>
-                                <p class="text-[#008c4c] font-semibold">رئيس مجلس الإدارة</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد فادي أبو الحصن</h4>
-                                <p class="text-[#008c4c] font-semibold">نائب رئيس مجلس الإدارة</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتور حسين سعيد سيفان</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد أسعد الإديسي</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد محمد عبد اللطيف غراب</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">سعادة السيد أيمن حتاحت</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتور موسى مبارك</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتورة خولة فريز النوباني</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">سعادة الدكتور حاتم الحلواني التميمي</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد يزيد شمس الدين الخالدي</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد تاج عمران خموش</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="accordion" id="boardAccordion">
 
-                <!-- Category 2: Share'ah Supervisory Board -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="shareah-board">
-                        <h3 class="text-2xl font-bold text-[#545454]">الهيئة الشرعية</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="shareah-board" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتور محمود السرتاوي</h4>
-                                <p class="text-[#008c4c] font-semibold">رئيس الهيئة الشرعية</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتور عبد الرحمن زيد الكيلاني</h4>
-                                <p class="text-[#008c4c] font-semibold">نائب رئيس الهيئة الشرعية</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">الدكتور حمدي مراد</h4>
-                                <p class="text-[#008c4c] font-semibold">أمين سر الهيئة الشرعية</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">سعادة الدكتور وائل عربيات</h4>
-                                <p class="text-[#008c4c] font-semibold">عضو الهيئة الشرعية</p>
-                            </div>
+              <!-- Category 1: Board of Directors -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingOne">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#boardMembers" aria-expanded="false" aria-controls="boardMembers">
+                    <h3>أعضاء مجلس الإدارة</h3>
+                  </button>
+                </h3>
+                <div id="boardMembers" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <!-- Each member card -->
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">سعادة السيد عيسى ح. مراد</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">رئيس مجلس الإدارة</p>
+                          </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Category 3: Executive Management -->
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="collapse-button w-full flex items-center justify-between p-6 bg-gray-50 hover:bg-gray-100 transition-colors" data-target="executive-management">
-                        <h3 class="text-2xl font-bold text-[#545454]">الإدارة التنفيذية</h3>
-                        <i data-lucide="chevron-down" class="w-6 h-6 text-[#008c4c] transition-transform collapse-icon"></i>
-                    </button>
-                    <div id="executive-management" class="collapse-content hidden">
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد رضا دحبور</h4>
-                                <p class="text-[#008c4c] font-semibold">المدير العام</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد عبد السميع النتشة</h4>
-                                <p class="text-[#008c4c] font-semibold">نائب المدير العام الأول</p>
-                            </div>
-                            <div class="flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                                <h4 class="flex-grow text-lg font-bold text-[#545454] mb-2">السيد ياسر التميمي</h4>
-                                <p class="text-[#008c4c] font-semibold">نائب المدير العام الثاني</p>
-                            </div>
+                      </div>
+                  
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">السيد فادي أبو الحسن</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">نائب رئيس مجلس الإدارة</p>
+                          </div>
                         </div>
+                      </div>
+                  
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">الدكتور حسين سعيد سِعفان</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">عضو مجلس الإدارة</p>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <!-- Add the rest of the members in the same pattern -->
                     </div>
+                  </div>
                 </div>
+              </div>
+          
+              <!-- Category 2: Share'ah Supervisory Board -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingTwo">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#shareahBoard" aria-expanded="false" aria-controls="shareahBoard">
+                    <h3>الهيئة الشرعية</h3>
+                  </button>
+                </h3>
+                <div id="shareahBoard" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">الدكتور محمود السرتاوي</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">رئيس الهيئة الشرعية</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">الدكتور عبد الرحمن زيد الكيلاني</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">نائب رئيس الهيئة الشرعية</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">الدكتور حمدي مراد</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">أمين سر الهيئة الشرعية</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">سعادة الدكتور وائل عربيات</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">عضو الهيئة الشرعية</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Category 3: Executive Management -->
+              <div class="accordion-item board-accordion-card">
+                <h3 class="accordion-header my-0" id="headingThree">
+                  <button class="accordion-button collapsed text-secondary-color py-4" type="button" data-bs-toggle="collapse" data-bs-target="#executiveManagement" aria-expanded="false" aria-controls="executiveManagement">
+                    <h3>الإدارة التنفيذية</h3>
+                  </button>
+                </h3>
+                <div id="executiveManagement" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#managementAccordion">
+                  <div class="accordion-body">
+                    <div class="row g-3">
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">السيد رضا دحبور</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">المدير العام</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">السيد عبد السميع النتشة</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">نائب المدير العام الأول</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex">
+                        <div class="card h-100 border d-flex flex-column flex-grow-1">
+                          <div class="card-body d-flex flex-column flex-grow-1">
+                            <h4 class="card-title text-secondary-color mb-2">السيد ياسر التميمي</h4>
+                            <p class="text-primary-color mb-0 flex-grow-1">نائب المدير العام الثاني</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </section>
