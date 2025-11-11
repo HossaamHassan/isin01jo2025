@@ -140,6 +140,7 @@ header {
         right: 0;
         width: 100%;
         background-color: var(--white-color);
+        box-shadow: var(--bs-box-shadow-sm);
         z-index: 11;
         max-height: 245px;
         overflow-y: scroll;
