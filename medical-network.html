@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -27,142 +27,394 @@
 </head>
 <body class="bg-white">
 
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">Home</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    About Us
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">Local News</a></li>
+                                        <li><a href="/news/world">World News</a></li>
+                                        <li><a href="/news/sports">Sports</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">Our Work</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">Projects</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">client &
+                                    Partners</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">Join Us</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            Search
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="Search Here"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Medical Network</h1>
-                <p class="text-xl opacity-90">Explore our extensive medical network spanning across Jordan with over 3,000 accredited medical providers.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">Medical Network</h1>
+                <p class="mb-0">Explore our extensive medical network spanning across Jordan with over 3,000 accredited medical providers.</p>
             </div>
         </div>
     </section>
 
     <!-- Medical Categories -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <section class="medical-categories-section py-6 bg-white">
+        <div class="container">
+            <div class="row g-4">
                 <!-- Physiotherapy Centers -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="activity" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="activity" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Physiotherapy Centers</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Specialized rehabilitation and therapy services</p>
+                        <button data-provider-type="physiotherapy" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Physiotherapy Centers</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Specialized rehabilitation and therapy services</p>
-                    <button data-provider-type="physiotherapy" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Doctors -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="stethoscope" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Doctors</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Qualified medical professionals across specialties</p>
+                        <button data-provider-type="doctors" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Doctors</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Qualified medical professionals across specialties</p>
-                    <button data-provider-type="doctors" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Dental -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="smile" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="smile" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Dental</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Complete dental care and oral health services</p>
+                        <button data-provider-type="dental" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Dental</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Complete dental care and oral health services</p>
-                    <button data-provider-type="dental" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Pharmacies -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="pill" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="pill" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Pharmacies</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Trusted pharmacies for all medication needs</p>
+                        <button data-provider-type="pharmacies" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Pharmacies</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Trusted pharmacies for all medication needs</p>
-                    <button data-provider-type="pharmacies" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Laboratories -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="flask-conical" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="flask-conical" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Laboratories</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Advanced diagnostic and testing facilities</p>
+                        <button data-provider-type="laboratories" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Laboratories</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Advanced diagnostic and testing facilities</p>
-                    <button data-provider-type="laboratories" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Radiology -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="scan" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="scan" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Radiology</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Modern imaging and diagnostic radiology</p>
+                        <button data-provider-type="radiology" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Radiology</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Modern imaging and diagnostic radiology</p>
-                    <button data-provider-type="radiology" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Optics -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="glasses" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="glasses" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Optics</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Eye care specialists and optical services</p>
+                        <button data-provider-type="optics" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Optics</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Eye care specialists and optical services</p>
-                    <button data-provider-type="optics" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
 
                 <!-- Hospitals -->
-                <div class="flex flex-col bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#008c4b] hover:shadow-lg transition-all">
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-20 h-20 bg-[#008c4b] rounded-full flex items-center justify-center">
-                            <i data-lucide="building-2" class="w-10 h-10 text-white"></i>
+                <div class="col-md-6 col-lg-4 col-xxl-3 d-flex">
+                    <div class="category-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <div class="icon-container bg-primary-color rounded-pill d-flex justify-content-center align-items-center">
+                                <i data-lucide="building-2" class="text-white"></i>
+                            </div>
                         </div>
+                        <h3 class="text-secondary-color text-center mb-2">Hospitals</h3>
+                        <p class="text-center text-gray-color mb-4 flex-grow-1">Comprehensive hospital care and facilities</p>
+                        <button data-provider-type="hospitals" class="provider-btn main-btn">
+                            <i data-lucide="search"></i>
+                            View Providers
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-[#545454] text-center mb-2">Hospitals</h3>
-                    <p class="text-center text-gray-600 mb-6 flex-grow">Comprehensive hospital care and facilities</p>
-                    <button data-provider-type="hospitals" class="provider-btn w-full bg-[#008c4b] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#007a42] transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                        View Providers
-                    </button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">The Islamic Insurance</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>Islamic Insurance Company is the first Islamic Takaful insurance company in Jordan, founded in 1996. It operates in accordance with the provisions of Islamic Sharia.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">Takaful Products</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> Our Vision</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href=""> Board of Directors </a></li>
+                        <li class="pb-2 mb-0"><a href="">Management Team </a></li>
+                        <li class="pb-2 mb-0"><a href=""> Products and Services </a></li>
+                        <li class="pb-2 mb-0"><a href="">Pricing and Fees List </a></li>
+                        <li class="pb-2 mb-0"><a href="">Branches</a></li>
+                        <li class="pb-2 mb-0"><a href="">Corporate Governance</a></li>
+                        <li class="pb-2 mb-0"><a href="">Central Bank of Jordan
+                                Instructions </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">View All</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">Useful Links</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> FAQs </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">Customer Complaints Channels </a></li>
+                        <li class="pb-2 mb-0"><a href=""> Apply a Complaint</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Vacancies</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Job Application</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Site Map</a></li>
+                        <li class="pb-2 mb-0"><a href=""> Marketing campaigns
+                                and rearwards</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">Contact Us</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Phone:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Wasfi Al-Tal Street (Al Gardens) – Islamic Insurance Complex (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>P.O.Box (941000) Amman 11194 – Jordan</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>Medical Approvals:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 Developed by dot jo. All rights reserved.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         lucide.createIcons();

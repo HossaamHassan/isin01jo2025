@@ -7,6 +7,7 @@
     --black-color: #000;
     --soft-white: #f9fafb;
     --gray-color: #374151;
+    --dark-gray-color: #1f2937;
     --silver-color: #6b7280;
     --light-gray-color: #d1d5db;
     --main-font-family: 'Rubik';
@@ -214,6 +215,8 @@ ul {
     padding: 0.75rem 1.25rem;
     border-radius: var(--rounded-circle);
     border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,6 +239,8 @@ ul {
     padding: 0.75rem 1.25rem;
     border-radius: var(--rounded-circle);
     border: 1px solid var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,6 +296,10 @@ ul {
 
 .text-gray-color {
     color: var(--gray-color);
+}
+
+.text-dark-gray {
+    color: var(--dark-gray-color);
 }
 
 .text-silver-color {
@@ -459,4 +468,27 @@ ul {
 .section-header p {
     max-width: 672px;
     text-align: center;
+}
+
+/* Pagination */
+.pagination .page-item .page-link {
+    border-radius: var(--main-border-radius);
+    color: var(--gray-color);
+    background-color: var(--soft-white);
+    padding: 0.5rem 1rem;
+} 
+
+.active>.page-link, .page-link.active {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    color: var(--white-color) !important;
+}
+
+.disabled>.page-link, .page-link.disabled {
+    color: var(--silver-color) !important;
+}
+
+.pagination .prev-btn .page-link,
+.pagination .next-btn .page-link {
+    padding: 0.1rem 0.5rem;
 }

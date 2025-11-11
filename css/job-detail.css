@@ -1,0 +1,98 @@
+#loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+#error .error-container {
+    max-width: 672px;
+}
+
+#error .error-container svg {
+    width: 4rem;
+    height: 4rem;
+}
+
+.arabic-version #job-content .breadcrumb-item+.breadcrumb-item {
+    padding-right: 0.5rem;
+    padding-left: 0;
+}
+
+#job-content .breadcrumb-item+.breadcrumb-item::before {
+    content: '›';
+    font-size: 1.2rem;
+}
+
+.arabic-version #job-content .breadcrumb-item+.breadcrumb-item::before {
+    float: right;
+    padding-left: 0.5rem;
+    padding-right: 0;
+}
+
+#job-content .breadcrumb-item a:hover {
+    color: var(--primary-color);
+}
+
+.job-header .back-btn:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.job-header .back-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.job-header .job-info svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@media (min-width: 991.98px) {
+    .job-header .job-action-buttons {
+        width: 288px;
+    }
+}
+
+.job-header .job-action-buttons .outlined-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.job-details-section .Job-section-card ul {
+    padding-inline-start: 1rem;
+}
+
+.job-details-section .sidebar .apply-card {
+    top: 6rem;
+}
+
+.job-details-section .sidebar .apply-card .view-all-btn:hover,
+.job-details-section .sidebar .company-info-card .learn-more-btn:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.job-details-section .sidebar .company-info-card .learn-more-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.similar-positions-section #similar-jobs .job-card {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.similar-positions-section #similar-jobs .job-card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.similar-positions-section #similar-jobs .job-card .job-card-content {
+    flex: 1 1 0%;
+}
+
+.similar-positions-section .job-card .job-card-content .card-icons-container svg {
+    width: 1rem;
+    height: 1rem;
+}

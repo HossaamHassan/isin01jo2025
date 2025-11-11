@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -27,132 +27,366 @@
 </head>
 <body class="bg-white arabic-version">
 
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">سياسة الجودة</h1>
-                <p class="text-xl opacity-90">التزامنا بتقديم خدمات تأمين تكافلي استثنائية من خلال التحسين المستمر والتميز.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">سياسة الجودة</h1>
+                <p class="mb-0">التزامنا بتقديم خدمات تأمين تكافلي استثنائية من خلال التحسين المستمر والتميز.</p>
             </div>
         </div>
     </section>
 
     <!-- Quality Statement -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-5xl mx-auto">
-                <div class="bg-gray-50 p-10 rounded-lg">
-                    <h2 class="text-3xl font-bold text-[#545454] mb-8 text-center">بيان الجودة الخاص بنا</h2>
+    <section class="quality-statement-section py-6 bg-white">
+        <div class="container">
+            <div class="quality-statement-container mx-auto">
+                <div class="bg-soft-white p-5 rounded-3">
+                    <h2 class="text-secondary-color mb-4 pb-2 text-center">بيان الجودة لدينا</h2>
 
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        شركة التأمين الإسلامية، شركة مساهمة عامة محدودة أردنية تأسست عام 1996. تقدم شركة التأمين الإسلامية خدماتها التأمينية وأنشطتها كافة وفق أحكام ومبادئ الشريعة الإسلامية. وتسعى باستمرار إلى رفع كفاءة نظامها الإداري والفني مع الحفاظ على رضا العملاء وتطوير الخدمات التأمينية المقدمة لمجتمع الشركة وعملائها من خلال تطبيق نظام إدارة جودة قوي (ISO 9001: 2015).
+                    <p class="text-gray-color mb-4">
+                        شركة التأمين الإسلامية، شركة مساهمة عامة محدودة أردنية تأسست عام 1996. تعد شركة التأمين الإسلامية مزودًا لخدمات التأمين الإسلامي، حيث تقدم خدماتها وجميع أنشطتها وفقًا لأحكام ومبادئ الشريعة الإسلامية. تسعى الشركة باستمرار إلى رفع كفاءة نظامها الإداري والفني مع الحفاظ على رضا العملاء وتطوير الخدمات التأمينية المقدمة لمجتمع الشركة وعملائها من خلال تطبيق نظام إدارة جودة متين (ISO 9001:2015).
                     </p>
 
-                    <h3 class="text-2xl font-bold text-[#545454] mb-6 mt-8">تلتزم شركة التأمين الإسلامية بتحقيق الأهداف التالية:</h3>
+                    <h3 class="text-secondary-color mb-4 mt-4 pt-2">تلتزم شركة التأمين الإسلامية بتحقيق الأهداف التالية:</h3>
 
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <ul class="purposes-list d-flex flex-column gap-3 text-gray-color">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">توفير بديل شرعي للتأمين التجاري لتلبية احتياجات شريحة كبيرة من المجتمع ممن لا يتعاملون مع التأمين التجاري.</span>
+                            <span>تقديم بديل شرعي عن التأمين التجاري لتلبية احتياجات شريحة واسعة من المجتمع الذين لا يتعاملون مع التأمين التجاري.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">استكمال الدوائر الاقتصادية الإسلامية إلى جانب البنوك الإسلامية والمؤسسات المالية الإسلامية الأخرى.</span>
+                            <span>استكمال الدائرة الاقتصادية الإسلامية مع البنوك الإسلامية والمؤسسات المالية الإسلامية الأخرى.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">المساهمة في بناء وازدهار الاقتصاد الوطني من خلال توفير مشاريع اقتصادية وتطوير واستثمار الأموال بوسائل مشروعة.</span>
+                            <span>المساهمة في بناء وازدهار الاقتصاد الوطني من خلال تنفيذ المشاريع الاقتصادية وتطوير واستثمار الأموال بوسائل شرعية.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">نشر مفهوم وثقافة التأمين الإسلامي داخلياً وخارجياً، ورفع الوعي التأميني في المجتمع المحلي من خلال المحاضرات وورش العمل ونشر الكتب حول موضوع التأمين الإسلامي.</span>
+                            <span>نشر مفهوم وثقافة التأمين الإسلامي داخليًا وخارجيًا، ورفع الوعي التأميني في المجتمع المحلي من خلال المحاضرات والورش ونشر الكتب حول موضوع التأمين الإسلامي.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">المساهمة في تأسيس وإدارة شركات تأمين وإعادة تأمين إسلامية حديثة الإنشاء.</span>
+                            <span>المساهمة في تأسيس وإدارة شركات التأمين وإعادة التأمين الإسلامية الجديدة.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">توفير التدريب المستمر لرفع كفاءة العاملين وتطوير مهاراتهم الإدارية والفنية.</span>
+                            <span>توفير التدريب المستمر لرفع كفاءة العاملين وتطوير مهاراتهم الإدارية والفنية.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">رفع وعي الموظفين بالالتزام بسياسة إدارة الجودة الخاصة بشركة التأمين الإسلامية (ISO 9001: 2015).</span>
+                            <span>تعزيز وعي موظفينا بالالتزام بسياسة إدارة الجودة لشركة التأمين الإسلامية (ISO 9001:2015).</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">تقديم خدمات عالية الجودة لتحقيق رضا العملاء وفقاً لأحكام ومبادئ الشريعة الإسلامية.</span>
+                            <span>تقديم خدمات عالية الجودة لتحقيق رضا العملاء وفقًا لأحكام ومبادئ الشريعة الإسلامية.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">التطوير المستمر لنظام إدارة الجودة المطبق من خلال تحديد الأهداف ومراجعتها باستمرار وزيادة جودة منتجاتنا.</span>
+                            <span>التطوير المستمر لنظام إدارة الجودة لدينا من خلال وضع الأهداف ومراجعتها باستمرار وزيادة جودة منتجاتنا.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">فحص البيئة الداخلية والخارجية، وتحليل المخاطر والفرص لضمان تقديم خدماتنا بما يتوافق مع متطلبات العملاء وتحقيق أداء محسن بشكل مستمر وتحقيق أفضل العوائد للمساهمين في الشركة.</span>
+                            <span>دراسة البيئة الداخلية والخارجية وتحليل المخاطر والفرص لضمان تقديم خدماتنا وفق متطلبات العملاء وتحسين الأداء بشكل مستمر لتحقيق أفضل العوائد للمساهمين في الشركة.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#008c4b] mt-1.5 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <li class="d-flex align-items-start gap-3">
+                            <span class="text-primary-color flex-shrink-0">
+                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </span>
-                            <span class="text-lg leading-relaxed">تحقيق أهداف الجودة لدينا ومراجعتها باستمرار وفقاً لإجراءات مراقبة الجودة.</span>
+                            <span>تحقيق أهداف الجودة لدينا ومراجعتها باستمرار وفقًا لإجراءات التحكم بالجودة.</span>
                         </li>
                     </ul>
 
-                    <div class="mt-12 pt-8 border-t border-gray-300">
+                    <div class="mt-5 pt-4 border-top">
                         <div class="text-center">
-                            <p class="text-xl font-bold text-[#545454] mb-1">رضا أمين دعبور</p>
-                            <p class="text-lg text-gray-700 mb-1">المدير العام</p>
-                            <p class="text-lg text-gray-700 mb-1">شركة التأمين الإسلامية</p>
-                            <p class="text-lg text-gray-700">عمان - الأردن</p>
+                            <h3 class="text-secondary-color text-center mb-1">رضا أمين دحبور</h3>
+                            <p class="text-gray-color text-center mb-1">المدير العام</p>
+                            <p class="text-gray-color text-center mb-1">شركة التأمين الإسلامية</p>
+                            <p class="text-gray-color text-center mb-0">عمّان - الأردن</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         lucide.createIcons();

@@ -1,0 +1,15 @@
+.products-section .products-card {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.products-section .products-card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.products-section .products-card p {
+    text-align: start;
+}

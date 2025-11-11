@@ -1,0 +1,12 @@
+.quality-statement-section .quality-statement-container {
+    max-width: 1024px;
+}
+
+.quality-statement-section .quality-statement-container .purposes-list {
+    padding-inline-start: 0;
+}
+
+.quality-statement-section .quality-statement-container .purposes-list .check-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}

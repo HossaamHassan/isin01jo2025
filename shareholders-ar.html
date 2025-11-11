@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -27,260 +27,530 @@
 </head>
 <body class="bg-white arabic-version">
 
-    <section class="bg-[#008c4b] text-white py-20">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20">
-        <div class="max-w-3xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">علاقات المساهمين</h1>
-            <p class="text-xl opacity-90">تواصل شفاف وعلاقات قوية مع مساهمينا ومستثمرينا الكرام.</p>
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
         </div>
     </div>
-</section>
+    <!-- End Navbar -->
 
-<!-- Financial Highlights -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-[#545454] mb-4">الملخص المالي لعام 2025</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">أداء مالي قوي يعكس التزامنا بالنمو المستدام وتعزيز قيمة المساهمين.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="flex flex-col text-center p-6 bg-gray-50 rounded-lg">
-                <div class="text-3xl font-bold text-[#008c4b] mb-2">2.8 مليون</div>
-                <div class="text-gray-600 text-sm flex-grow">الأرباح قبل الضريبة (دينار أردني)</div>
-                <div class="text-green-600 text-xs mt-1">↑ نمو بنسبة 70%</div>
-            </div>
-            <div class="flex flex-col text-center p-6 bg-gray-50 rounded-lg">
-                <div class="text-3xl font-bold text-[#008c4b] mb-2">27.7 مليون</div>
-                <div class="text-gray-600 text-sm flex-grow">الأقساط المكتتبة (دينار أردني)</div>
-                <div class="text-green-600 text-xs mt-1">↑ زيادة بنسبة 14%</div>
-            </div>
-            <div class="flex flex-col text-center p-6 bg-gray-50 rounded-lg">
-                <div class="text-3xl font-bold text-[#008c4b] mb-2">56 مليون</div>
-                <div class="text-gray-600 text-sm flex-grow">إجمالي الأصول (دينار أردني)</div>
-                <div class="text-green-600 text-xs mt-1">↑ نمو بنسبة 8%</div>
-            </div>
-            <div class="flex flex-col text-center p-6 bg-gray-50 rounded-lg">
-                <div class="text-3xl font-bold text-[#008c4b] mb-2">150%</div>
-                <div class="text-gray-600 text-sm flex-grow">كفاية رأس المال</div>
-                <div class="text-green-600 text-xs mt-1">أعلى من المتطلبات التنظيمية</div>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">علاقات المساهمين</h1>
+                <p class="mb-0">تواصل شفاف وعلاقات قوية مع مساهمينا ومستثمرينا الكرام.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Financial Reports -->
-<section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-[#545454] mb-4">التقارير والوثائق المالية</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">اطلع على أحدث تقاريرنا المالية، والبيانات السنوية، والتقارير التنظيمية.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Annual Report 2024 -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+    <!-- Financial Highlights -->
+    <section class="financial-highlights-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-primary-color mb-3">الملامح المالية لعام 2025</h2>
+                <p class="text-gray-color mx-auto">أداء مالي قوي يعكس التزامنا بالنمو المستدام وتعزيز قيمة المساهمين.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="d-flex flex-column text-center p-4 bg-soft-white rounded-3">
+                        <h2 class="text-primary-color mb-2">2.8 مليون</h2>
+                        <p class="text-gray-color text-center flex-grow-1 mb-0">الأرباح قبل الضريبة (دينار أردني)</p>
+                        <span class="text-primary-color mt-1">↑ نمو بنسبة 70%</span>
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="d-flex flex-column text-center p-4 bg-soft-white rounded-3">
+                        <h2 class="text-primary-color mb-2">27.7 مليون</h2>
+                        <p class="text-gray-color text-center flex-grow-1 mb-0">الأقساط المكتتبة (دينار أردني)</p>
+                        <span class="text-primary-color mt-1">↑ زيادة بنسبة 14%</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="d-flex flex-column text-center p-4 bg-soft-white rounded-3">
+                        <h2 class="text-primary-color mb-2">56 مليون</h2>
+                        <p class="text-gray-color text-center flex-grow-1 mb-0">إجمالي الأصول (دينار أردني)</p>
+                        <span class="text-primary-color mt-1">↑ نمو بنسبة 8%</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="d-flex flex-column text-center p-4 bg-soft-white rounded-3">
+                        <h2 class="text-primary-color mb-2">150%</h2>
+                        <p class="text-gray-color text-center flex-grow-1 mb-0">كفاية رأس المال</p>
+                        <span class="text-primary-color mt-1">أعلى من المتطلبات التنظيمية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Reports -->
+    <section class="financial-reports-section py-6 bg-soft-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">التقارير والوثائق المالية</h2>
+                <p class="text-gray-color mx-auto">يمكنك الوصول إلى أحدث التقارير المالية، والبيانات السنوية، والإفصاحات التنظيمية.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Annual Report 2024 -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="file-text" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">التقرير السنوي 2024</h3>
+                                <p class="text-gray-color mb-0">PDF • 2.5 ميجابايت</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">تقرير سنوي شامل يغطي الأداء المالي، والاستراتيجية التجارية، وآفاق السوق.</p>
+                        <button class="main-btn py-2 px-4">تحميل</button>
+                    </div>
+                </div>
+
+                <!-- Q2 2025 Results -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="trending-up" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">نتائج الربع الثاني 2025</h3>
+                                <p class="text-gray-color mb-0">PDF • 1.8 ميجابايت</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">نتائج مالية فصلية تُظهر أداءً قويًا ونموًا في جميع قطاعات الأعمال.</p>
+                        <button class="main-btn py-2 px-4">تحميل</button>
+                    </div>
+                </div>
+
+                <!-- Corporate Governance -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="shield-check" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">دليل الحوكمة</h3>
+                                <p class="text-gray-color mb-0">PDF • 3.2 ميجابايت</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">إطار الحوكمة المؤسسية والسياسات التي تضمن الشفافية والمساءلة.</p>
+                        <button class="main-btn py-2 px-4">تحميل</button>
+                    </div>
+                </div>
+
+                <!-- Audited Financials -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="calculator" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">البيانات المالية المدققة 2024</h3>
+                                <p class="text-gray-color mb-0">PDF • 2.1 ميجابايت</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">بيانات مالية مدققة مستقلة أُعدت وفقًا للمعايير الدولية.</p>
+                        <button class="main-btn py-2 px-4">تحميل</button>
+                    </div>
+                </div>
+
+                <!-- Investor Presentation -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="presentation" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">عرض المستثمرين</h3>
+                                <p class="text-gray-color mb-0">PDF • 4.5 ميجابايت</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">أحدث عرض للمستثمرين يسلط الضوء على الإنجازات والمبادرات الاستراتيجية الرئيسية.</p>
+                        <button class="main-btn py-2 px-4">تحميل</button>
+                    </div>
+                </div>
+
+                <!-- Regulatory Filings -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="reports-card d-flex flex-column flex-grow-1 p-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="card-icon-container bg-primary-color rounded-pill d-flex align-items-center justify-content-center">
+                                <i data-lucide="file-check" class="text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-secondary-color">الإفصاحات التنظيمية</h3>
+                                <p class="text-gray-color mb-0">عدة ملفات</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-color mb-3 flex-grow-1">جميع التقارير والإفصاحات التنظيمية المقدمة للجهات المعنية.</p>
+                        <button class="main-btn py-2 px-4">عرض الكل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors -->
+    <section class="board-directors-section py-6 bg-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">مجلس الإدارة</h2>
+                <p class="text-gray-color mx-auto">قيادة متمرسة توجه استراتيجيتنا وتضمن الحوكمة المؤسسية القوية.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="directors-card text-center">
+                        <div class="card-icon-container bg-light-gray-color rounded-pill mx-auto mb-3 d-flex align-items-center justify-content-center">
+                            <i data-lucide="user" class="text-silver-color"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-2">الدكتور أحمد الراشد</h3>
+                        <p class="text-primary-color text-center mb-2">رئيس مجلس الإدارة</p>
+                        <p class="text-gray-color text-center mb-0">أكثر من 25 عامًا من الخبرة في التمويل الإسلامي وقيادة صناعة التأمين.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="directors-card text-center">
+                        <div class="card-icon-container bg-light-gray-color rounded-pill mx-auto mb-3 d-flex align-items-center justify-content-center">
+                            <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-2">السيدة فاطمة الزهراء</h3>
+                        <p class="text-primary-color text-center mb-2">نائب رئيس مجلس الإدارة</p>
+                        <p class="text-gray-color text-center mb-0">خبيرة في الحوكمة المؤسسية والتخطيط الاستراتيجي مع خبرة واسعة في مجالس الإدارة.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="directors-card text-center">
+                        <div class="card-icon-container bg-light-gray-color rounded-pill mx-auto mb-3 d-flex align-items-center justify-content-center">
+                            <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
+                        </div>
+                        <h3 class="text-secondary-color mb-2">السيد عمر الخوري</h3>
+                        <p class="text-primary-color text-center mb-2">عضو مستقل</p>
+                        <p class="text-gray-color text-center mb-0">تنفيذي مصرفي سابق بخبرة عميقة في إدارة المخاطر والخدمات المالية.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mt-5">
+                <button class="main-btn px-5 py-2">عرض كامل أعضاء المجلس</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Calendar -->
+    <section class="investor-calendar-section py-6 bg-soft-white">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="text-secondary-color mb-3">تقويم المستثمرين</h2>
+                <p class="text-gray-color mx-auto">تواريخ وأحداث هامة لمساهمينا ومجتمع المستثمرين.</p>
+            </div>
+            <div class="d-flex flex-column gap-4">
+                <div class="event-card bg-white rounded-3 shadow-sm p-4 d-flex align-items-center justify-content-between flex-column flex-sm-row gap-3 gap-sm-2">
+                    <div class="d-flex align-items-center gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
+                        <div class="date-container bg-primary-color rounded-3 d-flex flex-column align-items-center justify-content-center text-white">
+                            <span>سبتمبر</span>
+                            <h5 class="my-0">15</h5>
+                        </div>
+                        <div>
+                            <h3 class="text-secondary-color">إعلان نتائج الربع الثالث لعام 2025</h3>
+                            <p class="text-gray-color mb-0">نتائج الربع الثالث واجتماع الأرباح</p>
+                        </div>
+                    </div>
+                    <button class="add-calendar-btn fw-medium text-nowrap border-0 bg-transparent text-primary-color">إضافة إلى التقويم</button>
+                </div>
+                <div class="event-card bg-white rounded-3 shadow-sm p-4 d-flex align-items-center justify-content-between flex-column flex-sm-row gap-3 gap-sm-2">
+                    <div class="d-flex align-items-center gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
+                        <div class="date-container bg-primary-color rounded-3 d-flex flex-column align-items-center justify-content-center text-white">
+                            <span>أكتوبر</span>
+                            <span class="my-0">20</span>
+                        </div>
+                        <div>
+                            <h3 class="text-secondary-color">الاجتماع العام السنوي</h3>
+                            <p class="text-gray-color mb-0">اجتماع المساهمين السنوي وانتخابات مجلس الإدارة</p>
+                        </div>
+                    </div>
+                    <button class="add-calendar-btn fw-medium text-nowrap border-0 bg-transparent text-primary-color">إضافة إلى التقويم</button>
+                </div>
+                <div class="event-card bg-white rounded-3 shadow-sm p-4 d-flex align-items-center justify-content-between flex-column flex-sm-row gap-3 gap-sm-2">
+                    <div class="d-flex align-items-center gap-3 flex-column flex-sm-row justify-content-center justify-content-lg-start">
+                        <div class="date-container bg-primary-color rounded-3 d-flex flex-column align-items-center justify-content-center text-white">
+                            <span>ديسمبر</span>
+                            <span class="my-0">10</span>
+                        </div>
+                        <div>
+                            <h3 class="text-secondary-color">توزيع الأرباح</h3>
+                            <p class="text-gray-color mb-0">الدفعة النهائية من الأرباح للسنة المالية 2025</p>
+                        </div>
+                    </div>
+                    <button class="add-calendar-btn fw-medium text-nowrap border-0 bg-transparent text-primary-color">إضافة إلى التقويم</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Investor Relations -->
+    <section class="contact-investor-section py-6 bg-primary-color">
+        <div class="container">
+            <div class="section-header text-center mb-4 pb-2">
+                <h2 class="text-white mb-4">التواصل مع علاقات المستثمرين</h2>
+                <p class="text-white mb-0 mx-auto">هل لديك أسئلة حول أدائنا المالي أو فرص الاستثمار؟ فريق علاقات المستثمرين لدينا هنا لمساعدتك.</p>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="contact-investor-card text-center">
+                        <i data-lucide="mail" class="card-icon text-white mx-auto mb-2"></i>
+                        <p class="text-white text-center">investors@tiic.com.jo</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-investor-card text-center">
+                        <i data-lucide="phone" class="card-icon text-white mx-auto mb-2"></i>
+                        <p class="text-white text-center">+962 6 562-0151</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-investor-card text-center">
+                        <i data-lucide="calendar" class="card-icon text-white mx-auto mb-2"></i>
+                        <p class="text-white text-center">حجز موعد</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="main-btn bg-white text-primary-color px-4 py-2">تواصل مع علاقات المستثمرين</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
                     <div>
-                        <h3 class="text-lg font-bold text-[#545454]">التقرير السنوي 2024</h3>
-                        <p class="text-sm text-gray-600">PDF • 2.5 ميغابايت</p>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
                     </div>
                 </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">تقرير سنوي شامل يغطي الأداء المالي، واستراتيجية العمل، وتوقعات السوق.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">تحميل</button>
             </div>
-
-            <!-- Q2 2025 Results -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454]">نتائج الربع الثاني 2025</h3>
-                        <p class="text-sm text-gray-600">PDF • 1.8 ميغابايت</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">نتائج مالية فصلية تُظهر أداءً قوياً ونمواً عبر جميع قطاعات الأعمال.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">تحميل</button>
-            </div>
-
-            <!-- Corporate Governance -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454]">دليل الحوكمة</h3>
-                        <p class="text-sm text-gray-600">PDF • 3.2 ميغابايت</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">إطار عمل الحوكمة المؤسسية والسياسات التي تضمن الشفافية والمساءلة.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">تحميل</button>
-            </div>
-
-            <!-- Audited Financials -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="calculator" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454]">البيانات المالية المدققة 2024</h3>
-                        <p class="text-sm text-gray-600">PDF • 2.1 ميغابايت</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">بيانات مالية مدققة بشكل مستقل وفقاً للمعايير الدولية.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">تحميل</button>
-            </div>
-
-            <!-- Investor Presentation -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="presentation" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454]">عرض المستثمرين</h3>
-                        <p class="text-sm text-gray-600">PDF • 4.5 ميغابايت</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">أحدث عرض للمستثمرين يسلط الضوء على أبرز الإنجازات والمبادرات الاستراتيجية.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">تحميل</button>
-            </div>
-
-            <!-- Regulatory Filings -->
-            <div class="flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#008c4b] rounded-full flex items-center justify-center me-4">
-                        <i data-lucide="file-check" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454]">الملفات التنظيمية</h3>
-                        <p class="text-sm text-gray-600">ملفات متعددة</p>
-                    </div>
-                </div>
-                <p class="text-gray-700 mb-4 text-sm flex-grow">جميع التقارير التنظيمية والمستندات المرفوعة إلى الجهات المختصة.</p>
-                <button class="bg-[#008c4b] text-white px-4 py-2 rounded-full text-sm hover:bg-[#007a42] transition-colors">عرض الكل</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Board of Directors -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-[#545454] mb-4">مجلس الإدارة</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">قيادة ذات خبرة توجه استراتيجيتنا وتضمن تطبيق أعلى معايير الحوكمة المؤسسية.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-[#545454] mb-2">الدكتور أحمد الرشيد</h3>
-                <p class="text-[#008c4b] font-semibold mb-2">رئيس مجلس الإدارة</p>
-                <p class="text-gray-700 text-sm">أكثر من 25 عاماً من الخبرة في التمويل الإسلامي وقيادة صناعة التأمين.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-[#545454] mb-2">السيدة فاطمة الزهراء</h3>
-                <p class="text-[#008c4b] font-semibold mb-2">نائب رئيس مجلس الإدارة</p>
-                <p class="text-gray-700 text-sm">خبيرة في الحوكمة المؤسسية والتخطيط الاستراتيجي بخبرة واسعة في مجالس الإدارة.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <i data-lucide="user" class="w-16 h-16 text-gray-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-[#545454] mb-2">السيد عمر الخوري</h3>
-                <p class="text-[#008c4b] font-semibold mb-2">عضو مستقل</p>
-                <p class="text-gray-700 text-sm">مدير تنفيذي مصرفي سابق بخبرة عميقة في إدارة المخاطر والخدمات المالية.</p>
-            </div>
-        </div>
-        <div class="text-center mt-12">
-            <button class="bg-[#008c4b] text-white px-8 py-3 rounded-full hover:bg-[#007a42] transition-colors">عرض جميع الأعضاء</button>
-        </div>
-    </div>
-</section>
-
-<!-- Investor Calendar -->
-<section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-[#545454] mb-4">تقويم المستثمرين</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">تواريخ وأحداث مهمة لمساهمينا ومجتمع المستثمرين.</p>
-        </div>
-        <div class="space-y-6">
-            <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between max-sm:flex-col max-sm:gap-4">
-                <div class="flex items-center gap-4 max-sm:flex-col max-sm:justify-center">
-                    <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
-                        <span class="text-xs">سبتمبر</span>
-                        <span class="text-lg font-bold">15</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454] max-sm:text-center">إعلان نتائج الربع الثالث 2025</h3>
-                        <p class="text-gray-600 max-sm:text-center">نتائج مالية للربع الثالث ومكالمة الأرباح</p>
-                    </div>
-                </div>
-                <button class="text-[#008c4b] hover:underline">إضافة إلى التقويم</button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between max-sm:flex-col max-sm:gap-4">
-                <div class="flex items-center gap-4 max-sm:flex-col max-sm:justify-center">
-                    <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
-                        <span class="text-xs">أكتوبر</span>
-                        <span class="text-lg font-bold">20</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454] max-sm:text-center">الاجتماع السنوي العام</h3>
-                        <p class="text-gray-600 max-sm:text-center">اجتماع المساهمين السنوي وانتخابات المجلس</p>
-                    </div>
-                </div>
-                <button class="text-[#008c4b] hover:underline">إضافة إلى التقويم</button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between max-sm:flex-col max-sm:gap-4">
-                <div class="flex items-center gap-4 max-sm:flex-col max-sm:justify-center">
-                    <div class="w-16 h-16 bg-[#008c4b] rounded-lg flex flex-col items-center justify-center text-white">
-                        <span class="text-xs">ديسمبر</span>
-                        <span class="text-lg font-bold">10</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-[#545454] max-sm:text-center">توزيع الأرباح</h3>
-                        <p class="text-gray-600 max-sm:text-center">الدفعة النهائية من الأرباح للسنة المالية 2025</p>
-                    </div>
-                </div>
-                <button class="text-[#008c4b] hover:underline">إضافة إلى التقويم</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Investor Relations -->
-<section class="py-20 bg-[#008c4b]">
-    <div class="container mx-auto px-4 md:px-8 lg:px-20 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">اتصل بعلاقات المستثمرين</h2>
-        <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">هل لديك أسئلة حول أدائنا المالي أو فرص الاستثمار؟ فريق علاقات المستثمرين لدينا هنا لمساعدتك.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div class="text-center">
-                <i data-lucide="mail" class="w-8 h-8 text-white mx-auto mb-2"></i>
-                <p class="text-white">investors@tiic.com.jo</p>
-            </div>
-            <div class="text-center">
-                <i data-lucide="phone" class="w-8 h-8 text-white mx-auto mb-2"></i>
-                <p class="text-white">+962 6 562-0151</p>
-            </div>
-            <div class="text-center">
-                <i data-lucide="calendar" class="w-8 h-8 text-white mx-auto mb-2"></i>
-                <p class="text-white">حجز موعد</p>
-            </div>
-        </div>
-        <button class="bg-white text-[#008c4b] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">تواصل مع علاقات المستثمرين</button>
-    </div>
-</section>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         lucide.createIcons();

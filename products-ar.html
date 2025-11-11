@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -27,213 +27,522 @@
 </head>
 <body class="bg-white arabic-version">
 
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">منتجات التأمين التكافلي</h1>
-                <p class="text-xl opacity-90">حلول تأمينية شاملة متوافقة مع الشريعة الإسلامية مصممة لحماية ما يهمك أنت وعائلتك.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">منتجات التأمين التكافلي</h1>
+                <p class="mb-0">حلول تأمين شاملة متوافقة مع الشريعة الإسلامية صُممت لحماية ما يهمك أنت وعائلتك أكثر.</p>
             </div>
         </div>
     </section>
 
     <!-- Products Grid -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <section class="products-section py-6 bg-white">
+        <div class="container">
+            <div class="row g-4">
                 <!-- 1. Fidelity Guarantee Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/1.png" alt="Fidelity Guarantee Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين خيانة الأمانة</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية ضد الخسائر المالية الناتجة عن الأفعال الاحتيالية أو غير الشريفة من الموظفين لضمان بقاء أصول عملك آمنة.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/1.png" alt="Fidelity Guarantee Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين ضمان الأمانة</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية ضد الخسائر المالية الناتجة عن الأفعال الاحتيالية أو غير الأمينة من الموظفين، لضمان بقاء أصول عملك آمنة.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 2. Professional Liability Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/2.png" alt="Professional Liability Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين المسؤولية المهنية</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية شاملة للمهنيين ضد المطالبات الناتجة عن الإهمال أو الأخطاء أو السهو أثناء تقديم الخدمات المهنية.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/2.png" alt="Professional Liability Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين المسؤولية المهنية</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية شاملة للمهنيين ضد دعاوى الإهمال أو الأخطاء أو السهو أثناء تقديم الخدمات المهنية.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 3. Money Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/3.png" alt="Money Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين النقد</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية لأموالك والأدوات المالية القابلة للتداول من السرقة أو السطو أو الفقدان أثناء النقل أو داخل مقر عملك.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/3.png" alt="Money Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين النقود</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية أموالك والمستندات القابلة للتداول من السرقة أو السطو أو الفقدان أثناء النقل أو أثناء وجودها في مقر عملك.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 4. Liability Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/4.png" alt="Liability Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين المسؤولية</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية عملك من المطالبات القانونية والمسؤوليات المالية الناتجة عن إصابات أو أضرار تلحق بالغير أو ممتلكاتهم.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/4.png" alt="Liability Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين المسؤولية</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية عملك من المطالبات القانونية والمسؤولية المالية الناتجة عن الإصابات أو الأضرار التي تلحق بالأطراف الثالثة وممتلكاتهم.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 5. Machinery Breakdown Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/5.png" alt="Machinery Breakdown Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين تعطل الآليات</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية للأعطال الميكانيكية والكهربائية المفاجئة للآليات والمعدات والغلايات الأساسية لعملك.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/5.png" alt="Machinery Breakdown Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين أعطال الآلات</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية للأعطال الميكانيكية والكهربائية المفاجئة للآلات والمعدات والغلايات الأساسية لعملياتك.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 6. Medical Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/6.png" alt="Medical Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">التأمين الطبي</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية طبية شاملة للأفراد والعائلات تشمل الاستشفاء، العيادات الخارجية، الطوارئ، والرعاية الوقائية.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/6.png" alt="Medical Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">التأمين الطبي</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية طبية شاملة للأفراد والعائلات تشمل الإقامة في المستشفى، والرعاية الخارجية، والطوارئ، والرعاية الوقائية.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 7. Fire Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/7.png" alt="Fire Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين الحريق</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية لممتلكاتك وأصولك ضد أضرار الحريق والكوارث الطبيعية والمخاطر المرتبطة بها ضمن تغطيات شاملة.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/7.png" alt="Fire Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين الحريق</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية ممتلكاتك وأصولك من أضرار الحريق والكوارث الطبيعية والمخاطر الأخرى ذات الصلة بتغطية شاملة.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 8. Motor Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/11.png" alt="Motor Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين المركبات</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية كاملة لمركبتك مع تغطية شاملة ومسؤولية تجاه الغير ومزايا إضافية مثل المساعدة على الطريق.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/11.png" alt="Motor Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين المركبات</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية شاملة لمركبتك تشمل التأمين ضد الغير والمزايا الإضافية مثل المساعدة على الطريق وخدمة السيارة البديلة.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 9. Marine Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/1 copy.png" alt="Marine Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين البحري</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية شاملة للسفن والبضائع والعمليات البحرية بما يشمل الهيكل والآلات ومسؤوليات النقل البحري.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/1 copy.png" alt="Marine Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين البحري</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية شاملة للسفن والبضائع والعمليات البحرية بما في ذلك هيكل السفينة والآلات والمسؤوليات البحرية.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 10. Social Takaful Life Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/2 copy.png" alt="Social Takaful Life Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين الحياة التكافلي الاجتماعي</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تأمين حياة متوافق مع الشريعة يوفر الأمان المالي والتخطيط طويل الأجل لمستقبل عائلتك.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/2 copy.png" alt="Social Takaful Life Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين الحياة التكافلي الاجتماعي</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تأمين حياة متوافق مع الشريعة الإسلامية يوفر الأمان المالي وراحة البال لمستقبل عائلتك والتخطيط المالي طويل الأمد.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 11. Personal Accident Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/3 copy.png" alt="Personal Accident Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين الحوادث الشخصية</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية مالية ضد الوفاة أو الإعاقة أو النفقات الطبية الناتجة عن الحوادث والإصابات المفاجئة.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/3 copy.png" alt="Personal Accident Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين الحوادث الشخصية</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية مالية ضد الوفاة العرضية أو العجز أو النفقات الطبية الناتجة عن الحوادث والإصابات غير المتوقعة.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 12. Workers Compensation Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/4 copy.png" alt="Workers Compensation Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين إصابات العمال</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية إلزامية تحمي الموظفين وأصحاب العمل من إصابات العمل والأمراض المهنية والحوادث المرتبطة بالعمل.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/4 copy.png" alt="Workers Compensation Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين تعويضات العمال</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية إلزامية تحمي الموظفين وأصحاب العمل من إصابات العمل أو الأمراض المهنية أو الحوادث المتعلقة بالعمل.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 13. Comprehensive Householder & Home Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/1 copy copy.png" alt="Comprehensive Householder & Home Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين المنزل والممتلكات الشامل</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية كاملة لمنزلك وممتلكاتك ضد الحريق والسرقة والكوارث الطبيعية وغيرها من الأحداث غير المتوقعة.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/1 copy copy.png" alt="Comprehensive Householder & Home Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين شامل للمنازل والممتلكات</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية كاملة لمنزلك وممتلكاتك ضد الحريق أو السرقة أو الكوارث الطبيعية أو الأحداث غير المتوقعة الأخرى التي تؤثر على ممتلكاتك.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 14. Engineering Insurances -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/2 copy copy.png" alt="Engineering Insurances" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمينات الهندسة</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطيات متخصصة للمشاريع الهندسية وأعمال الإنشاءات والتركيبات الصناعية ضد مختلف المخاطر أثناء التنفيذ والصيانة.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/2 copy copy.png" alt="Engineering Insurances" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمينات الهندسة</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية متخصصة للمشروعات الهندسية وأعمال البناء والتركيبات الصناعية ضد المخاطر المختلفة أثناء التنفيذ أو الصيانة.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 15. Contractor's Plant and Machinery Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/3 copy copy.png" alt="Contractor's Plant and Machinery Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين معدات وآليات المقاولين</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية لمعدات وآليات وورش المقاولين ضد التلف المادي والسرقة والمخاطر التشغيلية أثناء تنفيذ المشاريع.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/3 copy copy.png" alt="Contractor's Plant and Machinery Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين معدات وآليات المقاولين</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية لمعدات وآلات البناء من الأضرار المادية أو السرقة أو المخاطر التشغيلية أثناء تنفيذ المشاريع.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 16. Electronic Equipment Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/4 copy copy.png" alt="Electronic Equipment Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين المعدات الإلكترونية</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية لأجهزة الحاسوب والخوادم وأجهزة الاتصالات وغيرها من الأجهزة الإلكترونية ضد التلف أو الأعطال والخسائر التشغيلية.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/4 copy copy.png" alt="Electronic Equipment Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين المعدات الإلكترونية</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية لأجهزة الكمبيوتر والخوادم ومعدات الاتصالات والأجهزة الإلكترونية الأخرى ضد التلف أو الأعطال أو الخسائر التشغيلية.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 17. International Travel Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/1 copy copy copy.png" alt="International Travel Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين السفر الدولي</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">سافر بثقة مع تغطية شاملة للطوارئ الطبية وإلغاء الرحلات وفقدان الأمتعة، ومعتمدة من جميع سفارات شنغن.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/1 copy copy copy.png" alt="International Travel Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين السفر الدولي</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">سافر بثقة مع تغطية شاملة للطوارئ الطبية وإلغاء الرحلات وفقدان الأمتعة، ومعتمد من جميع سفارات الشنغن.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 18. Banker's Blanket Bond -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/2 copy copy copy.png" alt="Banker's Blanket Bond" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">سند ضمان المصرفيين</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">حماية شاملة للمؤسسات المالية ضد الخسائر الناتجة عن خيانة الموظفين أو التزوير أو الاحتيال أو الجرائم المالية الأخرى.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/2 copy copy copy.png" alt="Banker's Blanket Bond" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين شامل للبنوك</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">حماية شاملة للمؤسسات المالية ضد الخسائر الناتجة عن خيانة الأمانة أو التزوير أو الاحتيال أو الجرائم المالية الأخرى.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 19. Plate Glass Insurance -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
-                    <img src="./assets/images/3 copy copy copy.png" alt="Plate Glass Insurance" class="cover-image-class aspect-video">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 flex-grow">تأمين الزجاج</h3>
-                        <p class="text-gray-700 mb-6 flex-grow">تغطية للكسر العرضي للواجهات الزجاجية والأبواب والواجهات والديكورات الزجاجية في الممتلكات التجارية والسكنية.</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors mt-auto">اعرف المزيد</button>
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="products-card">
+                        <div class="card-image d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/3 copy copy copy.png" alt="Plate Glass Insurance" class="cover-image-class aspect-ratio-16-9">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-secondary-color mb-3 only-2-lines">تأمين الزجاج المسطح</h3>
+                            <p class="text-gray-color mb-4 only-3-lines">تغطية ضد الكسر العرضي لزجاج النوافذ والأبواب والمعارض والتركيبات الزجاجية الأخرى في العقارات التجارية والسكنية.</p>
+                            <button class="main-btn py-2 px-4 w-100">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         lucide.createIcons();

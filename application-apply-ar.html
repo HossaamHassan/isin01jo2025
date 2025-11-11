@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Islamic Insurance Company</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/intlTelInput.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style_front.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/forms.css" />
+    <link rel="stylesheet" href="./css/application-apply.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!-- Js -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/intlTelInputWithUtils.min.js"></script>
+    <script src="./js/lucide.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/navbar.js"></script>
+  </head>
+  <body class="arabic-version bg-white">
+
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="mb-4">Apply Online</h1>
+          <p class="mb-0">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry standard dummy text ever.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Apply Online Section -->
+    <section class="apply-section py-6">
+      <div class="container">
+        <div class="content-section-container d-flex justify-content-center align-items-center">
+          <div class="inputs-form">
+            <h3 class="mb-4 text-primary-color text-center">
+              Apply Your loan ONLINE
+            </h3>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum qui
+              consectetur eum numquam, nam vero provident sunt culpa molestias
+              nisi aliquam, molestiae illo sint est natus veritatis, praesentium
+              nemo cupiditate?
+            </p>
+            <p class="text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+              provident To submit the online loan application, please fill out
+              the form, then you will be contacted by our call center agent to
+              provide you with all the required details.
+            </p>
+            <form action="" class="">
+              <div
+                class="d-flex flex-column w-100 align-items-center justify-content-center"
+              >
+                <div class="row w-100 px-0 g-4 pt-3 pb-5">
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="name"
+                      >Full name<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder=" Full name "
+                    />
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="Nationality"
+                      >Nationality <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="Nationality"
+                      name="Nationality"
+                      id="Nationality"
+                      placeholder=" Jordanian "
+                    >
+                      <option value="Jordanian">Jordanian</option>
+                      <option value="">Egyptian</option>
+                      <option value="">American</option>
+                      <option value="">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="NationalityNum"
+                      >Nationality Number<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="NationalityNum"
+                      id="NationalityNum"
+                      placeholder=" Type here "
+                    />
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="mobile-number-input"
+                      >Mobile number<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="mobile-number-input"
+                      id="mobile-number-input"
+                      placeholder=" xxx xxx xxx "
+                    />
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="email"
+                      >Email<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder=" info@example.com "
+                    />
+                  </div>
+                  <div class="col-12 d-flex flex-column gap-2">
+                    <label for="loan"
+                      >Loan Type: <span class="red-astrik">*</span></label
+                    >
+                    <div class="radio-btns-container d-flex gap-4">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="loan"
+                          id="Individual"
+                          value="Individual"
+                        />
+                        <span> Individual </span>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="loan"
+                          id="MSEe"
+                          value="MSEe"
+                        />
+                        <span> MSEe </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="MonthlyIncome"
+                      >Monthly Income<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="MonthlyIncome"
+                      id="MonthlyIncome"
+                      placeholder=" Type here "
+                    />
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="work-number-input"
+                      >Work Phone<span class="red-astrik">*</span>
+                    </label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="work-number-input"
+                      id="work-number-input"
+                      placeholder=" xxx xxx xxx "
+                    />
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="LeadSource"
+                      >Lead Source <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="LeadSource"
+                      name="LeadSource"
+                      id="LeadSource"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="Product"
+                      >Product <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="Product"
+                      name="Product"
+                      id="Product"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="LoanTerm"
+                      >Loan Term <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="LoanTerm"
+                      name="LoanTerm"
+                      id="LoanTerm"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="LoanAmount"
+                      >Loan Amount <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="LoanAmount"
+                      name="LoanAmount"
+                      id="LoanAmount"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="LeadPurpose"
+                      >Lead Purpose <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="LeadPurpose"
+                      name="LeadPurpose"
+                      id="LeadPurpose"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="Governate"
+                      >Governate <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="Governate"
+                      name="Governate"
+                      id="Governate"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="District"
+                      >District <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="District"
+                      name="District"
+                      id="District"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="Subdistrict"
+                      >Subdistrict <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="Subdistrict"
+                      name="Subdistrict"
+                      id="Subdistrict"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="Street"
+                      >Street <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="Street"
+                      name="Street"
+                      id="Street"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="NearestBranch"
+                      >Nearest Branch <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="NearestBranch"
+                      name="NearestBranch"
+                      id="NearestBranch"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-4 col-12 d-flex flex-column gap-2">
+                    <label for="ContactTime"
+                      >Contact Time <span class="red-astrik">*</span>
+                    </label>
+                    <select
+                      class="form-select"
+                      type="ContactTime"
+                      name="ContactTime"
+                      id="ContactTime"
+                      placeholder=" Select "
+                    >
+                      <option value="Select">Select</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <div class="checkbox-btns-container">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="loan"
+                          id="Individual"
+                          value="Individual"
+                        />
+                        <span>
+                          Are you a client of Islamic Insurance Company?<span
+                            class="red-astrik text-danger"
+                            >*</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div
+                      class="g-recaptcha m-0"
+                      data-theme="light"
+                      data-sitekey="XXXXXXXXXXXXX"
+                    ></div>
+                  </div>
+                  <button class="outlined-btn ms-2 w-fit px-4 py-2">
+                    <span>Submit</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Apply Online Section -->
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      lucide.createIcons();
+
+      const input = document.querySelector("#mobile-number-input");
+      window.intlTelInput(input, {
+        initialCountry: "jo",
+        strictMode: true,
+        separateDialCode: true,
+        loadUtils: () => import("/intl-tel-input/js/utils.js?1743167482095"), // for formatting/placeholders etc
+      });
+
+      const workNumberInput = document.querySelector("#work-number-input");
+      window.intlTelInput(workNumberInput, {
+        initialCountry: "jo",
+        strictMode: true,
+        separateDialCode: true,
+        loadUtils: () => import("/intl-tel-input/js/utils.js?1743167482095"), // for formatting/placeholders etc
+      });
+    </script>
+  </body>
+</html>

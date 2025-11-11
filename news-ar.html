@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/style_front.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -17,8 +18,7 @@
 
     <!-- Js -->
     <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/tailwind.js"></script>
-    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/intlTelInputWithUtils.min.js"></script>
     <script src="./js/lucide.js"></script>
@@ -28,42 +28,146 @@
 </head>
 <body class="bg-white arabic-version">
 
+    <!-- Start Navbar -->
+    <header class="py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
     <!-- Hero Section -->
-    <section class="bg-[#008c4b] text-white py-20">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">آخر الأخبار</h1>
-                <p class="text-xl opacity-90">ابقَ على اطلاع بأحدث التطورات والإنجازات والإعلانات من شركة التأمين الإسلامية.</p>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="mb-4">آخر الأخبار</h1>
+                <p class="mb-0">ابقَ على اطلاع بآخر التطورات والإنجازات والإعلانات من شركة التأمين الإسلامية.</p>
             </div>
         </div>
     </section>
 
     <!-- Featured News -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden news-item" data-category="financial">
-                    <img src="./assets/images/featured-image.png" alt="أخبار مميزة" class="cover-image-class aspect-video">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>17 آب 2025</span>
+    <section class="featured-news-section py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 mb-5" id="featured-news-grid">
+                <div class="col-md-6">
+                    <div class="featured-news-card bg-white rounded-3 shadow overflow-hidden news-item" data-category="financial">
+                        <img src="./assets/images/featured-image.png" alt="Featured News" class="cover-image-class aspect-ratio-16-9">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>17 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines" dir="rtl">نتائج مميزة.. أرباح قبل الضريبة 2.8 مليون دينار وبنسبة نمو 70 بالمئة</h3>
+                            <p class="text-gray-color mb-3 only-2-lines" dir="rtl">الأقساط المكتتبة خلال النصف الأول من عام 2025 بلغت 27.7 مليون دينار مقابل 24.2 مليون دينار بزيادة بلغت 14%...</p>
+                            <button class="main-btn py-2 px-4">اقرأ المزيد</button>
                         </div>
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 only-1-lines" dir="rtl">نتائج مميزة.. أرباح قبل الضريبة 2.8 مليون دينار وبنسبة نمو 70 بالمئة</h3>
-                        <p class="text-gray-700 mb-4 only-2-lines" dir="rtl">الأقساط المكتتبة خلال النصف الأول من عام 2025 بلغت 27.7 مليون دينار مقابل 24.2 مليون دينار بزيادة بلغت 14%...</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">اقرأ المزيد</button>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden news-item" data-category="awards">
-                    <img src="./assets/images/featured-image-1.png" alt="أخبار الجوائز" class="cover-image-class aspect-video">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>17 آب 2025</span>
+                <div class="col-md-6">
+                    <div class="featured-news-card bg-white rounded-3 shadow overflow-hidden news-item" data-category="awards">
+                        <img src="./assets/images/featured-image-1.png" alt="Award News" class="cover-image-class aspect-ratio-16-9">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>17 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines" dir="rtl">مجلة يوروموني تمنح شركة التأمين الإسلامية جائزة أفضل شركة تكافل إسلامي في الأردن لعام 2025</h3>
+                            <p class="text-gray-color mb-3 only-2-lines" dir="rtl">أعلنت مجلة يوروموني المالية العالمية للمرة الأولى عن فوز شركة التأمين الإسلامية بجائزة أفضل شركة تأمين تكافلي إسلامي في الأردن لعام 2025...</p>
+                            <button class="main-btn py-2 px-4">اقرأ المزيد</button>
                         </div>
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 only-1-lines" dir="rtl">مجلة يوروموني تمنح شركة التأمين الإسلامية جائزة أفضل شركة تكافل إسلامي في الأردن لعام 2025</h3>
-                        <p class="text-gray-700 mb-4 only-2-lines" dir="rtl">أعلنت مجلة يوروموني المالية العالمية للمرة الأولى عن فوز شركة التأمين الإسلامية بجائزة أفضل شركة تأمين تكافلي إسلامي في الأردن لعام 2025...</p>
-                        <button class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors">اقرأ المزيد</button>
                     </div>
                 </div>
             </div>
@@ -71,140 +175,291 @@
     </section>
 
     <!-- All News -->
-    <section class="py-12 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold text-[#545454] mb-2">جميع الأخبار</h2>
-                <div class="w-16 h-1 bg-[#008c4b]"></div>
+    <section class="all-news-section py-5 bg-soft-white">
+        <div class="container">
+            <div class="mb-4">
+                <h2 class="text-secondary-color mb-2">جميع الأخبار</h2>
+                <div class="title-underline bg-primary-color"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+            <div class="row g-4" id="news-grid">
                 <!-- News Article 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="partnerships">
-                    <img src="./assets/images/featured-image-2.png" alt="أخبار الشراكات" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>17 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="partnerships">
+                        <img src="./assets/images/featured-image-2.png" alt="Partnership News" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>17 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines" dir="rtl">شركة التأمين الإسلامية توقع اتفاقية مع مؤسسة الحسين للسرطان</h3>
+                            <p class="text-gray-color mb-3 only-2-lines" dir="rtl">عمان، أيار 2025: وقعت شركة التأمين الإسلامية اتفاقية مع مؤسسة الحسين للسرطان...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3" dir="rtl">شركة التأمين الإسلامية توقع اتفاقية مع مؤسسة الحسين للسرطان</h3>
-                        <p class="text-gray-700 text-sm mb-4" dir="rtl">عمّان، أيار 2025: وقعت شركة التأمين الإسلامية اتفاقية مع مؤسسة الحسين للسرطان...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
 
                 <!-- News Article 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
-                    <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="الشبكة الطبية" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>15 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="company">
+                        <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Medical Network" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>15 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines">توسيع شبكة مزودي الخدمات الطبية</h3>
+                            <p class="text-gray-color mb-3 only-2-lines">تعلن شركة التأمين الإسلامية عن إضافة 50 مقدم خدمة طبية جديد إلى شبكتها، لتعزيز الوصول إلى خدمات الرعاية الصحية...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3">توسيع شبكة التغطية الطبية</h3>
-                        <p class="text-gray-700 text-sm mb-4">تعلن شركة التأمين الإسلامية عن إضافة 50 مزود خدمة طبية جديد إلى شبكتها، مما يعزز سهولة الوصول إلى خدمات الرعاية الصحية...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
 
                 <!-- News Article 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
-                    <img src="./assets/images/safety-happy-portrait-family-with-roof-covering-gesture-with-car.png" alt="تأمين السيارات" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>12 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="company">
+                        <img src="./assets/images/safety-happy-portrait-family-with-roof-covering-gesture-with-car.png" alt="Motor Insurance" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>12 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines">إطلاق مزايا جديدة لتأمين المركبات</h3>
+                            <p class="text-gray-color mb-3 only-2-lines">يشمل التأمين على المركبات الآن خدمات المساعدة على الطريق وخدمة السيارة البديلة...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3">إطلاق مزايا جديدة لتأمين السيارات</h3>
-                        <p class="text-gray-700 text-sm mb-4">يشمل التأمين المطور على السيارات الآن خدمة المساعدة على الطريق وتوفير سيارة بديلة...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
 
                 <!-- News Article 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="financial">
-                    <img src="./assets/images/beautiful-asian-businesswoman-insert-coins-pin-piggy-bank-table-.png" alt="الأداء المالي" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>10 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="financial">
+                        <img src="./assets/images/beautiful-asian-businesswoman-insert-coins-pin-piggy-bank-table-.png" alt="Financial Performance" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>10 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines">النتائج المالية للربع الثاني 2025</h3>
+                            <p class="text-gray-color mb-3 only-2-lines">استمرار الأداء المالي القوي مع زيادة في الدخل التأميني وتحسين الكفاءة التشغيلية...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3">نتائج الأداء المالي للربع الثاني 2025</h3>
-                        <p class="text-gray-700 text-sm mb-4">استمرار الأداء المالي القوي مع زيادة في الدخل من الأقساط وتحسن في الكفاءة التشغيلية...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
 
                 <!-- News Article 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
-                    <img src="./assets/images/young-woman-looking-camera-while-sitting-table.png" alt="خدمة العملاء" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>08 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="company">
+                        <img src="./assets/images/young-woman-looking-camera-while-sitting-table.png" alt="Customer Service" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>08 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines">تطوير منصة خدمة العملاء</h3>
+                            <p class="text-gray-color mb-3 only-2-lines">تم إطلاق منصة رقمية جديدة لتحسين تجربة العملاء وتسريع عملية معالجة المطالبات...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3">تطوير منصة خدمة العملاء</h3>
-                        <p class="text-gray-700 text-sm mb-4">إطلاق منصة رقمية جديدة لتحسين تجربة العملاء وتسهيل عملية تسوية المطالبات...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
 
                 <!-- News Article 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item" data-category="company">
-                    <img src="./assets/images/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="مبادرة صحية" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>05 آب 2025</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-3 overflow-hidden d-block news-item" data-category="company">
+                        <img src="./assets/images/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Healthcare Initiative" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>05 آب 2025</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines">إطلاق مبادرة الصحة المجتمعية</h3>
+                            <p class="text-gray-color mb-3 only-2-lines">أطلقت شركة التأمين الإسلامية برنامجًا للتوعية الصحية المجتمعية بالتعاون مع مزودي خدمات الرعاية الصحية المحليين...</p>
+                            <button class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">اقرأ المزيد <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></button>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3">إطلاق مبادرة التوعية الصحية المجتمعية</h3>
-                        <p class="text-gray-700 text-sm mb-4">أطلقت شركة التأمين الإسلامية برنامجًا للتوعية الصحية المجتمعية بالتعاون مع مزودي خدمات الرعاية الصحية المحليين...</p>
-                        <button class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Pagination -->
-            <div class="flex justify-center mt-12">
-                <div class="flex items-center gap-2">
-                    <button class="px-3 py-2 border rounded-lg hover:bg-gray-100 disabled:opacity-50" disabled>
-                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                    </button>
-                    <button class="px-4 py-2 bg-[#008c4b] text-white rounded-lg">1</button>
-                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">2</button>
-                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">3</button>
-                    <span class="px-2">...</span>
-                    <button class="px-4 py-2 border rounded-lg hover:bg-gray-100">10</button>
-                    <button class="px-3 py-2 border rounded-lg hover:bg-gray-100">
-                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
+            <nav aria-label="Page navigation">
+              <ul class="pagination d-flex justify-content-center gap-2 mt-5">
+                <li class="page-item prev-btn disabled d-flex align-items-center">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">
+                        <i data-lucide="chevron-left"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item next-btn d-flex align-items-center">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">
+                        <i data-lucide="chevron-right"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
         </div>
     </section>
 
     <!-- Newsletter Signup -->
-    <section class="py-20 bg-[#008c4b]">
-        <div class="container mx-auto px-4 md:px-8 lg:px-20 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">ابقَ على اطلاع</h2>
-            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">اشترك في نشرتنا الإخبارية لتصلك أحدث الأخبار والتحديثات مباشرة إلى بريدك الإلكتروني.</p>
-            <div class="max-w-md mx-auto flex gap-4">
-                <input type="email" placeholder="أدخل بريدك الإلكتروني" class="flex-1 px-4 py-3 rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-[#008c4b] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">اشترك</button>
+    <section class="newsletter-signup-section py-6 bg-primary-color">
+        <div class="container text-center">
+            <h2 class="text-white mb-4">ابقَ على اطلاع</h2>
+            <p class="text-white text-center mb-4 mx-auto">اشترك في النشرة البريدية لتصلك آخر الأخبار والتحديثات مباشرة إلى بريدك الإلكتروني.</p>
+            <div class="subscribe-form mx-auto d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" class="form-control rounded-pill">
+                <button class="main-btn bg-white text-primary-color px-4 py-2">اشترك</button>
             </div>
         </div>
     </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
     <script>
         const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
@@ -247,22 +502,24 @@
         }
 
         function displayFeaturedNews(articles) {
-            const featuredContainer = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.gap-8.mb-16');
+            const featuredContainer = document.getElementById('featured-news-grid');
             if (!featuredContainer || articles.length === 0) return;
 
             featuredContainer.innerHTML = articles.map(article => `
-                <a href="news-article.html?slug=${article.slug}" class="bg-white rounded-lg shadow-lg overflow-hidden news-item block hover:shadow-xl transition-shadow">
-                    <img src="${article.image_url}" alt="${article.title}" class="cover-image-class aspect-video">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>${formatDate(article.publish_date)}</span>
+                <div class="col-md-6">
+                    <a href="news-article.html?slug=${article.slug}" class="news-card bg-white rounded-3 overflow-hidden d-block news-item block">
+                        <img src="${article.image_url}" alt="${article.title}" class="cover-image-class aspect-ratio-16-9">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>${formatDate(article.publish_date)}</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
+                            <p class="text-gray-color mb-3 only-2-lines" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 150)}...</p>
+                            <span class="main-btn">Read More</span>
                         </div>
-                        <h3 class="text-xl font-bold text-[#545454] mb-3 only-1-lines" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
-                        <p class="text-gray-700 mb-4 only-2-lines" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 150)}...</p>
-                        <span class="bg-[#008c4b] text-white px-6 py-2 rounded-full hover:bg-[#007a42] transition-colors inline-block">اقرأ المزيد</span>
-                    </div>
-                </a>
+                    </a>
+                </div>
             `).join('');
 
             lucide.createIcons();
@@ -273,20 +530,22 @@
             if (!newsGrid || articles.length === 0) return;
 
             newsGrid.innerHTML = articles.map(article => `
-                <a href="news-article.html?slug=${article.slug}" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow news-item block">
-                    <img src="${article.image_url}" alt="${article.title}" class="cover-image-class aspect-video">
-                    <div class="p-6">
-                        <div class="flex items-center text-sm text-gray-500 mb-3">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                            <span>${formatDate(article.publish_date)}</span>
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <a href="news-article.html?slug=${article.slug}" class="news-card bg-white rounded-3 overflow-hidden d-block news-item block">
+                        <img src="${article.image_url}" alt="${article.title}" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-4">
+                            <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                <i data-lucide="calendar"></i>
+                                <span>${formatDate(article.publish_date)}</span>
+                            </div>
+                            <h3 class="text-secondary-color mb-2 only-1-lines only-1-lines" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
+                            <p class="text-gray-color mb-3 only-2-lines only-2-lines" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 120)}...</p>
+                            <span class="read-more-btn fw-medium border-0 bg-transparent text-primary-color">Read More <span>
+                                <i data-lucide="arrow-right"></i>
+                            </span></span>
                         </div>
-                        <h3 class="text-lg font-bold text-[#545454] mb-3 only-1-lines" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
-                        <p class="text-gray-700 text-sm mb-4 only-2-lines" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 120)}...</p>
-                        <span class="text-[#008c4b] font-semibold hover:underline">اقرأ المزيد <span>
-                            <i data-lucide="arrow-right" class="w-4 h4 inline-block"></i>
-                        </span></span>
-                    </div>
-                </a>
+                    </a>
+                </div>
             `).join('');
 
             lucide.createIcons();

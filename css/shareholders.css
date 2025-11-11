@@ -1,0 +1,69 @@
+/* Financial Reports Section */
+.financial-reports-section .reports-card {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.financial-reports-section .reports-card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.financial-reports-section .reports-card p {
+    text-align: start;
+}
+
+.financial-reports-section .reports-card .card-icon-container {
+    width: 3rem;
+    height: 3rem;
+}
+
+.financial-reports-section .reports-card .card-icon-container svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Board Directors Section */
+.board-directors-section .directors-card .card-icon-container {
+    width: 8rem;
+    height: 8rem;
+}
+
+.board-directors-section .directors-card .card-icon-container svg {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Investor Calendar Section */
+.investor-calendar-section .event-card .date-container {
+    width: 4rem;
+    height: 4rem;
+}
+
+.investor-calendar-section .event-card p {
+    text-align: start;
+}
+
+.investor-calendar-section .event-card .add-calendar-btn:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+    .investor-calendar-section .event-card,
+    .investor-calendar-section .event-card p {
+        text-align: center;
+    }    
+}
+
+/* Contact Investor Section */
+.contact-investor-section .contact-investor-card .card-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.contact-investor-section .main-btn:hover {
+    background-color: var(--soft-white) !important;
+}

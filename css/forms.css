@@ -1,9 +1,24 @@
+label span {
+    color: #D71F26;
+}
+
+input,
+select {
+    padding-block: 12px !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    padding-block: 0 !important;
+}
+
 .form-control {
     width: 100%;
-    padding: 0.75rem 1rem;
     outline: 1px solid var(--light-gray-color);
     border-radius: var(--main-border-radius);
     border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .form-control:focus {
@@ -12,12 +27,17 @@
     outline: 2px solid var(--primary-color);
 }
 
+.form-control::placeholder {
+    color: rgb(45 41 38 / 30%) !important;
+}
+
 .form-select {
     width: 100%;
-    padding: 0.75rem 1rem;
     outline: 1px solid var(--light-gray-color);
     border-radius: var(--main-border-radius);
     border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .form-select:focus {
@@ -36,10 +56,145 @@
     outline: 1px solid var(--light-gray-color);
     border-radius: var(--main-border-radius);
     border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .form-textarea:focus {
     border: none;
     box-shadow: unset;
     outline: 2px solid var(--primary-color);
+}
+
+/* Iti */
+.iti,
+.iti input {
+    width: 100%;
+    direction: ltr;
+}
+
+.iti input.iti__tel-input {
+    padding-left: 106px !important;
+    padding-right: 0 !important;
+}
+
+.iti__selected-country {
+    border-inline-end: 1.5px solid rgb(83 86 90 / 30%) !important;
+    padding-inline-end: 1.5rem !important;
+}
+
+@media (max-width: 767.98px) {
+    .iti__selected-country {
+        padding-inline-end: 1.9rem;
+    }
+}
+
+.iti__arrow {
+    position: absolute;
+    inset-inline-end: 3px;
+    background-image: url("../assets/images/caretdown.svg") !important;
+    background-size: 20px;
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    width: 20px !important;
+    height: 20px !important;
+    border: 0 !important;
+    background-color: transparent;
+}
+
+.iti__arrow.iti__arrow--up {
+    background-image: url("../assets/images/caretdown.svg") !important;
+    border-bottom: 0 !important;
+    rotate: 180deg;
+}
+
+.iti__country-container {
+    left: 0px;
+    right: auto;
+}
+
+.iti--allow-dropdown .iti__country-container:not(:has(+ input[disabled])):not(:has(+ input[readonly])) .iti__selected-country-primary:hover {
+    background-color: transparent;
+}
+
+.iti__flag {
+    background-image: url("../assets/images/flags.webp");
+}
+
+.iti__search-input,
+.iti__search-input:focus-visible {
+    border: unset !important;
+    padding: 10px;
+    outline: 0 !important;
+}
+
+/* .iti input.iti__tel-input {
+    text-indent: 10px;
+
+} */
+
+.iti--inline-dropdown .iti__dropdown-content {
+    z-index: 9;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--secondary-color) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border: var(--primary-color) !important;
+}
+
+.checkbox-btns-container,
+.radio-btns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem
+}
+
+.arabic-version .radio-btns-container,
+.arabic-version .checkbox-btns-container {
+    direction: rtl;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-check span {
+    padding-top: 0.3rem;
+}
+
+.arabic-version .form-check {
+    gap: 0;
+}
+
+.arabic-version .form-check-input {
+    margin: 0;
+    float: none;
+    margin-inline-end: 0.5em;
+}
+
+/* Global form style for full width forms */
+.content-section-container .inputs-form {
+    max-width: 80%;
+}
+
+@media (max-width: 767.98px) {
+    .content-section-container .inputs-form {
+        max-width: 100%;
+    }
+}
+
+.content-section-container form {
+    border-top: 8px solid var(--primary-color);
+    box-shadow: 0px 0px 40px 0px #B6B6B633;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
 }
