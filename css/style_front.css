@@ -266,6 +266,10 @@ ul {
     width: fit-content;
 }
 
+.border-primary-color {
+    border-color: var(--primary-color) !important;
+}
+
 .bg-primary-color {
     background-color: var(--primary-color);
 }

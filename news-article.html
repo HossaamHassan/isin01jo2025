@@ -159,43 +159,49 @@
             </div>
         </div>
 
-        <!-- Hero Image -->
-        <div class="hero-image-container">
-            <img id="article-hero-image" src="" alt="" class="cover-image-class h-100">
-        </div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="mb-4">News</h1>
+                    <p class="mb-0">Stay updated with the latest developments, achievements, and announcements from Islamic Insurance Company.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Article Header -->
         <section class="article-header py-5">
             <div class="header-container mx-auto px-3 px-md-4">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <a href="news.html" class="back-btn d-inline-flex align-items-center gap-2 text-primary-color">
-                        <i data-lucide="arrow-left"></i>
-                        Back to News
-                    </a>
-                </div>
 
                 <h1 id="article-title" class="text-secondary-color mb-3"></h1>
                 <h2 id="article-title-ar" class="text-gray-color mb-4" dir="rtl"></h2>
 
-                <div class="d-flex align-items-center gap-3 text-silver-color mb-4 pb-4 border-bottom">
-                    <div class="article-date d-flex align-items-center gap-2">
+                <picture>
+                    <img src="" alt="" id="article-hero-image" class="default-image-class rounded-3" />
+                </picture>
+
+                <div class="d-flex align-items-center gap-3 text-silver-color my-4">
+                    <div class="article-date d-flex align-items-center gap-2 text-primary-color">
                         <i data-lucide="calendar"></i>
                         <span id="article-date"></span>
                     </div>
-                    <button onclick="shareArticle()" class="share-btn d-flex align-items-center gap-2">
-                        <i data-lucide="share-2"></i>
-                        Share
-                    </button>
                 </div>
 
                 <!-- English Content -->
-                <div class="mb-5">
+                <div class="mb-4">
                     <div id="article-content-en" class="text-dark-gray d-flex flex-column gap-4"></div>
                 </div>
 
                 <!-- Arabic Content -->
-                <div class="mb-5" dir="rtl">
+                <div class="mb-4" dir="rtl">
                     <div id="article-content-ar" class="text-dark-gray d-flex flex-column gap-4"></div>
+                </div>
+
+                <div class="border-top border-bottom border-primary-color">
+                    <button onclick="shareArticle()" class="share-btn d-flex align-items-center gap-2 py-2">
+                    <i data-lucide="share-2"></i>
+                    Share
+                </button>
                 </div>
             </div>
         </section>
@@ -203,7 +209,7 @@
         <!-- Related Articles -->
         <section class="related-articles-section py-5 bg-soft-white">
             <div class="container">
-                <h2 class="text-secondary-color mb-4">Related Articles</h2>
+                <h2 class="text-secondary-color text-center mb-4">Related Articles</h2>
                 <div id="related-articles" class="row g-4">
                 </div>
             </div>
