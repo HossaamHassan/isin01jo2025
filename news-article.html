@@ -24,7 +24,6 @@
     <script src="./js/lucide.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-white">
 
@@ -129,12 +128,14 @@
     <!-- End Navbar -->
 
     <!-- Loading State -->
-    <div id="loading" class="py-6 text-center">
+    <!-- Remove d-none class to show loading spinner -->
+    <div id="loading" class="d-none py-6 text-center">
         <div class="spinner-border text-primary-color" role="status"></div>
         <p class="mt-3 text-center text-gray-color">Loading article...</p>
     </div>
 
     <!-- Error State -->
+    <!-- Remove d-none class to show error message -->
     <div id="error" class="d-none py-6 text-center">
         <div class="error-container d-flex flex-column align-items-center mx-auto px-3">
             <i data-lucide="alert-circle" class="mx-auto text-danger mb-3"></i>
@@ -145,7 +146,7 @@
     </div>
 
     <!-- Article Content -->
-    <div id="article-content" class="d-none">
+    <div id="article-content">
         <!-- Breadcrumb -->
         <div class="bg-soft-white py-3">
             <div class="container">
@@ -172,29 +173,44 @@
         <!-- Article Header -->
         <section class="article-header py-5">
             <div class="header-container mx-auto px-3 px-md-4">
-
-                <h1 id="article-title" class="text-secondary-color mb-3"></h1>
-                <h2 id="article-title-ar" class="text-gray-color mb-4" dir="rtl"></h2>
+                <h1 id="article-title" class="text-secondary-color mb-4">Islamic Insurance Company Signs Agreement with King Hussein Cancer Foundation</h1>
 
                 <picture>
-                    <img src="" alt="" id="article-hero-image" class="default-image-class rounded-3" />
+                    <img src="./assets/images/featured-image.png" alt="Islamic Insurance Company Signs Agreement with King Hussein Cancer Foundation"
+                     id="article-hero-image" class="default-image-class rounded-3" />
                 </picture>
 
                 <div class="d-flex align-items-center gap-3 text-silver-color my-4">
                     <div class="article-date d-flex align-items-center gap-2 text-primary-color">
                         <i data-lucide="calendar"></i>
-                        <span id="article-date"></span>
+                        <span id="article-date">Aug 17, 2025</span>
                     </div>
                 </div>
 
-                <!-- English Content -->
+                <!-- Article Content -->
                 <div class="mb-4">
-                    <div id="article-content-en" class="text-dark-gray d-flex flex-column gap-4"></div>
-                </div>
-
-                <!-- Arabic Content -->
-                <div class="mb-4" dir="rtl">
-                    <div id="article-content-ar" class="text-dark-gray d-flex flex-column gap-4"></div>
+                    <div id="article-content" class="text-dark-gray d-flex flex-column gap-4">
+                        <p class="mb-0">
+                            Amman, May 2025: Islamic Insurance Company proudly announces the signing of
+                            a strategic partnership agreement with King Hussein Cancer Foundation (KHCF).
+                            This collaboration aims to provide comprehensive health insurance coverage for cancer patients and ensure access
+                            to world-class treatment facilities. Under this agreement, policyholders of Islamic Insurance Company
+                            will benefit from direct billing services at the King Hussein Cancer Center, streamlined claim processes,
+                            and access to specialized oncology services. This partnership reflects the company's commitment to supporting the healthcare
+                            needs of the Jordanian community and providing Takaful insurance solutions that make a real difference in people's lives during
+                            their most challenging times.
+                        </p>
+                        <p class="mb-0">
+                            Amman, May 2025: Islamic Insurance Company proudly announces the signing of
+                            a strategic partnership agreement with King Hussein Cancer Foundation (KHCF).
+                            This collaboration aims to provide comprehensive health insurance coverage for cancer patients and ensure access
+                            to world-class treatment facilities. Under this agreement, policyholders of Islamic Insurance Company
+                            will benefit from direct billing services at the King Hussein Cancer Center, streamlined claim processes,
+                            and access to specialized oncology services. This partnership reflects the company's commitment to supporting the healthcare
+                            needs of the Jordanian community and providing Takaful insurance solutions that make a real difference in people's lives during
+                            their most challenging times.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="border-top border-bottom border-primary-color">
@@ -211,6 +227,57 @@
             <div class="container">
                 <h2 class="text-secondary-color text-center mb-4">Related Articles</h2>
                 <div id="related-articles" class="row g-4">
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div class="news-card bg-white rounded-3 overflow-hidden d-block">
+                            <img src="./assets/images/featured-image-1.png" alt="Islamic Insurance Company Signs Agreement with King Hussein Cancer Foundation" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                    <i data-lucide="calendar"></i>
+                                    <span>Aug 17, 2025</span>
+                                </div>
+                                <h3 class="text-secondary-color mb-2 only-1-lines">New Motor Insurance Features Launched</h3>
+                                <p class="text-gray-color mb-3 only-2-lines">Enhanced motor insurance coverage now includes roadside assistance and replacement vehicle services...</p>
+                                <a href="./news-article.html" class="read-more-btn text-primary-color">
+                                    Read More
+                                    <i data-lucide="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div href="news-article.html" class="news-card bg-white rounded-3 overflow-hidden d-block">
+                            <img src="./assets/images/featured-image-2.png" alt="Islamic Insurance Company Signs Agreement with King Hussein Cancer Foundation" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                    <i data-lucide="calendar"></i>
+                                    <span>Aug 17, 2025</span>
+                                </div>
+                                <h3 class="text-secondary-color mb-2 only-1-lines">Expansion of Medical Network Coverage</h3>
+                                <p class="text-gray-color mb-3 only-2-lines">Islamic Insurance Company announces the addition of 50 new medical providers to its network, enhancing healthcare access...</p>
+                                <a href="./news-article.html" class="read-more-btn text-primary-color">
+                                    Read More
+                                    <i data-lucide="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex">
+                        <div href="news-article.html" class="news-card bg-white rounded-3 overflow-hidden d-block">
+                            <img src="./assets/images/safety-happy-portrait-family-with-roof-covering-gesture-with-car.png" alt="Islamic Insurance Company Signs Agreement with King Hussein Cancer Foundation" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
+                                    <i data-lucide="calendar"></i>
+                                    <span>Aug 17, 2025</span>
+                                </div>
+                                <h3 class="text-secondary-color mb-2 only-1-lines">Q2 2025 Financial Performance</h3>
+                                <p class="text-gray-color mb-3 only-2-lines">Strong financial performance continues with increased premium income and improved operational efficiency...</p>
+                                <a href="./news-article.html" class="read-more-btn text-primary-color">
+                                    Read More
+                                    <i data-lucide="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -353,22 +420,7 @@
         <!-- End Footer -->
 
     <script>
-        const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imphc3Nmbnd1aHRkZHdxemxveGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjI0ODQsImV4cCI6MjA3NzM5ODQ4NH0.xx373opRUSa1yS1og8_TDx5F3Lrix4PSkybhU_XPD88';
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         lucide.createIcons();
-
-        function getArticleSlug() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('slug');
-        }
-
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' });
-        }
 
         function shareArticle() {
             if (navigator.share) {
@@ -381,101 +433,6 @@
                 alert('Link copied to clipboard!');
             }
         }
-
-        async function loadArticle() {
-            const slug = getArticleSlug();
-
-            if (!slug) {
-                showError();
-                return;
-            }
-
-            try {
-                const { data: article, error } = await supabase
-                    .from('news_articles')
-                    .select('*')
-                    .eq('slug', slug)
-                    .maybeSingle();
-
-                if (error || !article) {
-                    showError();
-                    return;
-                }
-
-                displayArticle(article);
-                loadRelatedArticles(article.category, article.id);
-            } catch (error) {
-                console.error('Error loading article:', error);
-                showError();
-            }
-        }
-
-        function displayArticle(article) {
-            document.getElementById('loading').classList.add('d-none');
-            document.getElementById('article-content').classList.remove('d-none');
-
-            document.getElementById('article-hero-image').src = article.image_url;
-            document.getElementById('article-hero-image').alt = article.title;
-            document.getElementById('article-title').textContent = article.title_en || article.title;
-            document.getElementById('article-title-ar').textContent = article.title_ar || article.title;
-            document.getElementById('article-date').textContent = formatDate(article.publish_date);
-
-            const contentEn = article.content_en || article.content;
-            const contentAr = article.content_ar || article.content;
-
-            document.getElementById('article-content-en').innerHTML = contentEn.split('\n\n').map(p => `<p>${p}</p>`).join('');
-            document.getElementById('article-content-ar').innerHTML = contentAr.split('\n\n').map(p => `<p>${p}</p>`).join('');
-
-            document.title = `${article.title} - Islamic Insurance Company`;
-
-            lucide.createIcons();
-        }
-
-        async function loadRelatedArticles(category, currentId) {
-            try {
-                const { data: articles, error } = await supabase
-                    .from('news_articles')
-                    .select('*')
-                    .neq('id', currentId)
-                    .order('publish_date', { ascending: false })
-                    .limit(3);
-
-                if (error) throw error;
-
-                const relatedContainer = document.getElementById('related-articles');
-                relatedContainer.innerHTML = articles.map(article => `
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <a href="news-article.html?slug=${article.slug}" class="news-card bg-white rounded-3 overflow-hidden d-block">
-                            <img src="${article.image_url}" alt="${article.title}" class="cover-image-class aspect-ratio-16-9 text-gray-color">
-                            <div class="p-4">
-                                <div class="d-flex align-items-center gap-2 text-silver-color mb-3">
-                                    <i data-lucide="calendar"></i>
-                                    <span>${formatDate(article.publish_date)}</span>
-                                </div>
-                                <h3 class="text-secondary-color mb-2 only-1-lines" ${article.title_ar ? 'dir="rtl"' : ''}>${article.title_ar || article.title}</h3>
-                                <p class="text-gray-color mb-3 only-2-lines" ${article.excerpt_ar ? 'dir="rtl"' : ''}>${(article.excerpt_ar || article.excerpt).substring(0, 120)}...</p>
-                                <span class="read-more-btn text-primary-color">
-                                    Read More
-                                    <i data-lucide="arrow-right"></i>
-                                    </span>
-                            </div>
-                        </a>
-                    </div>
-                `).join('');
-
-                lucide.createIcons();
-            } catch (error) {
-                console.error('Error loading related articles:', error);
-            }
-        }
-
-        function showError() {
-            document.getElementById('loading').classList.add('d-none');
-            document.getElementById('error').classList.remove('d-none');
-            lucide.createIcons();
-        }
-
-        loadArticle();
     </script>
 </body>
 </html>

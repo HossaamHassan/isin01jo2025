@@ -24,7 +24,6 @@
     <script src="./js/lucide.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-white">
 
@@ -129,7 +128,7 @@
     <!-- End Navbar -->
 
     <!-- Loading State -->
-    <div id="loading" class="py-6 text-center">
+    <div id="loading" class="d-none py-6 text-center">
         <div class="spinner-border text-primary-color" role="status"></div>
         <p class="mt-3 text-center text-gray-color">Loading job details...</p>
     </div>
@@ -145,7 +144,7 @@
     </div>
 
     <!-- Job Content -->
-    <div id="job-content" class="d-none">
+    <div id="job-content">
         <!-- Breadcrumb -->
         <div class="bg-soft-white py-3">
             <div class="container">
@@ -172,29 +171,27 @@
                 <div class="d-flex flex-column flex-lg-row align-items-lg-start justify-content-lg-between gap-4">
                     <div class="flex-fill">
                         <div class="d-flex align-items-center flex-wrap gap-3 mb-3">
-                            <h1 id="job-title" class="text-secondary-color"></h1>
-                            <span id="employment-badge" class="bg-primary-color text-white px-3 py-1 rounded-pill"></span>
+                            <h1 id="job-title" class="text-secondary-color">Senior Claims Specialist</h1>
+                            <span id="employment-badge" class="bg-primary-color text-white px-3 py-1 rounded-pill">Full-time</span>
                         </div>
-                        <h2 id="job-title-ar" class="text-gray-color mb-4" dir="rtl"></h2>
-
                         <div class="job-info d-flex flex-wrap gap-4 text-gray-color mb-4">
                             <div class="d-flex align-items-center gap-2">
                                 <i data-lucide="map-pin"></i>
-                                <span id="job-location"></span>
+                                <span id="job-location">Amman, Jordan</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <i data-lucide="briefcase"></i>
-                                <span id="job-department"></span>
+                                <span id="job-department">Claims Department</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <i data-lucide="clock"></i>
-                                <span id="job-posted"></span>
+                                <span id="job-posted">Posted 2 days ago</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="job-action-buttons d-flex flex-column align-items-center gap-3">
-                        <button onclick="applyNow()" class="main-btn w-100">
+                        <button class="main-btn w-100">
                             Apply Now
                         </button>
                         <button onclick="shareJob()" class="outlined-btn w-100">
@@ -215,35 +212,47 @@
                         <!-- Description -->
                         <div class="Job-section-card bg-white rounded-3 shadow-sm p-4">
                             <h3 class="text-secondary-color mb-4">Job Description</h3>
-                            <div id="job-description" class="text-dark-gray"></div>
-                        </div>
-
-                        <!-- Description Arabic -->
-                        <div class="Job-section-card bg-white rounded-3 shadow-sm p-4" dir="rtl">
-                            <h3 class="text-secondary-color mb-4">الوصف الوظيفي</h3>
-                            <div id="job-description-ar" class="text-dark-gray"></div>
+                            <div id="job-description" class="text-dark-gray">
+                                <p>
+                                    We are looking for an experienced Senior Claims Specialist to join our Claims Department.
+                                    The ideal candidate will be responsible for processing, assessing, and managing insurance claims
+                                    in accordance with Takaful principles and company policies. This position requires excellent analytical skills,
+                                    attention to detail, and strong customer service experience.
+                                </p>
+                                <p>Key Responsibilities:</p>
+                                <ul class="requirements-list mb-3">
+                                    <li>Review and process insurance claims</li>
+                                    <li>Assess claim validity and determine appropriate coverage</li>
+                                    <li>Explore complex claims and coordinate with relevant parties.</li>
+                                    <li>Manage insurance claims according to Takaful principles and company policies.</li>
+                                    <li>Explore complex claims and coordinate with relevant parties.</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <!-- Requirements -->
                         <div class="Job-section-card bg-white rounded-3 shadow-sm p-4">
                             <h3 class="text-secondary-color mb-4">Requirements & Qualifications</h3>
-                            <div id="job-requirements" class="text-dark-gray"></div>
-                        </div>
-
-                        <!-- Requirements Arabic -->
-                        <div class="Job-section-card bg-white rounded-3 shadow-sm p-4" dir="rtl">
-                            <h3 class="text-secondary-color mb-4">المتطلبات والمؤهلات</h3>
-                            <div id="job-requirements-ar" class="text-dark-gray"></div>
+                            <div id="job-requirements" class="text-dark-gray">
+                                <p>Requirements:</p>
+                                <ul class="requirements-list mb-3">
+                                    <li>Grade of Bachelor's in Insurance or Business Administration or related field</li>
+                                    <li>Experience of at least 5 years in processing insurance claims</li>
+                                    <li>Excellent analytical skills</li>
+                                    <li>Good communication skills</li>
+                                    <li>Experience in processing insurance claims</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Sidebar -->
                     <div class="sidebar col-lg-4 d-flex flex-column gap-4">
                         <!-- Apply Card -->
-                        <div class="apply-card bg-white rounded-3 shadow-sm p-4 position-sticky">
+                        <div class="apply-card bg-white rounded-3 shadow-sm p-4 z-1 position-sticky">
                             <h4 class="text-secondary-color mb-3">Interested in this position?</h4>
                             <p class="text-gray-color mb-4">Submit your application and join our team at Islamic Insurance Company.</p>
-                            <button onclick="applyNow()" class="main-btn w-100 mb-3">
+                            <button class="main-btn w-100 mb-3">
                                 Apply Now
                             </button>
                             <a href="careers.html" class="view-all-btn d-block text-center text-primary-color">View All Positions</a>
@@ -267,6 +276,35 @@
             <div class="container">
                 <h2 class="text-secondary-color mb-4">Similar Positions</h2>
                 <div id="similar-jobs" class="d-flex flex-column gap-3">
+                    <div class="job-card p-4">
+                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
+                            <div class="job-card-content">
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
+                                    <h3 class="text-secondary-color">Senior Claims Specialist</h3>
+                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">Full-time</span>
+                                </div>
+                                <p class="text-gray-color mb-3">Processing and assessing insurance claims to ensure compliance with Takaful principles and company policies.</p>
+                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="map-pin"></i>
+                                        Amman, Jordan
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="briefcase"></i>
+                                        Claims Department
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <i data-lucide="clock"></i>
+                                        Posted 2 days ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 flex-column flex-sm-row">
+                                <a href="./job-detail.html" class="outlined-btn w-sm-100 px-4 py-2">View Details</a>
+                                <button class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -409,50 +447,7 @@
         <!-- End Footer -->
 
     <script>
-        const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imphc3Nmbnd1aHRkZHdxemxveGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjI0ODQsImV4cCI6MjA3NzM5ODQ4NH0.xx373opRUSa1yS1og8_TDx5F3Lrix4PSkybhU_XPD88';
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         lucide.createIcons();
-
-        function getJobSlug() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('slug');
-        }
-
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const today = new Date();
-            const diffTime = Math.abs(today - date);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            if (diffDays === 0) return 'Posted today';
-            if (diffDays === 1) return 'Posted 1 day ago';
-            if (diffDays < 7) return `Posted ${diffDays} days ago`;
-            if (diffDays < 14) return 'Posted 1 week ago';
-            if (diffDays < 30) return `Posted ${Math.floor(diffDays / 7)} weeks ago`;
-            return `Posted ${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) > 1 ? 's' : ''} ago`;
-        }
-
-        function formatContent(text) {
-            return text.split('\n\n').map(section => {
-                if (section.includes('•')) {
-                    const lines = section.split('\n');
-                    const title = lines[0];
-                    const items = lines.slice(1).filter(l => l.trim());
-                    return `<p class="mb-2">${title}</p><ul class="requirements-list mb-3">${items.map(item => `<li>${item.replace('•', '').trim()}</li>`).join('')}</ul>`;
-                }
-                return `<p>${section}</p>`;
-            }).join('');
-        }
-
-        window.applyNow = function() {
-            const jobTitle = document.getElementById('job-title').textContent;
-            const subject = encodeURIComponent(`Job Application: ${jobTitle}`);
-            const body = encodeURIComponent(`Dear Hiring Manager,\n\nI am interested in applying for the ${jobTitle} position at Islamic Insurance Company.\n\nBest regards`);
-            window.location.href = `mailto:hr@tiic.com.jo?subject=${subject}&body=${body}`;
-        }
 
         window.shareJob = function() {
             if (navigator.share) {
@@ -466,114 +461,6 @@
                 alert('Link copied to clipboard!');
             }
         }
-
-        async function loadJob() {
-            const slug = getJobSlug();
-
-            if (!slug) {
-                showError();
-                return;
-            }
-
-            try {
-                const { data: job, error } = await supabase
-                    .from('job_positions')
-                    .select('*')
-                    .eq('slug', slug)
-                    .eq('is_active', true)
-                    .maybeSingle();
-
-                if (error || !job) {
-                    showError();
-                    return;
-                }
-
-                displayJob(job);
-                loadSimilarJobs(job.department, job.id);
-            } catch (error) {
-                console.error('Error loading job:', error);
-                showError();
-            }
-        }
-
-        function displayJob(job) {
-            document.getElementById('loading').classList.add('d-none');
-            document.getElementById('job-content').classList.remove('d-none');
-
-            document.getElementById('job-title').textContent = job.title;
-            document.getElementById('job-title-ar').textContent = job.title_ar || job.title;
-            document.getElementById('employment-badge').textContent = job.employment_type;
-            document.getElementById('job-location').textContent = job.location;
-            document.getElementById('job-department').textContent = job.department + ' Department';
-            document.getElementById('job-posted').textContent = formatDate(job.posted_date);
-
-            document.getElementById('job-description').innerHTML = formatContent(job.full_description);
-            document.getElementById('job-description-ar').innerHTML = formatContent(job.full_description_ar || job.full_description);
-            document.getElementById('job-requirements').innerHTML = formatContent(job.requirements);
-            document.getElementById('job-requirements-ar').innerHTML = formatContent(job.requirements_ar || job.requirements);
-
-            document.title = `${job.title} - Islamic Insurance Company`;
-
-            lucide.createIcons();
-        }
-
-        async function loadSimilarJobs(department, currentId) {
-            try {
-                const { data: jobs, error } = await supabase
-                    .from('job_positions')
-                    .select('*')
-                    .eq('is_active', true)
-                    .neq('id', currentId)
-                    .limit(3);
-
-                if (error) throw error;
-
-                const similarContainer = document.getElementById('similar-jobs');
-                similarContainer.innerHTML = jobs.map(job => `
-                    <div class="job-card p-4">
-                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
-                            <div class="job-card-content">
-                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
-                                    <h3 class="text-secondary-color">${job.title}</h3>
-                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">${job.employment_type}</span>
-                                </div>
-                                <p class="text-gray-color mb-3">${job.description}</p>
-                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="map-pin"></i>
-                                        ${job.location}
-                                    </span>
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="briefcase"></i>
-                                        ${job.department} Department
-                                    </span>
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="clock"></i>
-                                        ${formatDate(job.posted_date)}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <a href="job-detail.html?slug=${job.slug}" class="outlined-btn w-sm-100 px-4 py-2">View Details</a>
-                                <button onclick="applyNow()" class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-
-                lucide.createIcons();
-            } catch (error) {
-                console.error('Error loading similar jobs:', error);
-            }
-        }
-
-        function showError() {
-            document.getElementById('loading').classList.add('d-none');
-            document.getElementById('error').classList.remove('d-none');
-            lucide.createIcons();
-        }
-
-        loadJob();
     </script>
 </body>
 </html>

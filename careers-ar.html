@@ -24,7 +24,6 @@
     <script src="./js/lucide.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-white arabic-version">
 
@@ -213,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <button class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</button>
+                                <a href="./job-detail-ar.html" class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</a>
                                 <button class="main-btn w-sm-100 px-4 py-2">قدّم الآن</button>
                             </div>
                         </div>
@@ -246,7 +245,7 @@
                                 </div>
                             </div>
                             <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <button class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</button>
+                                <a href="./job-detail-ar.html" class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</a>
                                 <button class="main-btn w-sm-100 px-4 py-2">قدّم الآن</button>
                             </div>
                         </div>
@@ -279,7 +278,7 @@
                                 </div>
                             </div>
                             <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <button class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</button>
+                                <a href="./job-detail-ar.html" class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</a>
                                 <button class="main-btn w-sm-100 px-4 py-2">قدّم الآن</button>
                             </div>
                         </div>
@@ -312,7 +311,7 @@
                                 </div>
                             </div>
                             <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <button class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</button>
+                                <a href="./job-detail-ar.html" class="outlined-btn w-sm-100 px-4 py-2">عرض التفاصيل</a>
                                 <button class="main-btn w-sm-100 px-4 py-2">قدّم الآن</button>
                             </div>
                         </div>
@@ -457,91 +456,7 @@
         <!-- End Footer -->
 
     <script>
-        const SUPABASE_URL = 'https://jassfnwuhtddwqzloxci.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imphc3Nmbnd1aHRkZHdxemxveGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MjI0ODQsImV4cCI6MjA3NzM5ODQ4NH0.xx373opRUSa1yS1og8_TDx5F3Lrix4PSkybhU_XPD88';
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         lucide.createIcons();
-
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const today = new Date();
-            const diffTime = Math.abs(today - date);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-            if (diffDays === 0) return 'Posted today';
-            if (diffDays === 1) return 'Posted 1 day ago';
-            if (diffDays < 7) return `Posted ${diffDays} days ago`;
-            if (diffDays < 14) return 'Posted 1 week ago';
-            if (diffDays < 30) return `Posted ${Math.floor(diffDays / 7)} weeks ago`;
-            return `Posted ${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) > 1 ? 's' : ''} ago`;
-        }
-
-        window.applyNow = function(jobTitle) {
-            const subject = encodeURIComponent(`Job Application: ${jobTitle}`);
-            const body = encodeURIComponent(`Dear Hiring Manager,\n\nI am interested in applying for the ${jobTitle} position at Islamic Insurance Company.\n\nBest regards`);
-            window.location.href = `mailto:hr@tiic.com.jo?subject=${subject}&body=${body}`;
-        }
-
-        async function loadJobs() {
-            try {
-                const { data: jobs, error } = await supabase
-                    .from('job_positions')
-                    .select('*')
-                    .eq('is_active', true)
-                    .order('posted_date', { ascending: false });
-
-                if (error) throw error;
-
-                displayJobs(jobs);
-            } catch (error) {
-                console.error('Error loading jobs:', error);
-            }
-        }
-
-        function displayJobs(jobs) {
-            const jobListings = document.getElementById('job-listings');
-            if (!jobListings || jobs.length === 0) return;
-
-            jobListings.innerHTML = jobs.map(job => `
-                <div class="col-12">
-                    <div class="job-card p-4">
-                        <div class="d-flex flex-column justify-content-lg-between align-items-lg-center flex-lg-row gap-3">
-                            <div class="job-card-content">
-                                <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mb-2 gap-sm-3">
-                                    <h3 class="text-secondary-color">${job.title}</h3>
-                                    <span class="bg-primary-color text-white px-3 py-1 rounded-pill w-fit">${job.employment_type}</span>
-                                </div>
-                                <p class="text-gray-color mb-3">${job.description}</p>
-                                <div class="card-icons-container d-flex flex-wrap gap-3 text-silver-color">
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="map-pin"></i>
-                                        ${job.location}
-                                    </span>
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="briefcase"></i>
-                                        ${job.department} Department
-                                    </span>
-                                    <span class="d-flex align-items-center gap-1">
-                                        <i data-lucide="clock"></i>
-                                        ${formatDate(job.posted_date)}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 flex-column flex-sm-row">
-                                <a href="job-detail.html?slug=${job.slug}" class="outlined-btn w-sm-100 px-4 py-2">View Details</a>
-                                <button onclick="applyNow('${job.title}')" class="main-btn w-sm-100 px-4 py-2">Apply Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-
-            lucide.createIcons();
-        }
-
-        loadJobs();
     </script>
 </body>
 </html>
