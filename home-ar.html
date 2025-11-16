@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Islamic Insurance Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/intlTelInput.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style_front.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/forms.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/custom.css">
+
+    <!-- Js -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/intlTelInputWithUtils.min.js"></script>
+    <script src="./js/lucide.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/navbar.js"></script>
+</head>
+<body class="bg-white arabic-version">
+
+    <!-- Start Navbar -->
+    <header class="sticky-top shadow-sm py-3 d-flex flex-column justify-content-center align-items-center">
+        <div
+            class="container navbar-container d-inline-flex flex-xl-row flex-column-reverse justify-content-between align-items-stretch gap-3">
+            <picture class="logo-img">
+                <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+            </picture>
+            <!-- Navbar links -->
+            <nav class="navbar navbar-expand-xl w-100">
+                <button id="toggleButton" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="openIcon"></i>
+                    <i class="fa-solid fa-xmark primary-color d-none" id="closeIcon"></i>
+                </button>
+                <div class="navbar-collapse-container d-flex align-items-center justify-content-between w-100">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-lg-0 custom-nav">
+                            <li class="nav-item container">
+                                <a href="./home.html" class="nav-link small-screen p-title">الرئيسية</a>
+                            </li>
+                            <!-- About -->
+                            <li
+                                class="nav-item dropdown-menu-news-li-parent nav-link d-flex justify-content-between align-items-center w-100 flex-wrap container relative">
+                                <a href="#" class="custom-dropdown anchor-none p-title d-flex align-items-center">
+                                    من نحن
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <button class="toggleButtonHeader d-xl-none  px-3">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <div class="dropdown-menu-news">
+                                    <ul>
+                                        <li><a href="/news/local">الأخبار المحلية</a></li>
+                                        <li><a href="/news/world">الأخبار العالمية</a></li>
+                                        <li><a href="/news/sports">الرياضة</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work.html" class="nav-link small-screen p-title">أعمالنا</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./our-work-inner.html" class="nav-link small-screen p-title">المشاريع</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./clients-partners.html" class="nav-link small-screen p-title">العملاء و
+                                    الشركاء</a>
+                            </li>
+                            <li class="nav-item container">
+                                <a href="./join-us.html" class="nav-link small-screen p-title">انضم إلينا</a>
+                            </li>
+                            <!-- Contact -->
+                            <li class="nav-item container">
+                                <a href="/contact" class="nav-link small-screen p-title">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-between align-items-center px-3 px-xl-0">
+                <div>
+                    <a href="#">
+                        <picture class="mobile logo-img">
+                            <img src="./assets/images/logo-nav.png" alt="" class=" default-image-class">
+                        </picture>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <a href="#" class="outlined-btn px-2 px-xl-3 py-2 search-btn">
+                        <span>
+                            بحث
+                        </span>
+                        <i data-lucide="search"></i>
+                    </a>
+                    <a href="#" class="d-flex align-items-center gap-2 language-toggle-btn">
+                        <i data-lucide="globe" class="text-black"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Search Container -->
+    <div class="search-nav-container overflow-hidden">
+        <div class="searchBarOpen">
+            <form class="searchBarOpen--input" id="custom-search-form">
+                <div class="d-flex align-items-center gap-2">
+                    <input type="text" name="title" id="search-title-input" required placeholder="ابحث هنا"
+                        data-url-name="title" />
+                    <button>
+                        <i data-lucide="search"></i>
+                    </button>
+                </div>
+            </form>
+            <span class="searchBarOpen--closeBtn"><i class="fa-solid fa-x"></i></span>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <div class="position-fixed accessibility-btn-container">
+        <button class="accessibility-btn d-flex justify-content-center align-items-center">
+            <i data-lucide="accessibility"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="home-hero-section">
+        <div class="swiper-container hero-swiper overflow-hidden mx-auto">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture class="image-container-slider">
+                        <img src="./assets/images/-hero-cover-1.png" alt="" class="cover-image-class h-100">
+                    </picture>
+                    <div class="container">
+                        <div class="hero-content text-white">
+                            <h1 class="mb-4">تأمين السفر</h1>
+                            <p>سافر بثقة – تأمين السفر لدينا معتمد من جميع سفارات شنغن ويغطي الوجهات حول العالم.</p>
+                            <a href="#" class="main-btn w-fit bg-white text-primary-color px-4 mb-5">استكشاف المزيد</a>
+                            <!-- Navigation Buttons -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="swiper-button-prev position-static p-2 mt-0">
+                                    <i data-lucide="arrow-left" class="text-white"></i>
+                                </div>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="current-slide"></span>
+                                    <span class="mx-1">/</span>
+                                    <span class="total-slides"></span>
+                                </div>
+                                <div class="swiper-button-next position-static p-2 mt-0">
+                                    <i data-lucide="arrow-right" class="text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture class="image-container-slider">
+                        <img src="./assets/images/-hero-cover-1.png" alt="" class="cover-image-class h-100">
+                    </picture>
+                    <div class="container">
+                        <div class="hero-content text-white">
+                            <h1 class="mb-4">السفر</h1>
+                            <p>لوريم إيبسوم دولار سيت أميت، كونسيكتيتور أديبيسيسينغ إليت. إكسرسيتاتيونيم، إنيم دوكيموس أميت، آب أتاكوي فوغا سيد إيبسوم تينتور دولورibus إيم نيهل، كوي نيسكنت بارياتور إت؟ آب كوو فولوبتاتيم سولاتا ريبرهينديريت.</p>
+                            <a href="#" class="main-btn w-fit bg-white text-primary-color px-4 mb-5">استكشاف المزيد</a>
+                            <!-- Navigation Buttons -->
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="swiper-button-prev position-static p-2 mt-0">
+                                    <i data-lucide="arrow-left" class="text-white"></i>
+                                </div>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="current-slide"></span>
+                                    <span class="mx-1">/</span>
+                                    <span class="total-slides"></span>
+                                </div>
+                                <div class="swiper-button-next position-static p-2 mt-0">
+                                    <i data-lucide="arrow-right" class="text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Network -->
+    <section class="medical-network-section py-6 bg-soft-white">
+        <div class="container">
+            <div class="row gy-4 gy-lg-0 gx-0 gx-lg-4 align-items-center">
+                <div class="col-xl-3">
+                    <h4 class="text-primary-color mb-3">شبكتنا الطبية</h4>
+                    <p class="text-gray-color mb-0">استكشف شبكتنا الطبية المتنوعة المنتشرة في جميع أنحاء الأردن.</p>
+                </div>
+                <div class="col-xl-9">
+                    <form action="" class="medical-network-form">
+                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-4">
+                            <div class="col-xl-3">
+                                <label class="text-gray-color mb-2">اختر الفئة</label>
+                                <select required class="form-select">
+                                    <option value="">اختر</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-4">
+                                <label class="text-gray-color mb-2">اختر التخصص</label>
+                                <select required class="form-select">
+                                    <option value="">اختر</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-5">
+                                <label class="text-gray-color mb-2">اختر المدينة</label>
+                                <div class="d-flex flex-column align-items-center flex-xl-row gap-3">
+                                    <select required class="form-select">
+                                        <option value="">اختر</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                    </select>
+                                    <button type="submit" class="main-btn px-4 py-2">بحث</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us-section py-6">
+        <div class="container">
+            <h5 class="text-primary-color mb-3">لماذا تختارنا؟</h5>
+            <div class="row gy-4 gy-lg-0 gx-0 gx-lg-4 mb-5">
+                <div class="col-lg-6">
+                    <h2 class="text-black mb-3">شركة التأمين الإسلامية هي أول شركة تأمين تكافلي في الأردن.</h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-gray-color">
+                        تأسست الشركة عام 1996. وتمارس التأمين التعاوني الشرعي المتوافق مع أحكام الشريعة الإسلامية وعلى أساس الوكالة بأجر معلوم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="features-card rounded-3 p-4">
+                        <div class="features-card-header d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="text-primary-color">مهمتنا</h4>
+                            <img src="./assets/images/goal-1.svg" alt="">
+                        </div>
+                        <p class="text-black flex-grow-1 mb-0">
+                            الريادة في التأمين التكافلي وأول شركة تكافل في الأردن.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="features-card rounded-3 p-4">
+                        <div class="features-card-header d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="text-primary-color">مهمتنا</h4>
+                            <img src="./assets/images/review-1.svg" alt="">
+                        </div>
+                        <p class="text-black flex-grow-1 mb-0">
+                            الريادة في التأمين التكافلي وأول شركة تكافل في الأردن.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="features-card rounded-3 p-4">
+                        <div class="features-card-header d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="text-primary-color">مهمتنا</h4>
+                            <img src="./assets/images/economy-1.svg" alt="">
+                        </div>
+                        <p class="text-black flex-grow-1 mb-0">
+                            الريادة في التأمين التكافلي وأول شركة تكافل في الأردن.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section py-5">
+        <div class="container">
+            <div class="row gy-4 gy-lg-0 gx-0 gx-lg-4">
+                <div class="col-lg-3 col-md-6 statistic-col text-white d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="mb-3">29+</h1>
+                    <span class="mb-0">سنوات من الخبرة</span>
+                </div>
+                <div class="col-lg-3 col-md-6 statistic-col text-white d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="mb-3">120+</h1>
+                    <span class="mb-0">موظف في خدمتك</span>
+                </div>
+                <div class="col-lg-3 col-md-6 statistic-col text-white d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="mb-3">6+</h1>
+                    <span class="mb-0">جوائز الشركة</span>
+                </div>
+                <div class="col-lg-3 col-md-6 statistic-col text-white d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="mb-3">3000+</h1>
+                    <span class="mb-0">مزود طبي معتمد</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Products Section -->
+    <section class="insurance-products-section py-5">
+        <div class="container">
+            <div class="section-header mb-5">
+                <h5 class="text-primary-color mb-3">منتجات التأمين</h5>
+                <h2 class="text-black mb-3">منتجات التأمين التكافلي</h2>
+                <div class="categories-tabs d-flex align-items-center gap-2 mt-4">
+                    <button>التأمين الفردي</button>
+                    <button>التأمين المؤسسي</button>
+                </div>
+            </div>
+
+            <div class="position-relative">
+                <div class="swiper-container insurance-products-slider position-relative overflow-hidden mx-auto">
+                    <div class="swiper-wrapper py-3">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/doctor-medical-scrubs-changing-oxygen-balloon-artificial-lung-ve.png" alt="Physiotherapy Centers" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">مراكز العلاج الطبيعي</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/confident-male-doctor-whitecoat-holding-medical-document-while-h.png" alt="Doctors" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">الأطباء</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/dentist-with-assistant-install-implant-patient-mouthin-modern-cl.png" alt="Dental" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">الأسنان</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/young-woman-looking-camera-while-sitting-table.png" alt="Pharmacies" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">الصيدليات</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/featured-image.png" alt="Laboratories" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">المختبرات</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/featured-image-1.png" alt="Radiology" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">الأشعة</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/featured-image-2.png" alt="Optics" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">البصريات</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="swiper-slide d-flex">
+                            <div class="insurance-products-card mx-2 mx-md-3">
+                                <div class="overflow-hidden position-relative">
+                                    <div class="image-overlay"></div>
+                                    <img src="./assets/images/group-1000003684.png" alt="Hospitals" class="cover-image-class">
+                                </div>
+                                <div class="p-4">
+                                    <a href="#" class="text-gray-color">
+                                        <h5 class="mb-2">المستشفيات</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-prev p-2 d-none d-sm-flex">
+                    <i data-lucide="chevron-left" class="text-primary-color"></i>
+                </div>
+                <div class="swiper-button-next p-2 d-none d-sm-flex">
+                    <i data-lucide="chevron-right" class="text-primary-color"></i>
+                </div>
+
+                <div class="d-flex justify-content-sm-between align-items-center flex-sm-row flex-column gap-3">
+                    <div class="swiper-pagination w-fit mt-3 mt-md-4"></div>
+                    <a href="#" class="main-btn px-4 py-2 mt-3 mt-md-4">استكشاف جميع المنتجات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="latest-news-section py-5">
+        <div class="container">
+            <div class="section-header mb-4">
+                <h5 class="text-primary-color mb-3">ابقَ على اطلاع</h5>
+                <h2 class="text-black">آخر الأخبار</h2>
+            </div>
+            <div class="row g-4">
+
+                <!-- News Article 1 -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-1 overflow-hidden d-block news-item" data-category="partnerships">
+                        <img src="./assets/images/featured-image.png" alt="Partnership News" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-3">
+                            <div class="d-flex align-items-center gap-2 text-dark-gray mb-3">
+                                <span>17 آب 2025</span>
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <a href="#" class="text-dark-gray">
+                                <h3 class="mb-2 only-1-lines">أفضل مزود لشركة تكافل 2024</h3>
+                            </a>
+                            <p class="text-gray-color mb-0 only-3-lines">
+                                حصلت شركة التأمين الإسلامية على 
+                                "جائزة أفضل شركة تأمين تكافلي في الأردن"
+                                لعام 2024 من مجلة وورلد فاينانس. وقد حصلت الشركة على هذه
+                                الجائزة للسنة الرابعة على التوالي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Article 2 -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-1 overflow-hidden d-block news-item" data-category="partnerships">
+                        <img src="./assets/images/featured-image-1.png" alt="Partnership News" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-3">
+                            <div class="d-flex align-items-center gap-2 text-dark-gray mb-3">
+                                <span>17 آب 2025</span>
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <a href="#" class="text-dark-gray">
+                                <h3 class="mb-2 only-1-lines">أفضل مزود لشركة تكافل 2024</h3>
+                            </a>
+                            <p class="text-gray-color mb-0 only-3-lines">
+                                حصلت شركة التأمين الإسلامية على 
+                                "جائزة أفضل شركة تأمين تكافلي في الأردن"
+                                لعام 2024 من مجلة وورلد فاينانس. وقد حصلت الشركة على هذه
+                                الجائزة للسنة الرابعة على التوالي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Article 3 -->
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="news-card bg-white rounded-1 overflow-hidden d-block news-item" data-category="partnerships">
+                        <img src="./assets/images/featured-image-2.png" alt="Partnership News" class="cover-image-class aspect-ratio-16-9 text-gray-color">
+                        <div class="p-3">
+                            <div class="d-flex align-items-center gap-2 text-dark-gray mb-3">
+                                <span>17 آب 2025</span>
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <a href="#" class="text-dark-gray">
+                                <h3 class="mb-2 only-1-lines">أفضل مزود لشركة تكافل 2024</h3>
+                            </a>
+                            <p class="text-gray-color mb-0 only-3-lines">
+                                حصلت شركة التأمين الإسلامية على 
+                                "جائزة أفضل شركة تأمين تكافلي في الأردن"
+                                لعام 2024 من مجلة وورلد فاينانس. وقد حصلت الشركة على هذه
+                                الجائزة للسنة الرابعة على التوالي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center justify-content-lg-end">
+                    <a href="#" class="main-btn px-4 py-2">استكشاف الكل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Re Insurance Section -->
+    <section class="re-insurance-section bg-soft-gray py-5">
+        <div class="container">
+            <div class="section-header mb-4">
+                <h5 class="text-primary-color mb-4">نجاحات متقدمة</h5>
+                <h2 class="text-black">إعادة التأمين</h2>
+            </div>
+            <div class="re-insurance-grid">
+                <div class="image-container position-relative">
+                    <img src="./assets/images/1 copy copy.png" alt="Partnership News" class="default-image-class h-100 aspect-ratio-16-9">
+                </div>
+                <div class="image-container position-relative">
+                    <img src="./assets/images/2 copy copy copy.png" alt="Partnership News" class="default-image-class h-100 aspect-ratio-16-9">
+                </div>
+                <div class="image-container position-relative">
+                    <img src="./assets/images/3 copy copy.png" alt="Partnership News" class="default-image-class h-100 aspect-ratio-16-9">
+                </div>
+                <div class="image-container position-relative">
+                    <img src="./assets/images/4 copy copy.png" alt="Partnership News" class="default-image-class h-100 aspect-ratio-16-9">
+                </div>
+                <div class="image-container position-relative">
+                    <img src="./assets/images/5.png" alt="Partnership News" class="default-image-class h-100 aspect-ratio-16-9">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us-section py-5">
+        <div class="container">
+            <div class="d-flex justify-content-sm-between align-items-sm-center flex-sm-row flex-column gap-4">
+                <div class="section-header-container">
+                    <h2 class="text-primary-color mb-2">تواصل معنا!</h2>
+                    <p class="text-black mb-0">أخبرنا بما تحتاجه وكيف يمكننا المساعدة.</p>
+                </div>
+                <div>
+                    <a href="#" class="main-btn px-4 py-2">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Footer -->
+        <footer class="main-footer-container">
+            <div class="container footer-section py-4">
+                <div class="row gy-4 gy-md-0 gx-0 gx-md-4">
+                    <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="logo-container mb-2">
+                        <img src="./assets/images/logo whitepng.png" alt="Logo" class="default-image-class">
+                    </div>
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">شركة التأمين الإسلامية</h5>
+                        <button class="toggleButton mobile-responsive" data-target="about">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="about" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <span>شركة التأمين الإسلامية هي أول شركة تأمين تكافلي إسلامي في الأردن، تأسست عام 1996 وتعمل وفقاً لأحكام الشريعة الإسلامية.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">منتجات التكافل</h5>
+                        <button class="toggleButton mobile-responsive" data-target="products">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="products" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> رؤيتنا</a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">مجلس الإدارة </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفريق الإداري </a></li>
+                        <li class="pb-2 mb-0"><a href=""> المنتجات والخدمات </a></li>
+                        <li class="pb-2 mb-0"><a href="">قائمة الأسعار والرسوم </a></li>
+                        <li class="pb-2 mb-0"><a href="">الفروع</a></li>
+                        <li class="pb-2 mb-0"><a href="">الحوكمة المؤسسية</a></li>
+                        <li class="pb-2 mb-0"><a href="">تعليمات البنك المركزي الأردني </a></li>
+                        <li class="pb-2 mb-0"><a href="#" class="underline hover:no-underline">عرض الكل</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">روابط مفيدة</h5>
+                        <button class="toggleButton mobile-responsive" data-target="useful-links">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="useful-links" class="list-unstyled py-2">
+                        <li class="pb-2 mb-0">
+                            <a href=""> الأسئلة الشائعة </a>
+                        </li>
+                        <li class="pb-2 mb-0"><a href="">قنوات شكاوى العملاء </a></li>
+                        <li class="pb-2 mb-0"><a href=""> تقديم شكوى</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الوظائف الشاغرة</a></li>
+                        <li class="pb-2 mb-0"><a href=""> طلب توظيف</a></li>
+                        <li class="pb-2 mb-0"><a href=""> خريطة الموقع</a></li>
+                        <li class="pb-2 mb-0"><a href=""> الحملات التسويقية والمكافآت</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-item pt-0 pt-md-4">
+                    <div class="footer-item-header d-flex align-items-start justify-content-between">
+                        <h5 class="text-white">تواصل معنا</h5>
+                        <button class="toggleButton mobile-responsive" data-target="contact-us">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-minus" style="display: none"></i>
+                        </button>
+                    </div>
+                    <ul id="contact-us" class="list-unstyled contact-info-list py-2">
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="phone" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>هاتف:</span>
+                                <span dir="ltr">06-562-0151</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="map-pin" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>شارع وصفي التل (الحدائق) – مجمع التأمين الإسلامية (94)</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mail" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>islamicinsurance@tiic.com.jo</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="mailbox" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>ص.ب (941000) عمان 11194 – الأردن</span>
+                            </a>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <div>
+                                <i data-lucide="stethoscope" class="text-white"></i>
+                            </div>
+                            <a href="#" class="d-flex align-items-center gap-1 flex-wrap">
+                                <span>الموافقات الطبية:</span>
+                                <span dir="ltr">06-566-1300</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright-container m-0">
+                <div class="footer-copyright-container-centered container py-4">
+                    <div>
+                        <p class="text-center text-black mb-0">© 2025 تم التطوير بواسطة dot jo. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    <script>
+        lucide.createIcons();
+
+        $(document).ready(function() {
+            // Hero Slider
+            const heroSwiper = new Swiper('.hero-swiper', {
+                slidesPerView: 1,
+                initialSlide: 0,
+                loop: false,
+                pagination: false,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                on: {
+                    init: function() {
+                        const totalSlides = this.slides.length;
+                        $('.total-slides').text(totalSlides);
+                        $('.current-slide').text(this.realIndex + 1);
+                    },
+                    slideChange: function() {
+                        $('.current-slide').text(this.realIndex + 1);
+                    }
+                }
+            });
+
+            // Categories tabs functionality
+            const $categoryTabs = $(".categories-tabs button");
+
+            // Set first tab as active by default
+            $categoryTabs.first().addClass("active");
+
+            // Handle tab click events
+            $categoryTabs.on("click", function () {
+              // Remove active class from all tabs
+              $categoryTabs.removeClass("active");
+
+              // Add active class to clicked tab
+              $(this).addClass("active");
+            });
+
+            // Insurance Products Slider
+            new Swiper('.insurance-products-slider', {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                centeredSlides: true,
+                initialSlide: 0,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + ' w-3 h-3 mx-1 rounded-full inline-block cursor-pointer"></span>';
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        centeredSlides: false
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        centeredSlides: false
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        centeredSlides: false
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 24,
+                        centeredSlides: false
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

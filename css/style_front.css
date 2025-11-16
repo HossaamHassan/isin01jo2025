@@ -2,10 +2,14 @@
     --primary-color: #008c4c;
     --primary-color-hover: #007a42;
     --secondary-color: #545454;
+    --primary-color-op-60: rgba(0, 140, 76, 0.6);
     --primary-color-op-30: rgba(0, 140, 76, 0.3);
+    --light-primary-color: rgba(0, 140, 76, 0.07);
+    --dark-primary-color: #222b27;
     --white-color: #fff;
     --black-color: #000;
-    --soft-white: #f9fafb;
+    --soft-white: #f3f4f6;
+    --soft-gray: #f4f4f4;
     --gray-color: #374151;
     --dark-gray-color: #1f2937;
     --silver-color: #6b7280;
@@ -263,7 +267,11 @@ ul {
 }
 
 .w-fit {
-    width: fit-content;
+    width: fit-content !important;
+}
+
+.h-fit {
+    height: fit-content !important;
 }
 
 .border-primary-color {
@@ -288,6 +296,10 @@ ul {
 
 .bg-light-gray-color {
     background-color: var(--light-gray-color);
+}
+
+.bg-soft-gray {
+    background-color: var(--soft-gray);
 }
 
 .text-primary-color {
@@ -379,7 +391,7 @@ ul {
     position: relative;
 }
 
-.swiper-pagination span {
+.swiper-pagination .swiper-pagination-bullet {
     background-color: var(--primary-color);
     width: 0.7rem;
     height: 0.7rem;
@@ -445,8 +457,9 @@ ul {
 
 .swiper-button-prev svg,
 .swiper-button-next svg {
-    width: 1rem;
-    height: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
 }
 
 .arabic-version .swiper-button-prev svg,
@@ -495,4 +508,32 @@ ul {
 .pagination .prev-btn .page-link,
 .pagination .next-btn .page-link {
     padding: 0.1rem 0.5rem;
+}
+
+.accessibility-btn-container {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+}
+
+.accessibility-btn-container .accessibility-btn {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    border-radius: var(--rounded-circle);
+    border: 2px solid var(--white-color);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.accessibility-btn-container .accessibility-btn svg {
+    color: var(--white-color);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.accessibility-btn-container .accessibility-btn:hover {
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-color-hover);
 }

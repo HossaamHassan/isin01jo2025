@@ -1,0 +1,270 @@
+.home-hero-section {
+    height: 100vh;
+    position: relative;
+}
+
+.home-hero-section .hero-swiper {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.home-hero-section .hero-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+}
+
+.home-hero-section .swiper-button-prev,
+.home-hero-section .swiper-button-next {
+    background-color: transparent;
+    border: 2px solid var(--white-color);
+}
+
+.home-hero-section .swiper-button-prev:hover,
+.home-hero-section .swiper-button-next:hover {
+    background-color: var(--white-color);
+}
+.home-hero-section .swiper-button-prev:hover svg,
+.home-hero-section .swiper-button-next:hover svg {
+    color: var(--primary-color) !important;
+}
+
+.home-hero-section .image-container-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.home-hero-section .image-container-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color-op-60) 0%, var(--primary-color-op-30) 40%, transparent 100%);
+    z-index: 0;
+}
+
+.home-hero-section .hero-content {
+    max-width: 768px;
+}
+
+.home-hero-section .hero-content p {
+    text-align: start;
+}
+
+.home-hero-section .hero-content .main-btn:hover {
+    background: var(--soft-white) !important;
+    color: var(--black-color);
+}
+
+/* Medical Network Section */
+@media (max-width: 1200px) {
+    .medical-network-section .medical-network-form .main-btn {
+        width: 100%;
+    }
+}
+
+/* Why Choose us */
+.why-choose-us-section .features-card {
+    border: 1px solid var(--light-gray-color);
+    background-color: var(--light-primary-color);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.why-choose-us-section .features-card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Statistics Section */
+.statistics-section {
+    background-color: var(--dark-primary-color);
+}
+
+.statistics-section .statistic-col {
+    border-inline-end: 1px solid var(--light-gray-color);
+}
+
+.statistics-section .statistic-col:last-child {
+    border-inline-end: none;
+}
+
+@media (max-width: 991.98px) {
+    .statistics-section .statistic-col {
+        border-inline-end: none;
+    }
+}
+
+/* Insurance Products Section */
+.insurance-products-section .categories-tabs {
+  background: var(--soft-white);
+  border-radius: 999px;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid var(--light-gray-color);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.insurance-products-section .categories-tabs button {
+  color: var(--gray-color);
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: transparent;
+  min-width: 80px;
+  border: none;
+  transition: 0.2s all ease-in-out;
+}
+
+.insurance-products-section .categories-tabs button:hover {
+  color: var(--primary-color);
+}
+
+.insurance-products-section .categories-tabs button.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.insurance-products-section {
+    background-color: var(--soft-gray);
+}
+
+.insurance-products-section .swiper-button-prev,
+.insurance-products-section .swiper-button-next {
+    background-color: var(--soft-gray);
+    border: 1px solid var(--light-gray-color);
+}
+
+.insurance-products-section .swiper-button-prev:hover,
+.insurance-products-section .swiper-button-next:hover {
+    background-color: var(--white-color);
+}
+
+.insurance-products-section .swiper-button-prev svg,
+.insurance-products-section .swiper-button-next svg {
+    color: var(--black-color);
+}
+
+.insurance-products-section .swiper-pagination .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--gray-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.insurance-products-section .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+    width: 1.25rem;
+    border-radius: 999px;
+}
+
+.insurance-products-section .insurance-products-card {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.insurance-products-section .insurance-products-card img {
+    aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 1200px) {
+    .insurance-products-section .insurance-products-card img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+.insurance-products-section .insurance-products-card .image-overlay {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.insurance-products-section .insurance-products-card:hover .image-overlay {
+    background-color: var(--primary-color-op-60);
+}
+
+.insurance-products-section .insurance-products-card a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Latest News */
+.latest-news-section .news-card {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--light-gray-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.latest-news-section .news-card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.latest-news-section .news-card svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.latest-news-section .news-card a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Re Insurance */
+.re-insurance-section .re-insurance-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.re-insurance-section .re-insurance-grid .image-container {
+    max-height: 80px;
+}
+
+.re-insurance-section .re-insurance-grid .image-container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.75rem;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 80px;
+    background-color: var(--light-gray-color);
+}
+
+.re-insurance-section .re-insurance-grid .image-container:last-child::after {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .re-insurance-section .re-insurance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .re-insurance-section .re-insurance-grid .image-container::after {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .re-insurance-section .re-insurance-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.arabic-version .re-insurance-section .re-insurance-grid .image-container::after {
+    right: auto;
+    left: -0.75rem;
+}
